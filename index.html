@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="সূতো — Handmade by Risha. Handmade wool dolls and gifts, crafted with love.">
+      content="সূতো — Handmade by Risha. Woolen dolls, trinkets, mats and handmade wool designs.">
 
 <title>সূতো — Handmade by Risha</title>
 
+
 <style>
 
+/* =========================================
+   GLOBAL
+========================================= */
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -23,9 +31,15 @@ html{
 }
 
 body{
-    font-family:Georgia,"Times New Roman",serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     background:#faf7f2;
+
     color:#3b302b;
+
     line-height:1.7;
 }
 
@@ -40,48 +54,69 @@ button{
 }
 
 
-/* NAVBAR */
+/* =========================================
+   NAVIGATION
+========================================= */
 
 header{
     position:sticky;
     top:0;
+
     z-index:1000;
-    background:rgba(250,247,242,.96);
+
+    background:rgba(250,247,242,.97);
+
     backdrop-filter:blur(12px);
+
     border-bottom:1px solid #e7dcd3;
 }
 
-.nav{
-    max-width:1150px;
+.nav-container{
+    max-width:1180px;
+
     margin:auto;
+
     padding:15px 25px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 }
 
 .logo{
-    font-size:23px;
+    font-size:24px;
+
     font-weight:bold;
-    color:#69483c;
+
+    color:#68473b;
 }
 
 .logo small{
     display:block;
+
     font-size:10px;
+
     letter-spacing:2px;
-    color:#9b8176;
+
     text-transform:uppercase;
+
+    color:#9a7d71;
 }
 
 nav{
     display:flex;
+
     gap:25px;
 }
 
 nav a{
     font-size:14px;
-    color:#604d45;
+
+    color:#5f4b43;
+
+    transition:.3s;
 }
 
 nav a:hover{
@@ -89,37 +124,65 @@ nav a:hover{
 }
 
 
-/* HERO */
+/* =========================================
+   HERO
+========================================= */
 
 .hero{
     min-height:78vh;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
+
     padding:80px 20px;
-    background:radial-gradient(circle at top,#fffaf5,#f2e8df);
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fffaf5,
+            #f1e7de
+        );
 }
 
-.hero-inner{
+.hero-content{
     max-width:850px;
 }
 
-.badge{
+.hero-badge{
     display:inline-block;
-    padding:7px 17px;
-    border:1px solid #d8c2b4;
-    border-radius:50px;
-    color:#8b6758;
-    font-size:11px;
-    letter-spacing:2px;
-    text-transform:uppercase;
+
+    padding:7px 18px;
+
     margin-bottom:20px;
+
+    border:1px solid #d6bfb1;
+
+    border-radius:50px;
+
+    color:#8b6657;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
 }
 
 .hero h1{
-    font-size:clamp(42px,8vw,76px);
+    font-size:
+        clamp(
+            42px,
+            8vw,
+            76px
+        );
+
     line-height:1.1;
+
     color:#563b32;
 }
 
@@ -129,204 +192,436 @@ nav a:hover{
 
 .hero p{
     max-width:680px;
+
     margin:22px auto 0;
+
     font-size:18px;
+
     color:#75655d;
 }
 
 .hero-buttons{
     margin-top:32px;
+
     display:flex;
+
     justify-content:center;
+
     gap:12px;
+
     flex-wrap:wrap;
 }
 
-.primary,
-.secondary{
+.primary-btn,
+.secondary-btn{
     padding:13px 25px;
+
     border-radius:50px;
+
     transition:.3s;
 }
 
-.primary{
+.primary-btn{
     background:#765246;
+
     color:white;
-    border:0;
+
+    border:none;
 }
 
-.primary:hover{
+.primary-btn:hover{
     transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(80,55,45,.18);
 }
 
-.secondary{
-    border:1px solid #b99b8b;
+.secondary-btn{
+    background:transparent;
+
     color:#6b4c40;
+
+    border:1px solid #b99b8b;
 }
 
-.secondary:hover{
+.secondary-btn:hover{
     background:#eee1d7;
 }
 
 
-/* SECTIONS */
+/* =========================================
+   COMMON SECTIONS
+========================================= */
 
 section{
-    max-width:1150px;
+    max-width:1180px;
+
     margin:auto;
+
     padding:80px 25px;
 }
 
-.heading{
+.section-heading{
     text-align:center;
+
     margin-bottom:45px;
 }
 
-.heading span{
+.section-heading span{
     display:block;
+
     font-size:11px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
+
     color:#a17866;
 }
 
-.heading h2{
+.section-heading h2{
     margin-top:5px;
+
     font-size:36px;
+
     color:#573d34;
 }
 
-.heading p{
+.section-heading p{
     max-width:650px;
+
     margin:10px auto;
+
     color:#786a63;
 }
 
 
-/* CUSTOMER */
+/* =========================================
+   PRODUCT CATEGORIES
+========================================= */
+
+.category-section{
+    background:#fffdfb;
+}
+
+.categories{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
+
+    gap:22px;
+}
+
+.category-card{
+    position:relative;
+
+    min-height:210px;
+
+    padding:30px 25px;
+
+    background:white;
+
+    border:1px solid #e8dcd3;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.35s;
+
+    overflow:hidden;
+}
+
+.category-card.active{
+    cursor:pointer;
+}
+
+.category-card.active:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(70,50,40,.12);
+}
+
+.category-icon{
+    font-size:48px;
+
+    margin-bottom:12px;
+}
+
+.category-card h3{
+    color:#604238;
+
+    font-size:21px;
+
+    margin-bottom:5px;
+}
+
+.category-card p{
+    color:#81736b;
+
+    font-size:14px;
+}
+
+.category-card.coming-soon{
+    background:
+        linear-gradient(
+            135deg,
+            #f8f3ee,
+            #f1e8e0
+        );
+
+    opacity:.82;
+}
+
+.coming-badge{
+    display:inline-block;
+
+    margin-top:12px;
+
+    padding:5px 13px;
+
+    border-radius:50px;
+
+    background:#e4d5ca;
+
+    color:#765b4e;
+
+    font-size:10px;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================
+   COLLECTION FILTER
+========================================= */
+
+.collection-title{
+    margin-top:15px;
+}
+
+
+/* =========================================
+   CUSTOMER SELECTOR
+========================================= */
 
 .customer-box{
     max-width:750px;
-    margin:0 auto 45px;
+
+    margin:
+        0 auto 45px;
+
     padding:25px;
+
     text-align:center;
+
     background:white;
-    border:1px solid #e9ddd4;
+
+    border:1px solid #e8dcd3;
+
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(70,50,40,.06);
+
+    box-shadow:
+        0 10px 30px
+        rgba(70,50,40,.06);
 }
 
 .customer-buttons{
     margin-top:15px;
+
     display:flex;
+
     justify-content:center;
+
     gap:12px;
+
     flex-wrap:wrap;
 }
 
 .customer-btn{
     padding:10px 22px;
-    border:1px solid #d7c2b5;
+
+    border:1px solid #d5bfb1;
+
     border-radius:50px;
+
     background:#faf7f2;
+
     color:#624a40;
+}
+
+.customer-btn:hover{
+    background:#eee1d7;
 }
 
 .customer-info{
     margin-top:18px;
+
     padding:15px;
+
     border-radius:12px;
+
     background:#f7eee8;
+
     color:#745c50;
 }
 
 
-/* PRODUCTS */
+/* =========================================
+   PRODUCTS
+========================================= */
 
-.products{
+.products-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(270px,1fr)
+        );
+
     gap:30px;
 }
 
-.card{
+.product-card{
     background:white;
+
     border:1px solid #e8dcd3;
+
     border-radius:22px;
+
     overflow:hidden;
-    box-shadow:0 12px 35px rgba(70,50,40,.08);
-    transition:.3s;
+
+    box-shadow:
+        0 12px 35px
+        rgba(70,50,40,.08);
+
+    transition:.35s;
 }
 
-.card:hover{
+.product-card:hover{
     transform:translateY(-6px);
-    box-shadow:0 20px 45px rgba(70,50,40,.13);
+
+    box-shadow:
+        0 20px 45px
+        rgba(70,50,40,.13);
 }
 
-.card img{
+.product-image{
     width:100%;
+
     height:330px;
+
     object-fit:cover;
+
     display:block;
 }
 
-.card-body{
+.product-content{
     padding:25px;
 }
 
-.card h3{
-    font-size:22px;
+.product-content h3{
     color:#5c4036;
+
+    font-size:22px;
 }
 
-.card p{
+.product-content p{
     margin-top:8px;
+
     color:#786b64;
+
     font-size:15px;
 }
 
-.price{
+.product-price{
     margin-top:15px;
+
     font-size:22px;
+
     font-weight:bold;
+
     color:#805a48;
 }
 
 .order-btn{
     width:100%;
+
     margin-top:20px;
+
     padding:13px;
-    border:0;
+
+    border:none;
+
     border-radius:50px;
+
     background:#765246;
+
     color:white;
+
     font-size:15px;
+
+    transition:.3s;
 }
 
 .order-btn:hover{
     background:#604238;
+
+    transform:translateY(-2px);
 }
 
 
-/* ORDER */
+/* =========================================
+   ORDER FORM
+========================================= */
 
-#orderBox{
+#order-section{
     display:none;
+
     max-width:650px;
-    margin:45px auto 0;
+
+    margin:
+        45px auto 0;
+
     padding:32px;
+
     background:white;
-    border:1px solid #e6d8cd;
+
+    border:1px solid #e5d7cd;
+
     border-radius:22px;
-    box-shadow:0 15px 40px rgba(70,50,40,.1);
+
+    box-shadow:
+        0 15px 40px
+        rgba(70,50,40,.10);
 }
 
-#orderBox h2{
+#order-section h2{
     color:#573d34;
 }
 
-#selectedProduct{
-    margin:7px 0 25px;
+#selected-product{
+    margin:
+        7px 0 25px;
+
     color:#8a6758;
 }
 
@@ -336,24 +631,34 @@ section{
 
 .form-group label{
     display:block;
+
     margin-bottom:6px;
+
     font-size:14px;
+
     color:#604c43;
 }
 
 .form-group input,
 .form-group textarea{
     width:100%;
+
     padding:12px 14px;
+
     border:1px solid #d9cbc1;
+
     border-radius:10px;
+
     background:#fcfaf8;
+
     font-family:inherit;
+
     outline:none;
 }
 
 .form-group textarea{
     min-height:100px;
+
     resize:vertical;
 }
 
@@ -361,73 +666,117 @@ section{
     max-width:110px;
 }
 
-.total{
+.total-price{
     margin:20px 0;
+
     padding:15px;
+
     background:#f5eee8;
+
     border-radius:12px;
+
     color:#674b40;
+
     font-size:18px;
 }
 
-.whatsapp{
+.whatsapp-btn{
     width:100%;
+
     padding:14px;
-    border:0;
+
+    border:none;
+
     border-radius:50px;
+
     background:#5d805b;
+
     color:white;
+
     font-size:16px;
 }
 
+.whatsapp-btn:hover{
+    opacity:.9;
+}
 
-/* ABOUT */
 
-.about{
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px,1fr)
+        );
+
     gap:35px;
+
     align-items:center;
 }
 
-.about h3{
+.about-grid h3{
     font-size:30px;
+
     color:#573d34;
+
     margin-bottom:15px;
 }
 
-.about p{
+.about-grid p{
     color:#756860;
+
     margin-bottom:15px;
 }
 
-.highlight{
+.about-highlight{
     padding:30px;
+
     background:#eee1d7;
+
     border-radius:20px;
+
     color:#654b40;
 }
 
-.highlight strong{
+.about-highlight strong{
     display:block;
+
     font-size:18px;
+
     margin-bottom:5px;
 }
 
 
-/* FEATURES */
+/* =========================================
+   FEATURES
+========================================= */
 
 .features{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(200px,1fr)
+        );
+
     gap:20px;
 }
 
 .feature{
     padding:28px 20px;
+
     text-align:center;
+
     background:white;
+
     border:1px solid #e8dcd3;
+
     border-radius:18px;
 }
 
@@ -437,33 +786,48 @@ section{
 
 .feature h3{
     margin-top:8px;
+
     color:#60483e;
 }
 
 .feature p{
     margin-top:5px;
+
     color:#81736b;
+
     font-size:14px;
 }
 
 
-/* SHIPPING */
+/* =========================================
+   SHIPPING
+========================================= */
 
-.shipping{
+.shipping-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
     gap:25px;
 }
 
 .shipping-card{
     padding:25px;
+
     background:white;
+
     border:1px solid #e8dcd3;
+
     border-radius:18px;
 }
 
 .shipping-card h3{
     color:#60483e;
+
     margin-bottom:8px;
 }
 
@@ -472,38 +836,53 @@ section{
 }
 
 
-/* CONTACT */
+/* =========================================
+   CONTACT
+========================================= */
 
-.contact{
+.contact-box{
     text-align:center;
+
     padding:55px 25px;
+
     background:#eee1d7;
+
     border-radius:25px;
 }
 
-.contact h2{
+.contact-box h2{
     font-size:34px;
+
     color:#573d34;
 }
 
-.contact p{
+.contact-box p{
     max-width:620px;
-    margin:10px auto 25px;
+
+    margin:
+        10px auto 25px;
+
     color:#745f55;
 }
 
 
-/* FOOTER */
+/* =========================================
+   FOOTER
+========================================= */
 
 footer{
-    text-align:center;
     padding:30px 20px;
+
+    text-align:center;
+
     background:#4d3830;
+
     color:#eee2dc;
 }
 
 footer strong{
     display:block;
+
     font-size:20px;
 }
 
@@ -512,24 +891,31 @@ footer small{
 }
 
 
-/* MOBILE */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media(max-width:700px){
 
-    .nav{
+    .nav-container{
         flex-direction:column;
+
         gap:10px;
     }
 
     nav{
         gap:15px;
+
         flex-wrap:wrap;
+
         justify-content:center;
     }
 
     .hero{
         min-height:70vh;
-        padding:60px 20px;
+
+        padding:
+            60px 20px;
     }
 
     .hero h1{
@@ -537,56 +923,76 @@ footer small{
     }
 
     section{
-        padding:60px 18px;
+        padding:
+            60px 18px;
     }
 
-    .heading h2{
+    .section-heading h2{
         font-size:30px;
     }
 
-    .card img{
+    .product-image{
         height:300px;
     }
 
-    #orderBox{
-        margin:30px 18px;
-        padding:25px 18px;
+    #order-section{
+        margin:
+            30px 18px;
+
+        padding:
+            25px 18px;
     }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- =========================================
+     NAVIGATION
+========================================= -->
 
 <header>
 
-<div class="nav">
+<div class="nav-container">
 
 <a href="#home" class="logo">
 
 সূতো 🧶
 
-<small>Handmade by Risha</small>
+<small>
+Handmade by Risha
+</small>
 
 </a>
 
 
 <nav>
 
-<a href="#home">Home</a>
+<a href="#home">
+Home
+</a>
 
-<a href="#collection">Collection</a>
+<a href="#categories">
+Categories
+</a>
 
-<a href="#about">About</a>
+<a href="#collection">
+Collection
+</a>
 
-<a href="#shipping">Shipping</a>
+<a href="#about">
+About
+</a>
 
-<a href="#contact">Contact</a>
+<a href="#contact">
+Contact
+</a>
 
 </nav>
 
@@ -596,39 +1002,62 @@ footer small{
 
 
 
-<!-- HERO -->
+<!-- =========================================
+     HERO
+========================================= -->
 
 <main id="home">
 
 <div class="hero">
 
-<div class="hero-inner">
+<div class="hero-content">
 
-<div class="badge">
+<div class="hero-badge">
 Handmade • Heartmade
 </div>
 
+
 <h1>
+
 সূতো —
-<span>Handmade by Risha</span>
+
+<span>
+Handmade by Risha
+</span>
+
 </h1>
 
+
 <p>
-হাতে তৈরি উলের পুতুল ও সুন্দর উপহার,
-ভালোবাসা দিয়ে একেকটি করে তৈরি।
+
+হাতে তৈরি সুন্দর woolen creations,
+ভালোবাসা, যত্ন এবং সৃজনশীলতার সঙ্গে।
+
 <br>
-Beautiful handmade creations, crafted with love.
+
+Beautiful handmade creations,
+crafted with love.
+
 </p>
 
 
 <div class="hero-buttons">
 
-<a href="#collection" class="primary">
-Explore Collection 🧶
+<a
+href="#categories"
+class="primary-btn">
+
+Explore Categories 🧶
+
 </a>
 
-<a href="#about" class="secondary">
+
+<a
+href="#about"
+class="secondary-btn">
+
 Our Story
+
 </a>
 
 </div>
@@ -639,21 +1068,166 @@ Our Story
 
 
 
-<!-- COLLECTION -->
+<!-- =========================================
+     PRODUCT CATEGORIES
+========================================= -->
 
-<section id="collection">
+<section
+id="categories"
+class="category-section">
 
-<div class="heading">
 
-<span>Our Collection</span>
+<div class="section-heading">
 
-<h2>আমাদের পণ্য 🧶</h2>
+<span>
+Our Categories
+</span>
+
+
+<h2>
+Product Categories 🧶
+</h2>
+
 
 <p>
-ছোট্ট সুতো থেকে তৈরি ভালোবাসায় ভরা handmade creations.
+আমাদের handmade collection চারটি
+বিশেষ category-তে ভাগ করা হয়েছে।
 </p>
 
 </div>
+
+
+<div class="categories">
+
+
+<!-- WOOLEN DOLLS -->
+
+<div
+class="category-card active"
+onclick="openDolls()">
+
+<div class="category-icon">
+🧸
+</div>
+
+<h3>
+Woolen Dolls
+</h3>
+
+<p>
+Handmade woolen dolls
+and characters.
+</p>
+
+</div>
+
+
+
+<!-- WOOLEN TRINKETS -->
+
+<div class="category-card coming-soon">
+
+<div class="category-icon">
+🧶
+</div>
+
+<h3>
+Woolen Trinkets
+</h3>
+
+<p>
+Beautiful handmade
+woolen accessories.
+</p>
+
+<span class="coming-badge">
+Coming Soon
+</span>
+
+</div>
+
+
+
+<!-- WOOLEN MATS -->
+
+<div class="category-card coming-soon">
+
+<div class="category-icon">
+🪢
+</div>
+
+<h3>
+Woolen Mats
+</h3>
+
+<p>
+Decorative and useful
+handmade woolen mats.
+</p>
+
+<span class="coming-badge">
+Coming Soon
+</span>
+
+</div>
+
+
+
+<!-- WOOLEN DESIGNS -->
+
+<div class="category-card coming-soon">
+
+<div class="category-icon">
+🎨
+</div>
+
+<h3>
+Woolen Designs
+</h3>
+
+<p>
+Creative handmade
+woolen art and designs.
+</p>
+
+<span class="coming-badge">
+Coming Soon
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COLLECTION
+========================================= -->
+
+<section id="collection">
+
+
+<div class="section-heading">
+
+<span>
+Woolen Dolls
+</span>
+
+
+<h2>
+Our Current Collection 🧸
+</h2>
+
+
+<p>
+আমাদের প্রথম collection —
+handmade woolen dolls.
+</p>
+
+</div>
+
 
 
 <!-- CUSTOMER TYPE -->
@@ -661,11 +1235,17 @@ Our Story
 <div class="customer-box">
 
 <p>
+
 <b>
+
 আপনি কোথা থেকে অর্ডার করছেন?
+
 <br>
+
 Where are you ordering from?
+
 </b>
+
 </p>
 
 
@@ -674,25 +1254,34 @@ Where are you ordering from?
 <button
 class="customer-btn"
 onclick="showIndia()">
+
 🇮🇳 India
+
 </button>
 
 
 <button
 class="customer-btn"
 onclick="showInternational()">
+
 🌍 International
+
 </button>
 
 </div>
 
 
+
 <div
-id="indiaInfo"
+id="india-info"
 class="customer-info"
 style="display:none;">
 
-🇮🇳 <strong>Indian Customers</strong>
+🇮🇳
+
+<strong>
+Indian Customers
+</strong>
 
 <br>
 
@@ -705,12 +1294,17 @@ Prices are shown in INR.
 </div>
 
 
+
 <div
-id="internationalInfo"
+id="international-info"
 class="customer-info"
 style="display:none;">
 
-🌍 <strong>International Customers</strong>
+🌍
+
+<strong>
+International Customers
+</strong>
 
 <br>
 
@@ -726,44 +1320,58 @@ Shipping charges may vary by destination.
 
 
 
-<!-- PRODUCTS -->
+<!-- =========================================
+     PRODUCTS
+========================================= -->
 
-<div class="products">
+<div class="products-grid">
 
 
 <!-- PRODUCT 1 -->
 
-<article class="card">
+<article class="product-card">
+
 
 <img
+class="product-image"
 src="wool-doll.jpg"
 alt="Handmade Wool Doll">
 
-<div class="card-body">
+
+<div class="product-content">
+
 
 <h3>
 Handmade Wool Doll 🧸
 </h3>
 
+
 <p>
 হাতে তৈরি সুন্দর উলের পুতুল।
 </p>
+
 
 <p>
 Handmade with love 💗
 </p>
 
-<div class="price">
+
+<div class="product-price">
 ₹499
 </div>
 
+
 <button
 class="order-btn"
-onclick="selectProduct('Handmade Wool Doll',499)">
+onclick="selectProduct(
+'Handmade Wool Doll',
+499
+)">
 
 🛒 Order Now
 
 </button>
+
 
 </div>
 
@@ -773,57 +1381,77 @@ onclick="selectProduct('Handmade Wool Doll',499)">
 
 <!-- PRODUCT 2 -->
 
-<article class="card">
+<article class="product-card">
+
 
 <img
+class="product-image"
 src="Wool-doll-2.jpg"
 alt="Krishna Handmade Wool Doll">
 
-<div class="card-body">
+
+<div class="product-content">
+
 
 <h3>
 Krishna — Handmade Wool Doll 🧶
 </h3>
 
+
 <p>
-হাতে তৈরি সুন্দর Krishna-themed wool doll.
+হাতে তৈরি সুন্দর Krishna-themed
+wool doll.
 </p>
+
 
 <p>
 Handmade with love 💗
 </p>
 
-<div class="price">
+
+<div class="product-price">
 ₹600
 </div>
 
+
 <button
 class="order-btn"
-onclick="selectProduct('Krishna — Handmade Wool Doll',600)">
+onclick="selectProduct(
+'Krishna — Handmade Wool Doll',
+600
+)">
 
 🛒 Order Now
 
 </button>
 
+
 </div>
 
 </article>
 
+
 </div>
 
 
 
-<!-- ORDER FORM -->
+<!-- =========================================
+     ORDER FORM
+========================================= -->
 
-<div id="orderBox">
+<div
+id="order-section">
+
 
 <h2>
 📝 Place Your Order
 </h2>
 
-<p id="selectedProduct">
-Select a product.
+
+<p id="selected-product">
+Select a product to continue.
 </p>
+
 
 
 <div class="form-group">
@@ -834,10 +1462,11 @@ Your Name / আপনার নাম
 
 <input
 type="text"
-id="customerName"
+id="customer-name"
 placeholder="Enter your name">
 
 </div>
+
 
 
 <div class="form-group">
@@ -848,10 +1477,11 @@ WhatsApp Number / মোবাইল নম্বর
 
 <input
 type="tel"
-id="customerPhone"
+id="customer-phone"
 placeholder="Enter your WhatsApp number">
 
 </div>
+
 
 
 <div class="form-group">
@@ -861,11 +1491,12 @@ Delivery Address / ঠিকানা
 </label>
 
 <textarea
-id="customerAddress"
+id="customer-address"
 placeholder="Enter your complete delivery address">
 </textarea>
 
 </div>
+
 
 
 <div class="form-group">
@@ -886,24 +1517,31 @@ oninput="calculateTotal()">
 </div>
 
 
-<div class="total">
+
+<div class="total-price">
 
 Total:
 
 <strong>
-₹<span id="totalPrice">0</span>
+
+₹<span id="total-price">
+0
+</span>
+
 </strong>
 
 </div>
 
 
+
 <button
-class="whatsapp"
+class="whatsapp-btn"
 onclick="sendOrder()">
 
 📲 Send Order on WhatsApp
 
 </button>
+
 
 </div>
 
@@ -911,13 +1549,19 @@ onclick="sendOrder()">
 
 
 
-<!-- ABOUT -->
+<!-- =========================================
+     ABOUT
+========================================= -->
 
 <section id="about">
 
-<div class="heading">
 
-<span>Our Story</span>
+<div class="section-heading">
+
+<span>
+Our Story
+</span>
+
 
 <h2>
 ভালোবাসা দিয়ে তৈরি ❤️
@@ -926,7 +1570,9 @@ onclick="sendOrder()">
 </div>
 
 
-<div class="about">
+
+<div class="about-grid">
+
 
 <div>
 
@@ -934,45 +1580,68 @@ onclick="sendOrder()">
 Handmade by Risha
 </h3>
 
-<p>
-সূতো — Handmade by Risha একটি ছোট্ট
-handmade creation brand, যেখানে উলের
-সুতো দিয়ে তৈরি হয় সুন্দর পুতুল ও উপহার।
-</p>
 
 <p>
+
+সূতো — Handmade by Risha
+একটি handmade creation brand,
+যেখানে wool-এর সুতো দিয়ে তৈরি হয়
+সুন্দর পুতুল ও বিভিন্ন creative products।
+
+</p>
+
+
+<p>
+
 প্রতিটি product হাতে তৈরি।
-তাই প্রতিটি creation-এর মধ্যে থাকে
-নিজের একটা আলাদা personality।
+তাই প্রতিটি creation-এর মধ্যে
+থাকে আলাদা personality।
+
 </p>
 
+
 <p>
-From a simple thread to something meaningful —
-every piece is made with patience,
-creativity and love.
+
+From a simple thread to something
+meaningful — every piece is made
+with patience, creativity and love.
+
 </p>
 
 </div>
 
 
-<div class="highlight">
 
-<strong>🧶 Handmade</strong>
+<div class="about-highlight">
+
+
+<strong>
+🧶 Handmade
+</strong>
 
 Mass-produced নয়।
 
-<br><br>
-
-<strong>💗 Made with Love</strong>
-
-প্রতিটি creation-এর পিছনে রয়েছে
-যত্ন ও সময়।
 
 <br><br>
 
-<strong>✨ Made for You</strong>
 
-Gift, collection অথবা special someone-এর জন্য।
+<strong>
+💗 Made with Love
+</strong>
+
+প্রতিটি creation-এর পিছনে
+রয়েছে যত্ন ও সময়।
+
+
+<br><br>
+
+
+<strong>
+✨ Made for You
+</strong>
+
+Gift, collection অথবা
+special someone-এর জন্য।
 
 </div>
 
@@ -982,13 +1651,19 @@ Gift, collection অথবা special someone-এর জন্য।
 
 
 
-<!-- FEATURES -->
+<!-- =========================================
+     FEATURES
+========================================= -->
 
 <section>
 
-<div class="heading">
 
-<span>Why Suto</span>
+<div class="section-heading">
+
+<span>
+Why Suto
+</span>
+
 
 <h2>
 কেন সূতো? 🧶
@@ -997,14 +1672,19 @@ Gift, collection অথবা special someone-এর জন্য।
 </div>
 
 
+
 <div class="features">
 
 
 <div class="feature">
 
-<div class="feature-icon">🧶</div>
+<div class="feature-icon">
+🧶
+</div>
 
-<h3>Handmade</h3>
+<h3>
+Handmade
+</h3>
 
 <p>
 প্রতিটি product হাতে তৈরি।
@@ -1013,11 +1693,16 @@ Gift, collection অথবা special someone-এর জন্য।
 </div>
 
 
+
 <div class="feature">
 
-<div class="feature-icon">💗</div>
+<div class="feature-icon">
+💗
+</div>
 
-<h3>Heartmade</h3>
+<h3>
+Heartmade
+</h3>
 
 <p>
 ভালোবাসা ও যত্ন দিয়ে তৈরি।
@@ -1026,24 +1711,35 @@ Gift, collection অথবা special someone-এর জন্য।
 </div>
 
 
+
 <div class="feature">
 
-<div class="feature-icon">🎁</div>
+<div class="feature-icon">
+🎁
+</div>
 
-<h3>Perfect Gift</h3>
+<h3>
+Perfect Gift
+</h3>
 
 <p>
-Special occasions-এর জন্য সুন্দর gift.
+Special occasions-এর জন্য
+সুন্দর gift.
 </p>
 
 </div>
 
 
+
 <div class="feature">
 
-<div class="feature-icon">🌍</div>
+<div class="feature-icon">
+🌍
+</div>
 
-<h3>Worldwide</h3>
+<h3>
+Worldwide
+</h3>
 
 <p>
 International orders welcomed.
@@ -1051,312 +1747,104 @@ International orders welcomed.
 
 </div>
 
+
 </div>
 
 </section>
 
 
 
-<!-- SHIPPING -->
+<!-- =========================================
+     FUTURE COLLECTIONS
+========================================= -->
+
+<section>
+
+
+<div class="section-heading">
+
+<span>
+Coming Soon
+</span>
+
+
+<h2>
+আরও কিছু আসছে... ✨
+</h2>
+
+
+<p>
+
+আমাদের handmade journey
+এখানেই শেষ নয়।
+
+</p>
+
+</div>
+
+
+
+<div class="shipping-grid">
+
+
+<div class="shipping-card">
+
+<h3>
+🧶 Woolen Trinkets
+</h3>
+
+<p>
+ছোট ছোট সুন্দর handmade
+woolen accessories খুব শীঘ্রই আসছে।
+</p>
+
+</div>
+
+
+
+<div class="shipping-card">
+
+<h3>
+🪢 Woolen Mats
+</h3>
+
+<p>
+ঘর সাজানোর জন্য সুন্দর
+handmade woolen mats।
+</p>
+
+</div>
+
+
+
+<div class="shipping-card">
+
+<h3>
+🎨 Woolen Designs
+</h3>
+
+<p>
+Creative woolen art,
+designs এবং decorative creations।
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SHIPPING
+========================================= -->
 
 <section id="shipping">
 
-<div class="heading">
 
-<span>Delivery</span>
+<div class="section-heading">
 
-<h2>
-Shipping & Orders 📦
-</h2>
-
-<p>
-We welcome both Indian and international customers.
-</p>
-
-</div>
-
-
-<div class="shipping">
-
-
-<div class="shipping-card">
-
-<h3>
-🇮🇳 India
-</h3>
-
-<p>
-Indian customers can place their order
-directly through WhatsApp.
-</p>
-
-</div>
-
-
-<div class="shipping-card">
-
-<h3>
-🌍 International
-</h3>
-
-<p>
-International customers can contact us
-for availability and shipping charges.
-</p>
-
-</div>
-
-
-<div class="shipping-card">
-
-<h3>
-🧶 Custom Orders
-</h3>
-
-<p>
-Want something special?
-Contact Risha for custom handmade creations.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<div class="contact">
-
-<h2>
-Let's Create Something Beautiful 🧶
-</h2>
-
-<p>
-কোনো product পছন্দ হয়েছে?
-অথবা custom handmade creation চান?
-WhatsApp-এ আমাদের সঙ্গে যোগাযোগ করুন।
-</p>
-
-<button
-class="primary"
-onclick="contactWhatsApp()">
-
-💬 Chat on WhatsApp
-
-</button>
-
-</div>
-
-</section>
-
-</main>
-
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<strong>
-সূতো — Handmade by Risha 🧶
-</strong>
-
-<small>
-Handmade with love • © 2026
-</small>
-
-</footer>
-
-
-
-<script>
-
-/* =========================
-   PRODUCT SYSTEM
-========================= */
-
-let selectedProduct = "";
-let selectedPrice = 0;
-
-
-/* SELECT PRODUCT */
-
-function selectProduct(product,price){
-
-selectedProduct = product;
-
-selectedPrice = price;
-
-document.getElementById("orderBox").style.display="block";
-
-document.getElementById("selectedProduct").innerText =
-"🧶 " + product + " — ₹" + price;
-
-document.getElementById("quantity").value=1;
-
-calculateTotal();
-
-document.getElementById("orderBox").scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-}
-
-
-/* TOTAL */
-
-function calculateTotal(){
-
-let quantity =
-parseInt(document.getElementById("quantity").value) || 1;
-
-if(quantity < 1){
-quantity=1;
-}
-
-let total = selectedPrice * quantity;
-
-document.getElementById("totalPrice").innerText=total;
-
-}
-
-
-/* WHATSAPP ORDER */
-
-function sendOrder(){
-
-let name =
-document.getElementById("customerName").value.trim();
-
-let phone =
-document.getElementById("customerPhone").value.trim();
-
-let address =
-document.getElementById("customerAddress").value.trim();
-
-let quantity =
-parseInt(document.getElementById("quantity").value) || 1;
-
-
-if(selectedProduct === "" || selectedPrice === 0){
-
-alert("Please select a product first.");
-
-return;
-
-}
-
-
-if(name === "" || phone === "" || address === ""){
-
-alert("দয়া করে সব তথ্য পূরণ করুন।");
-
-return;
-
-}
-
-
-let total = selectedPrice * quantity;
-
-
-/* Risha's WhatsApp */
-
-let whatsappNumber = "917602579054";
-
-
-let message =
-
-"🛒 নতুন অর্ডার\n\n" +
-
-"🧶 Product: " +
-selectedProduct +
-"\n" +
-
-"💰 Unit Price: ₹" +
-selectedPrice +
-"\n" +
-
-"🔢 Quantity: " +
-quantity +
-"\n" +
-
-"💵 Total: ₹" +
-total +
-"\n\n" +
-
-"👤 Customer: " +
-name +
-"\n" +
-
-"📱 WhatsApp: " +
-phone +
-"\n" +
-
-"📍 Address: " +
-address;
-
-
-let whatsappURL =
-"https://wa.me/" +
-whatsappNumber +
-"?text=" +
-encodeURIComponent(message);
-
-
-window.open(whatsappURL,"_blank");
-
-}
-
-
-/* INDIA */
-
-function showIndia(){
-
-document.getElementById("indiaInfo").style.display="block";
-
-document.getElementById("internationalInfo").style.display="none";
-
-}
-
-
-/* INTERNATIONAL */
-
-function showInternational(){
-
-document.getElementById("indiaInfo").style.display="none";
-
-document.getElementById("internationalInfo").style.display="block";
-
-}
-
-
-/* CONTACT */
-
-function contactWhatsApp(){
-
-let whatsappNumber="917602579054";
-
-let message=
-"Hello Risha! I am interested in your handmade products from সূতো.";
-
-let url=
-"https://wa.me/" +
-whatsappNumber +
-"?text=" +
-encodeURIComponent(message);
-
-window.open(url,"_blank");
-
-}
-
-</script>
-
-
-</body>
-</html>
+<span>
+Deliv
