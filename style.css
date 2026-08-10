@@ -24,3 +24,14 @@ button {
     border: none !important;
     border-radius: 8px !important;
 }
+nav {
+    background-color: darkblue;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
