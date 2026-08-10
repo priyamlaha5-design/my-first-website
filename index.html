@@ -10,8 +10,15 @@ function showMessage() {
     document.getElementById("surprise").style.display = "block";
 }
 
-function showIndia() {
-    document.getElementById("india-info").style.display = "block";
+let selectedProduct = "Handmade Wool Doll";
+let selectedPrice = 499;
+
+function showOrder(product, price) {
+    selectedProduct = product;
+    selectedPrice = price;
+
+    document.getElementById("order-form").style.display = "block";
+}
     document.getElementById("international-info").style.display = "none";
 }
 
