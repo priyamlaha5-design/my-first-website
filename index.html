@@ -1,207 +1,318 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>সূতো — Handmade by Risha</title>
-<link rel="stylesheet" href="style.css?v=3">
+
+    <link rel="stylesheet" href="style.css?v=3">
+
+    <script>
+
+        let selectedProduct = "Handmade Wool Doll";
+        let selectedPrice = 499;
+
+        function showMessage() {
+            document.getElementById("surprise").style.display = "block";
+        }
+
+        function showIndia() {
+            document.getElementById("india-info").style.display = "block";
+            document.getElementById("international-info").style.display = "none";
+        }
+
+        function showInternational() {
+            document.getElementById("india-info").style.display = "none";
+            document.getElementById("international-info").style.display = "block";
+        }
+
+        function showOrder(product, price) {
+
+            selectedProduct = product;
+            selectedPrice = price;
+
+            document.getElementById("order-form").style.display = "block";
+
+            document.getElementById("selected-product").innerText =
+                "🧶 Product: " + selectedProduct +
+                " | Price: ₹" + selectedPrice;
+
+            document.getElementById("order-form").scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
+        function sendOrder() {
+
+            let name =
+                document.getElementById("customer-name").value.trim();
+
+            let phone =
+                document.getElementById("customer-phone").value.trim();
+
+            let address =
+                document.getElementById("customer-address").value.trim();
+
+            if (name === "" || phone === "" || address === "") {
+
+                alert("দয়া করে সব তথ্য পূরণ করুন।");
+
+                return;
+            }
+
+            let message =
+                "🛒 নতুন অর্ডার\n\n" +
+                "👤 নাম: " + name + "\n" +
+                "📱 ফোন: " + phone + "\n" +
+                "📍 ঠিকানা: " + address + "\n\n" +
+                "🧶 Product: " + selectedProduct + "\n" +
+                "💰 Price: ₹" + selectedPrice;
+
+            let whatsappNumber = "917602579054";
+
+            let whatsappURL =
+                "https://wa.me/" +
+                whatsappNumber +
+                "?text=" +
+                encodeURIComponent(message);
+
+            window.open(whatsappURL, "_blank");
+        }
+
+    </script>
+
 </head>
-<script>
 
-let selectedProduct = "Handmade Wool Doll";
-let selectedPrice = 499;
-
-function showMessage() {
-    document.getElementById("surprise").style.display = "block";
-}
-
-function showIndia() {
-    document.getElementById("india-info").style.display = "block";
-    document.getElementById("international-info").style.display = "none";
-
-
-function showInternational() {
-    document.getElementById("india-info").style.display = "none";
-    document.getElementById("international-info").style.display = "block";
-}
-
-function showOrder(product, price) {
-    selectedProduct = product;
-    selectedPrice = price;
-
-    document.getElementById("order-form").style.display = "block";
-}
-
-function sendOrder() {
-
-    let name = document.getElementById("customer-name").value;
-    let phone = document.getElementById("customer-phone").value;
-    let address = document.getElementById("customer-address").value;
-
-    if (name === "" || phone === "" || address === "") {
-        alert("দয়া করে সব তথ্য পূরণ করুন।");
-        return;
-    }
-
-    let message =
-        "🛒 নতুন অর্ডার\n\n" +
-        "👤 নাম: " + name + "\n" +
-        "📱 ফোন: " + phone + "\n" +
-        "📍 ঠিকানা: " + address + "\n\n" +
-        "🧶 Product: " + selectedProduct + "\n" +
-        "💰 Price: ₹" + selectedPrice;
-
-    let whatsappNumber = "917602579054";
-
-    let whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-    window.open(whatsappURL, "_blank");
-}
-
-</script>
 <body>
+
 <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
 </nav>
 
-    <h1>সূতো — Handmade by Risha 🧶</h1>
+
+<h1>সূতো — Handmade by Risha 🧶</h1>
 
 <p>হাতে তৈরি উলের সুন্দর পুতুল ও উপহার</p>
 
 <h2>ভালোবাসা দিয়ে তৈরি প্রতিটি সৃষ্টি ❤️</h2>
+
+
 <section id="products">
-<h2>আমাদের পণ্য 🧶 | Our Handmade Collection</h2>
-<div class="customer-selector">
-    <p><b>আপনি কোথা থেকে অর্ডার করছেন? | Where are you ordering from?</b></p>
 
-    <button onclick="showIndia()">🇮🇳 India</button>
-
-    <button onclick="showInternational()">🌍 International</button>
-</div>
-
-<div id="india-info" style="display:none;">
-    <h3>🇮🇳 Indian Customer</h3>
-    <p>মূল্য | Price: ₹499</p>
-
-    <p>ভারতের মধ্যে Delivery available</p>
-</div>
-
-<div id="international-info" style="display:none;">
-    <h3>🌍 International Customer</h3>
-    <p>Price: $6.00 USD</p>
-    <p>International shipping available</p>
-</div>
-
-<p>হাতে তৈরি সুন্দর উলের পুতুল ও উপহার</p>
-
-<p>Beautiful handmade wool dolls and gifts, made with love.</p>
-<div class="product-card">
-
-    <img src="wool-doll.jpg"
-     alt="Handmade Wool Doll"
-     style="display:block; width:100%; max-width:320px; height:auto; margin:10px auto; border-radius:10px;">
-
-    <h3>Handmade Wool Doll 🧸</h3>
-
-    <p>হাতে তৈরি সুন্দর উলের পুতুল</p>
-
-    <p>Handmade with love 💗</p>
-
-    <p>Price: ₹499</p>
-<button onclick="showOrder('Handmade Wool Doll', 499)">🛒 Order Now</button>
-<div id="order-form" style="display:none;">
-    <h3>📝 Place Your Order</h3>
-
-    <input type="text" id="customer-name" placeholder="আপনার নাম">
-
-    <input type="tel" id="customer-phone" placeholder="মোবাইল নম্বর">
-
-    <textarea id="customer-address" placeholder="আপনার ঠিকানা"></textarea>
-
-    <button onclick="sendOrder()">📲 Send Order on WhatsApp</button>
-</div>
-
-</div>
-</div>
-
-<!-- SECOND PRODUCT -->
-<div class="product-card">
-
-    <img src="Wool-doll-2.jpg"
-         alt="Handmade Wool Doll 2"
-         style="display:block; width:100%; max-width:320px; height:auto; margin:10px auto; border-radius:10px;">
-
-    <h3>Krishna — Handmade Wool Doll 🧶</h3>
+    <h2>আমাদের পণ্য 🧶 | Our Handmade Collection</h2>
 
 
-    <p>হাতে তৈরি সুন্দর উলের পুতুল</p>
+    <div class="customer-selector">
 
-    <p>Handmade with love 💗</p>
+        <p>
+            <b>
+                আপনি কোথা থেকে অর্ডার করছেন?
+                |
+                Where are you ordering from?
+            </b>
+        </p>
 
-    <p>Price: ₹600</p>
+        <button onclick="showIndia()">
+            🇮🇳 India
+        </button>
 
-    <button onclick="showOrder('Krishna', 600)">
-🛒 Order Now
-</button>
-</div>
-<!-- SECOND PRODUCT -->
+        <button onclick="showInternational()">
+            🌍 International
+        </button>
 
-<div class="product-card">
+    </div>
 
-    <img src="Wool-doll-2.jpg"
-         alt="Krishna">
 
-    <h3>Krishna – Handmade Wool Doll 🧶</h3>
+    <div id="india-info" style="display:none;">
 
-    <p>হাতে তৈরি সুন্দর উলের পুতুল</p>
+        <h3>🇮🇳 Indian Customer</h3>
 
-    <p>Handmade with love 💗</p>
+        <p>মূল্য | Price: ₹499</p>
 
-    <p>Price: ₹600</p>
+        <p>ভারতের মধ্যে Delivery available</p>
 
-    <button onclick="showOrder('Krishna', 600)">
-        🛒 Order Now
-    </button>
+    </div>
 
-</div>
 
-<!-- ORDER FORM -->
+    <div id="international-info" style="display:none;">
 
-<div id="order-form" style="display:none;">
+        <h3>🌍 International Customer</h3>
 
-    <h3>📝 Place Your Order</h3>
+        <p>Price: $6.00 USD</p>
 
-    <input type="text"
-           id="customer-name"
-           placeholder="আপনার নাম">
+        <p>International shipping available</p>
 
-    <input type="tel"
-           id="customer-phone"
-           placeholder="মোবাইল নম্বর">
+    </div>
 
-    <textarea id="customer-address"
-              placeholder="আপনার ঠিকানা"></textarea>
 
-    <button onclick="sendOrder()">
-        📲 Send Order on WhatsApp
-    </button>
+    <p>হাতে তৈরি সুন্দর উলের পুতুল ও উপহার</p>
 
-</div>
+    <p>
+        Beautiful handmade wool dolls and gifts, made with love.
+    </p>
+
+
+    <!-- ========================= -->
+    <!-- FIRST PRODUCT -->
+    <!-- ========================= -->
+
+    <div class="product-card">
+
+        <img
+            src="wool-doll.jpg"
+            alt="Handmade Wool Doll"
+            style="display:block; width:100%; max-width:320px; height:auto; margin:10px auto; border-radius:10px;"
+        >
+
+        <h3>
+            Handmade Wool Doll 🧸
+        </h3>
+
+        <p>
+            হাতে তৈরি সুন্দর উলের পুতুল
+        </p>
+
+        <p>
+            Handmade with love 💗
+        </p>
+
+        <p>
+            Price: ₹499
+        </p>
+
+        <button
+            onclick="showOrder('Handmade Wool Doll', 499)"
+        >
+            🛒 Order Now
+        </button>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- SECOND PRODUCT - KRISHNA -->
+    <!-- ========================= -->
+
+    <div class="product-card">
+
+        <img
+            src="Wool-doll-2.jpg"
+            alt="Krishna Handmade Wool Doll"
+            style="display:block; width:100%; max-width:320px; height:auto; margin:10px auto; border-radius:10px;"
+        >
+
+        <h3>
+            Krishna — Handmade Wool Doll 🧶
+        </h3>
+
+        <p>
+            হাতে তৈরি সুন্দর উলের পুতুল
+        </p>
+
+        <p>
+            Handmade with love 💗
+        </p>
+
+        <p>
+            Price: ₹600
+        </p>
+
+        <button
+            onclick="showOrder('Krishna', 600)"
+        >
+            🛒 Order Now
+        </button>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- COMMON ORDER FORM -->
+    <!-- ========================= -->
+
+    <div
+        id="order-form"
+        style="display:none;"
+    >
+
+        <h3>
+            📝 Place Your Order
+        </h3>
+
+
+        <p id="selected-product">
+            🧶 Product: Handmade Wool Doll | Price: ₹499
+        </p>
+
+
+        <input
+            type="text"
+            id="customer-name"
+            placeholder="আপনার নাম"
+        >
+
+
+        <input
+            type="tel"
+            id="customer-phone"
+            placeholder="মোবাইল নম্বর"
+        >
+
+
+        <textarea
+            id="customer-address"
+            placeholder="আপনার ঠিকানা"
+        ></textarea>
+
+
+        <button onclick="sendOrder()">
+            📲 Send Order on WhatsApp
+        </button>
+
+    </div>
 
 </section>
-</section>
-<button onclick="document.getElementById('surprise').style.display='block';">
-Open My Surprise 💌
+
+
+<!-- ========================= -->
+<!-- SURPRISE BUTTON -->
+<!-- ========================= -->
+
+<button
+    onclick="showMessage()"
+>
+    Open My Surprise 💌
 </button>
-<div id="surprise" style="display: none;">
-    <h2>💖 For Risha 💖</h2>
-    <p>তোমাকে আমার জীবনে পাওয়াটা সত্যিই special।</p>
-    <p>তুমি আমার কাছে অনেক বেশি গুরুত্বপূর্ণ। ❤️</p>
-    <p>এই ছোট্ট website-টা শুধু তোমার জন্য। 🌹</p>
+
+
+<div
+    id="surprise"
+    style="display:none;"
+>
+
+    <h2>
+        💖 For Risha 💖
+    </h2>
+
+    <p>
+        তোমাকে আমার জীবনে পাওয়াটা সত্যিই special।
+    </p>
+
+    <p>
+        তুমি আমার কাছে অনেক বেশি গুরুত্বপূর্ণ। ❤️
+    </p>
+
+    <p>
+        এই ছোট্ট website-টা শুধু তোমার জন্য। 🌹
+    </p>
+
 </div>
+
+
 </body>
 </html>
