@@ -2,1085 +2,1361 @@
 <html lang="bn">
 
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="সূতো — Handmade by Risha. Beautiful handmade wool dolls and gifts, crafted with love.">
-
-    <title>সূতো — Handmade by Risha</title>
-
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #faf7f2;
-            color: #332b27;
-            line-height: 1.7;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            font-family: inherit;
-            cursor: pointer;
-        }
-
-
-        /* NAVIGATION */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(250,247,242,0.96);
-            backdrop-filter: blur(12px);
-
-            border-bottom: 1px solid #e8ded4;
-        }
-
-        .nav-container {
-            max-width: 1150px;
-            margin: auto;
-
-            padding: 15px 25px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand {
-            font-size: 23px;
-            font-weight: bold;
-            color: #6e493c;
-        }
-
-        .brand small {
-            display: block;
-            font-size: 11px;
-            font-weight: normal;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #9b8074;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            font-size: 14px;
-            color: #5a4840;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #9a654f;
-        }
-
-
-        /* HERO */
-
-        .hero {
-            min-height: 78vh;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 80px 20px;
-
-            background:
-                radial-gradient(
-                    circle at top,
-                    #fffaf4,
-                    #f4ebe3
-                );
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero-label {
-            display: inline-block;
-
-            padding: 7px 16px;
-            margin-bottom: 20px;
-
-            border: 1px solid #d8c3b5;
-            border-radius: 50px;
-
-            font-size: 12px;
-            letter-spacing: 2px;
-
-            color: #8c6757;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 8vw, 76px);
-            line-height: 1.1;
-
-            color: #573d34;
-
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #9b6955;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: auto;
-
-            font-size: 18px;
-            color: #75645c;
-        }
-
-        .hero-buttons {
-            margin-top: 35px;
-
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-
-            flex-wrap: wrap;
-        }
-
-        .primary-btn,
-        .secondary-btn {
-            border-radius: 50px;
-            padding: 13px 25px;
-            transition: 0.3s;
-        }
-
-        .primary-btn {
-            background: #795548;
-            color: white;
-            border: none;
-        }
-
-        .primary-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(80,55,45,0.2);
-        }
-
-        .secondary-btn {
-            background: transparent;
-            border: 1px solid #b99b8b;
-            color: #6e493c;
-        }
-
-        .secondary-btn:hover {
-            background: #eee2d8;
-        }
-
-
-        /* SECTIONS */
-
-        section {
-            max-width: 1150px;
-            margin: auto;
-            padding: 80px 25px;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-heading span {
-            display: block;
-
-            font-size: 12px;
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            color: #a47a68;
-
-            margin-bottom: 8px;
-        }
-
-        .section-heading h2 {
-            font-size: 36px;
-            color: #573d34;
-        }
-
-        .section-heading p {
-            max-width: 650px;
-            margin: 10px auto;
-            color: #796c65;
-        }
-
-
-        /* CUSTOMER SELECTOR */
-
-        .customer-box {
-            max-width: 750px;
-            margin: 0 auto 50px;
-
-            padding: 25px;
-
-            text-align: center;
-
-            background: #fff;
-
-            border: 1px solid #eadfd6;
-            border-radius: 18px;
-
-            box-shadow: 0 8px 30px rgba(80,60,50,0.06);
-        }
-
-        .customer-box p {
-            margin-bottom: 15px;
-            color: #66574f;
-        }
-
-        .customer-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .customer-btn {
-            padding: 10px 20px;
-
-            border-radius: 30px;
-
-            border: 1px solid #d7c3b6;
-
-            background: #faf7f2;
-
-            color: #644a3e;
-        }
-
-        .customer-btn:hover {
-            background: #eee2d8;
-        }
-
-        .customer-info {
-            margin-top: 18px;
-
-            padding: 15px;
-
-            border-radius: 12px;
-
-            background: #f8f1eb;
-
-            color: #765d50;
-        }
-
-
-        /* PRODUCTS */
-
-        .products-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(260px, 1fr));
-
-            gap: 30px;
-        }
-
-        .product-card {
-            background: #fff;
-
-            border: 1px solid #eadfd6;
-            border-radius: 22px;
-
-            overflow: hidden;
-
-            box-shadow:
-                0 12px 35px rgba(70,50,40,0.08);
-
-            transition: 0.35s;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-7px);
-
-            box-shadow:
-                0 20px 45px rgba(70,50,40,0.13);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 330px;
-
-            object-fit: cover;
-
-            display: block;
-        }
-
-        .product-content {
-            padding: 25px;
-
-            display: flex;
-            flex-direction: column;
-
-            flex: 1;
-        }
-
-        .product-content h3 {
-            font-size: 22px;
-            color: #5d4037;
-            margin-bottom: 8px;
-        }
-
-        .product-content p {
-            color: #796c65;
-            font-size: 15px;
-        }
-
-        .product-price {
-            margin-top: 15px;
-
-            font-size: 22px;
-
-            font-weight: bold;
-
-            color: #805b49;
-        }
-
-        .product-actions {
-            margin-top: auto;
-            padding-top: 20px;
-        }
-
-        .order-btn {
-            width: 100%;
-
-            border: none;
-            border-radius: 50px;
-
-            padding: 13px;
-
-            background: #795548;
-            color: white;
-
-            font-size: 15px;
-
-            transition: 0.3s;
-        }
-
-        .order-btn:hover {
-            background: #604238;
-            transform: translateY(-2px);
-        }
-
-
-        /* ORDER FORM */
-
-        #order-section {
-            display: none;
-
-            max-width: 650px;
-
-            margin: 40px auto;
-
-            padding: 35px;
-
-            background: white;
-
-            border: 1px solid #e6d8cd;
-
-            border-radius: 22px;
-
-            box-shadow:
-                0 15px 40px rgba(70,50,40,0.1);
-        }
-
-        #order-section h2 {
-            color: #573d34;
-            margin-bottom: 5px;
-        }
-
-        #selected-product {
-            color: #8b6758;
-            margin-bottom: 25px;
-        }
-
-        .form-group {
-            margin-bottom: 17px;
-        }
-
-        .form-group label {
-            display: block;
-
-            margin-bottom: 6px;
-
-            font-size: 14px;
-
-            color: #5e4b43;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-
-            padding: 12px 14px;
-
-            border: 1px solid #daccc2;
-
-            border-radius: 10px;
-
-            background: #fcfaf8;
-
-            font-family: inherit;
-
-            outline: none;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #9b7461;
-        }
-
-        .quantity-row {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .quantity-row input {
-            max-width: 100px;
-        }
-
-        .total-price {
-            margin: 20px 0;
-
-            padding: 15px;
-
-            background: #f5eee8;
-
-            border-radius: 12px;
-
-            font-size: 18px;
-
-            color: #64483d;
-        }
-
-        .whatsapp-btn {
-            width: 100%;
-
-            border: none;
-            border-radius: 50px;
-
-            padding: 14px;
-
-            background: #5d7f5b;
-            color: white;
-
-            font-size: 16px;
-
-            transition: 0.3s;
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-
-
-        /* ABOUT */
-
-        .about-box {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(280px, 1fr));
-
-            gap: 35px;
-
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 30px;
-            color: #573d34;
-            margin-bottom: 15px;
-        }
-
-        .about-text p {
-            color: #756860;
-            margin-bottom: 15px;
-        }
-
-        .about-highlight {
-            padding: 30px;
-
-            background: #eee2d8;
-
-            border-radius: 20px;
-
-            color: #654b40;
-        }
-
-        .about-highlight strong {
-            display: block;
-
-            font-size: 18px;
-
-            margin-bottom: 8px;
-        }
-
-
-        /* FEATURES */
-
-        .features {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(200px, 1fr));
-
-            gap: 20px;
-        }
-
-        .feature {
-            text-align: center;
-
-            padding: 30px 20px;
-
-            background: white;
-
-            border: 1px solid #eadfd6;
-
-            border-radius: 18px;
-        }
-
-        .feature-icon {
-            font-size: 35px;
-            margin-bottom: 10px;
-        }
-
-        .feature h3 {
-            color: #60483e;
-            margin-bottom: 5px;
-        }
-
-        .feature p {
-            font-size: 14px;
-            color: #81736b;
-        }
-
-
-        /* SHIPPING */
-
-        .shipping-box {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(260px, 1fr));
-
-            gap: 25px;
-        }
-
-        .shipping-card {
-            background: white;
-
-            border: 1px solid #eadfd6;
-
-            border-radius: 18px;
-
-            padding: 25px;
-        }
-
-        .shipping-card h3 {
-            color: #60483e;
-            margin-bottom: 10px;
-        }
-
-        .shipping-card p {
-            color: #796c65;
-        }
-
-
-        /* CONTACT */
-
-        .contact-box {
-            text-align: center;
-
-            padding: 50px 25px;
-
-            background: #eee2d8;
-
-            border-radius: 25px;
-        }
-
-        .contact-box h2 {
-            font-size: 35px;
-
-            color: #573d34;
-
-            margin-bottom: 10px;
-        }
-
-        .contact-box p {
-            color: #745f55;
-
-            max-width: 600px;
-
-            margin: auto auto 25px;
-        }
-
-
-        /* FOOTER */
-
-        footer {
-            padding: 30px 20px;
-
-            text-align: center;
-
-            background: #4f3931;
-
-            color: #eee3dc;
-        }
-
-        footer strong {
-            display: block;
-
-            font-size: 20px;
-
-            margin-bottom: 5px;
-        }
-
-        footer small {
-            color: #cdbdb4;
-        }
-
-
-        /* MOBILE */
-
-        @media (max-width:700px) {
-
-            .nav-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            nav {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                min-height: 70vh;
-                padding: 60px 20px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            section {
-                padding: 60px 18px;
-            }
-
-            .section-heading h2 {
-                font-size: 30px;
-            }
-
-            .product-image {
-                height: 300px;
-            }
-
-            #order-section {
-                margin: 20px 18px;
-                padding: 25px 18px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="সূতো — Handmade by Risha. Handmade wool dolls and gifts, crafted with love.">
+
+<title>সূতো — Handmade by Risha</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#faf7f2;
+    color:#3b302b;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+
+/* NAVBAR */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(250,247,242,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #e7dcd3;
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+    color:#69483c;
+}
+
+.logo small{
+    display:block;
+    font-size:10px;
+    letter-spacing:2px;
+    color:#9b8176;
+    text-transform:uppercase;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    font-size:14px;
+    color:#604d45;
+}
+
+nav a:hover{
+    color:#9a654f;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:78vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+    background:radial-gradient(circle at top,#fffaf5,#f2e8df);
+}
+
+.hero-inner{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 17px;
+    border:1px solid #d8c2b4;
+    border-radius:50px;
+    color:#8b6758;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,8vw,76px);
+    line-height:1.1;
+    color:#563b32;
+}
+
+.hero h1 span{
+    color:#9a6855;
+}
+
+.hero p{
+    max-width:680px;
+    margin:22px auto 0;
+    font-size:18px;
+    color:#75655d;
+}
+
+.hero-buttons{
+    margin-top:32px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.primary,
+.secondary{
+    padding:13px 25px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.primary{
+    background:#765246;
+    color:white;
+    border:0;
+}
+
+.primary:hover{
+    transform:translateY(-3px);
+}
+
+.secondary{
+    border:1px solid #b99b8b;
+    color:#6b4c40;
+}
+
+.secondary:hover{
+    background:#eee1d7;
+}
+
+
+/* SECTIONS */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:80px 25px;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.heading span{
+    display:block;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a17866;
+}
+
+.heading h2{
+    margin-top:5px;
+    font-size:36px;
+    color:#573d34;
+}
+
+.heading p{
+    max-width:650px;
+    margin:10px auto;
+    color:#786a63;
+}
+
+
+/* CUSTOMER */
+
+.customer-box{
+    max-width:750px;
+    margin:0 auto 45px;
+    padding:25px;
+    text-align:center;
+    background:white;
+    border:1px solid #e9ddd4;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(70,50,40,.06);
+}
+
+.customer-buttons{
+    margin-top:15px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.customer-btn{
+    padding:10px 22px;
+    border:1px solid #d7c2b5;
+    border-radius:50px;
+    background:#faf7f2;
+    color:#624a40;
+}
+
+.customer-info{
+    margin-top:18px;
+    padding:15px;
+    border-radius:12px;
+    background:#f7eee8;
+    color:#745c50;
+}
+
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border:1px solid #e8dcd3;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 12px 35px rgba(70,50,40,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(70,50,40,.13);
+}
+
+.card img{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-body{
+    padding:25px;
+}
+
+.card h3{
+    font-size:22px;
+    color:#5c4036;
+}
+
+.card p{
+    margin-top:8px;
+    color:#786b64;
+    font-size:15px;
+}
+
+.price{
+    margin-top:15px;
+    font-size:22px;
+    font-weight:bold;
+    color:#805a48;
+}
+
+.order-btn{
+    width:100%;
+    margin-top:20px;
+    padding:13px;
+    border:0;
+    border-radius:50px;
+    background:#765246;
+    color:white;
+    font-size:15px;
+}
+
+.order-btn:hover{
+    background:#604238;
+}
+
+
+/* ORDER */
+
+#orderBox{
+    display:none;
+    max-width:650px;
+    margin:45px auto 0;
+    padding:32px;
+    background:white;
+    border:1px solid #e6d8cd;
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(70,50,40,.1);
+}
+
+#orderBox h2{
+    color:#573d34;
+}
+
+#selectedProduct{
+    margin:7px 0 25px;
+    color:#8a6758;
+}
+
+.form-group{
+    margin-bottom:17px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-size:14px;
+    color:#604c43;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid #d9cbc1;
+    border-radius:10px;
+    background:#fcfaf8;
+    font-family:inherit;
+    outline:none;
+}
+
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.quantity{
+    max-width:110px;
+}
+
+.total{
+    margin:20px 0;
+    padding:15px;
+    background:#f5eee8;
+    border-radius:12px;
+    color:#674b40;
+    font-size:18px;
+}
+
+.whatsapp{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:50px;
+    background:#5d805b;
+    color:white;
+    font-size:16px;
+}
+
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+    align-items:center;
+}
+
+.about h3{
+    font-size:30px;
+    color:#573d34;
+    margin-bottom:15px;
+}
+
+.about p{
+    color:#756860;
+    margin-bottom:15px;
+}
+
+.highlight{
+    padding:30px;
+    background:#eee1d7;
+    border-radius:20px;
+    color:#654b40;
+}
+
+.highlight strong{
+    display:block;
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.feature{
+    padding:28px 20px;
+    text-align:center;
+    background:white;
+    border:1px solid #e8dcd3;
+    border-radius:18px;
+}
+
+.feature-icon{
+    font-size:34px;
+}
+
+.feature h3{
+    margin-top:8px;
+    color:#60483e;
+}
+
+.feature p{
+    margin-top:5px;
+    color:#81736b;
+    font-size:14px;
+}
+
+
+/* SHIPPING */
+
+.shipping{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.shipping-card{
+    padding:25px;
+    background:white;
+    border:1px solid #e8dcd3;
+    border-radius:18px;
+}
+
+.shipping-card h3{
+    color:#60483e;
+    margin-bottom:8px;
+}
+
+.shipping-card p{
+    color:#796c65;
+}
+
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    padding:55px 25px;
+    background:#eee1d7;
+    border-radius:25px;
+}
+
+.contact h2{
+    font-size:34px;
+    color:#573d34;
+}
+
+.contact p{
+    max-width:620px;
+    margin:10px auto 25px;
+    color:#745f55;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    background:#4d3830;
+    color:#eee2dc;
+}
+
+footer strong{
+    display:block;
+    font-size:20px;
+}
+
+footer small{
+    color:#cdbcb3;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:70vh;
+        padding:60px 20px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    section{
+        padding:60px 18px;
+    }
+
+    .heading h2{
+        font-size:30px;
+    }
+
+    .card img{
+        height:300px;
+    }
+
+    #orderBox{
+        margin:30px 18px;
+        padding:25px 18px;
+    }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-<!-- HEADER -->
+<!-- NAVIGATION -->
 
 <header>
 
-    <div class="nav-container">
+<div class="nav">
 
-        <a href="#home" class="brand">
+<a href="#home" class="logo">
 
-            সূতো 🧶
+সূতো 🧶
 
-            <small>
-                Handmade by Risha
-            </small>
+<small>Handmade by Risha</small>
 
-        </a>
+</a>
 
 
-        <nav>
+<nav>
 
-            <a href="#home">
-                Home
-            </a>
+<a href="#home">Home</a>
 
-            <a href="#collection">
-                Collection
-            </a>
+<a href="#collection">Collection</a>
 
-            <a href="#about">
-                About
-            </a>
+<a href="#about">About</a>
 
-            <a href="#shipping">
-                Shipping
-            </a>
+<a href="#shipping">Shipping</a>
 
-            <a href="#contact">
-                Contact
-            </a>
+<a href="#contact">Contact</a>
 
-        </nav>
+</nav>
 
-    </div>
+</div>
 
 </header>
+
 
 
 <!-- HERO -->
 
 <main id="home">
 
-    <div class="hero">
+<div class="hero">
 
-        <div class="hero-content">
+<div class="hero-inner">
 
-            <div class="hero-label">
-                Handmade • Heartmade
-            </div>
+<div class="badge">
+Handmade • Heartmade
+</div>
 
+<h1>
+সূতো —
+<span>Handmade by Risha</span>
+</h1>
 
-            <h1>
+<p>
+হাতে তৈরি উলের পুতুল ও সুন্দর উপহার,
+ভালোবাসা দিয়ে একেকটি করে তৈরি।
+<br>
+Beautiful handmade creations, crafted with love.
+</p>
 
-                সূতো —
 
-                <span>
-                    Handmade by Risha
-                </span>
+<div class="hero-buttons">
 
-            </h1>
+<a href="#collection" class="primary">
+Explore Collection 🧶
+</a>
 
+<a href="#about" class="secondary">
+Our Story
+</a>
 
-            <p>
+</div>
 
-                হাতে তৈরি উলের পুতুল ও সুন্দর উপহার,
-                ভালোবাসা দিয়ে একেকটি করে তৈরি।
+</div>
 
-                <br>
+</div>
 
-                Beautiful handmade creations,
-                crafted with love.
 
-            </p>
 
+<!-- COLLECTION -->
 
-            <div class="hero-buttons">
+<section id="collection">
 
-                <a
-                    href="#collection"
-                    class="primary-btn"
-                >
-                    Explore Collection 🧶
-                </a>
+<div class="heading">
 
+<span>Our Collection</span>
 
-                <a
-                    href="#about"
-                    class="secondary-btn"
-                >
-                    Our Story
-                </a>
+<h2>আমাদের পণ্য 🧶</h2>
 
-            </div>
+<p>
+ছোট্ট সুতো থেকে তৈরি ভালোবাসায় ভরা handmade creations.
+</p>
 
-        </div>
+</div>
 
-    </div>
 
+<!-- CUSTOMER TYPE -->
 
-    <!-- COLLECTION -->
+<div class="customer-box">
 
-    <section id="collection">
+<p>
+<b>
+আপনি কোথা থেকে অর্ডার করছেন?
+<br>
+Where are you ordering from?
+</b>
+</p>
 
-        <div class="section-heading">
 
-            <span>
-                Our Collection
-            </span>
+<div class="customer-buttons">
 
-            <h2>
-                আমাদের পণ্য 🧶
-            </h2>
+<button
+class="customer-btn"
+onclick="showIndia()">
+🇮🇳 India
+</button>
 
-            <p>
-                ছোট্ট সুতো থেকে তৈরি
-                ভালোবাসায় ভরা handmade creations.
-            </p>
 
-        </div>
+<button
+class="customer-btn"
+onclick="showInternational()">
+🌍 International
+</button>
 
+</div>
 
-        <!-- CUSTOMER TYPE -->
 
-        <div class="customer-box">
+<div
+id="indiaInfo"
+class="customer-info"
+style="display:none;">
 
-            <p>
+🇮🇳 <strong>Indian Customers</strong>
 
-                <b>
-                    আপনি কোথা থেকে অর্ডার করছেন?
-                    <br>
-                    Where are you ordering from?
-                </b>
+<br>
 
-            </p>
+Prices are shown in INR.
 
+<br>
 
-            <div class="customer-buttons">
+ভারতের মধ্যে delivery available.
 
-                <button
-                    class="customer-btn"
-                    onclick="showIndia()"
-                >
-                    🇮🇳 India
-                </button>
+</div>
 
 
-                <button
-                    class="customer-btn"
-                    onclick="showInternational()"
-                >
-                    🌍 International
-                </button>
+<div
+id="internationalInfo"
+class="customer-info"
+style="display:none;">
 
-            </div>
+🌍 <strong>International Customers</strong>
 
+<br>
 
-            <div
-                id="india-info"
-                class="customer-info"
-                style="display:none;"
-            >
+International orders are welcome.
 
-                🇮🇳
+<br>
 
-                <strong>
-                    Indian Customers
-                </strong>
+Shipping charges may vary by destination.
 
-                <br>
+</div>
 
-                Prices are shown in INR.
+</div>
 
-                <br>
 
-                ভারতের মধ্যে delivery available.
 
-            </div>
+<!-- PRODUCTS -->
 
+<div class="products">
 
-            <div
-                id="international-info"
-                class="customer-info"
-                style="display:none;"
-            >
 
-                🌍
+<!-- PRODUCT 1 -->
 
-                <strong>
-                    International Customers
-                </strong>
+<article class="card">
 
-                <br>
+<img
+src="wool-doll.jpg"
+alt="Handmade Wool Doll">
 
-                International orders are welcome.
+<div class="card-body">
 
-                <br>
+<h3>
+Handmade Wool Doll 🧸
+</h3>
 
-                Shipping charges may vary by destination.
+<p>
+হাতে তৈরি সুন্দর উলের পুতুল।
+</p>
 
-            </div>
+<p>
+Handmade with love 💗
+</p>
 
-        </div>
+<div class="price">
+₹499
+</div>
 
+<button
+class="order-btn"
+onclick="selectProduct('Handmade Wool Doll',499)">
 
-        <!-- PRODUCTS -->
+🛒 Order Now
 
-        <div class="products-grid">
+</button>
 
+</div>
 
-            <!-- PRODUCT 1 -->
+</article>
 
-            <article class="product-card">
 
-                <img
-                    class="product-image"
-                    src="wool-doll.jpg"
-                    alt="Handmade Wool Doll"
-                >
 
+<!-- PRODUCT 2 -->
 
-                <div class="product-content">
+<article class="card">
 
-                    <h3>
-                        Handmade Wool Doll 🧸
-                    </h3>
+<img
+src="Wool-doll-2.jpg"
+alt="Krishna Handmade Wool Doll">
 
+<div class="card-body">
 
-                    <p>
-                        হাতে তৈরি সুন্দর উলের পুতুল।
-                        প্রতিটি piece যত্ন এবং ভালোবাসা দিয়ে তৈরি।
-                    </p>
+<h3>
+Krishna — Handmade Wool Doll 🧶
+</h3>
 
+<p>
+হাতে তৈরি সুন্দর Krishna-themed wool doll.
+</p>
 
-                    <p>
-                        Handmade with love 💗
-                    </p>
+<p>
+Handmade with love 💗
+</p>
 
+<div class="price">
+₹600
+</div>
 
-                    <div class="product-price">
-                        ₹499
-                    </div>
+<button
+class="order-btn"
+onclick="selectProduct('Krishna — Handmade Wool Doll',600)">
 
+🛒 Order Now
 
-                    <div class="product-actions">
+</button>
 
-                        <button
-                            class="order-btn"
-                            onclick="showOrder(
-                                'Handmade Wool Doll',
-                                499
-                            )"
-                        >
-                            🛒 Order Now
-                        </button>
+</div>
 
-                    </div>
+</article>
 
-                </div>
+</div>
 
-            </article>
 
 
-            <!-- PRODUCT 2 -->
+<!-- ORDER FORM -->
 
-            <article class="product-card">
+<div id="orderBox">
 
-                <img
-                    class="product-image"
-                    src="Wool-doll-2.jpg"
-                    alt="Krishna Handmade Wool Doll"
-                >
+<h2>
+📝 Place Your Order
+</h2>
 
+<p id="selectedProduct">
+Select a product.
+</p>
 
-                <div class="product-content">
 
-                    <h3>
-                        Krishna — Handmade Wool Doll 🧶
-                    </h3>
+<div class="form-group">
 
+<label>
+Your Name / আপনার নাম
+</label>
 
-                    <p>
-                        হাতে তৈরি সুন্দর Krishna-themed
-                        wool doll.
-                    </p>
+<input
+type="text"
+id="customerName"
+placeholder="Enter your name">
 
+</div>
 
-                    <p>
-                        Handmade with love 💗
-                    </p>
 
+<div class="form-group">
 
-                    <div class="product-price">
-                        ₹600
-                    </div>
+<label>
+WhatsApp Number / মোবাইল নম্বর
+</label>
 
+<input
+type="tel"
+id="customerPhone"
+placeholder="Enter your WhatsApp number">
 
-                    <div class="product-actions">
+</div>
 
-                        <button
-                            class="order-btn"
-                            onclick="showOrder(
-                                'Krishna — Handmade Wool Doll',
-                                600
-                            )"
-                        >
-                            🛒 Order Now
-                        </button>
 
-                    </div>
+<div class="form-group">
 
-                </div>
+<label>
+Delivery Address / ঠিকানা
+</label>
 
-            </article>
+<textarea
+id="customerAddress"
+placeholder="Enter your complete delivery address">
+</textarea>
 
+</div>
 
-        </div>
 
+<div class="form-group">
 
-        <!-- ORDER FORM -->
+<label>
+Quantity / পরিমাণ
+</label>
 
-        <div id="order-section">
+<input
+class="quantity"
+type="number"
+id="quantity"
+value="1"
+min="1"
+max="20"
+oninput="calculateTotal()">
 
-            <h2>
-                📝 Place Your Order
-            </h2>
+</div>
 
 
-            <p id="selected-product">
-                Select a product to continue.
-            </p>
+<div class="total">
 
+Total:
 
-            <div class="form-group">
+<strong>
+₹<span id="totalPrice">0</span>
+</strong>
 
-                <label>
-                    Your Name / আপনার নাম
-                </label>
+</div>
 
-                <input
-                    type="text"
-                    id="customer-name"
-                    placeholder="En
+
+<button
+class="whatsapp"
+onclick="sendOrder()">
+
+📲 Send Order on WhatsApp
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="heading">
+
+<span>Our Story</span>
+
+<h2>
+ভালোবাসা দিয়ে তৈরি ❤️
+</h2>
+
+</div>
+
+
+<div class="about">
+
+<div>
+
+<h3>
+Handmade by Risha
+</h3>
+
+<p>
+সূতো — Handmade by Risha একটি ছোট্ট
+handmade creation brand, যেখানে উলের
+সুতো দিয়ে তৈরি হয় সুন্দর পুতুল ও উপহার।
+</p>
+
+<p>
+প্রতিটি product হাতে তৈরি।
+তাই প্রতিটি creation-এর মধ্যে থাকে
+নিজের একটা আলাদা personality।
+</p>
+
+<p>
+From a simple thread to something meaningful —
+every piece is made with patience,
+creativity and love.
+</p>
+
+</div>
+
+
+<div class="highlight">
+
+<strong>🧶 Handmade</strong>
+
+Mass-produced নয়।
+
+<br><br>
+
+<strong>💗 Made with Love</strong>
+
+প্রতিটি creation-এর পিছনে রয়েছে
+যত্ন ও সময়।
+
+<br><br>
+
+<strong>✨ Made for You</strong>
+
+Gift, collection অথবা special someone-এর জন্য।
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section>
+
+<div class="heading">
+
+<span>Why Suto</span>
+
+<h2>
+কেন সূতো? 🧶
+</h2>
+
+</div>
+
+
+<div class="features">
+
+
+<div class="feature">
+
+<div class="feature-icon">🧶</div>
+
+<h3>Handmade</h3>
+
+<p>
+প্রতিটি product হাতে তৈরি।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">💗</div>
+
+<h3>Heartmade</h3>
+
+<p>
+ভালোবাসা ও যত্ন দিয়ে তৈরি।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🎁</div>
+
+<h3>Perfect Gift</h3>
+
+<p>
+Special occasions-এর জন্য সুন্দর gift.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🌍</div>
+
+<h3>Worldwide</h3>
+
+<p>
+International orders welcomed.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SHIPPING -->
+
+<section id="shipping">
+
+<div class="heading">
+
+<span>Delivery</span>
+
+<h2>
+Shipping & Orders 📦
+</h2>
+
+<p>
+We welcome both Indian and international customers.
+</p>
+
+</div>
+
+
+<div class="shipping">
+
+
+<div class="shipping-card">
+
+<h3>
+🇮🇳 India
+</h3>
+
+<p>
+Indian customers can place their order
+directly through WhatsApp.
+</p>
+
+</div>
+
+
+<div class="shipping-card">
+
+<h3>
+🌍 International
+</h3>
+
+<p>
+International customers can contact us
+for availability and shipping charges.
+</p>
+
+</div>
+
+
+<div class="shipping-card">
+
+<h3>
+🧶 Custom Orders
+</h3>
+
+<p>
+Want something special?
+Contact Risha for custom handmade creations.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact">
+
+<h2>
+Let's Create Something Beautiful 🧶
+</h2>
+
+<p>
+কোনো product পছন্দ হয়েছে?
+অথবা custom handmade creation চান?
+WhatsApp-এ আমাদের সঙ্গে যোগাযোগ করুন।
+</p>
+
+<button
+class="primary"
+onclick="contactWhatsApp()">
+
+💬 Chat on WhatsApp
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<strong>
+সূতো — Handmade by Risha 🧶
+</strong>
+
+<small>
+Handmade with love • © 2026
+</small>
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   PRODUCT SYSTEM
+========================= */
+
+let selectedProduct = "";
+let selectedPrice = 0;
+
+
+/* SELECT PRODUCT */
+
+function selectProduct(product,price){
+
+selectedProduct = product;
+
+selectedPrice = price;
+
+document.getElementById("orderBox").style.display="block";
+
+document.getElementById("selectedProduct").innerText =
+"🧶 " + product + " — ₹" + price;
+
+document.getElementById("quantity").value=1;
+
+calculateTotal();
+
+document.getElementById("orderBox").scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+
+
+/* TOTAL */
+
+function calculateTotal(){
+
+let quantity =
+parseInt(document.getElementById("quantity").value) || 1;
+
+if(quantity < 1){
+quantity=1;
+}
+
+let total = selectedPrice * quantity;
+
+document.getElementById("totalPrice").innerText=total;
+
+}
+
+
+/* WHATSAPP ORDER */
+
+function sendOrder(){
+
+let name =
+document.getElementById("customerName").value.trim();
+
+let phone =
+document.getElementById("customerPhone").value.trim();
+
+let address =
+document.getElementById("customerAddress").value.trim();
+
+let quantity =
+parseInt(document.getElementById("quantity").value) || 1;
+
+
+if(selectedProduct === "" || selectedPrice === 0){
+
+alert("Please select a product first.");
+
+return;
+
+}
+
+
+if(name === "" || phone === "" || address === ""){
+
+alert("দয়া করে সব তথ্য পূরণ করুন।");
+
+return;
+
+}
+
+
+let total = selectedPrice * quantity;
+
+
+/* Risha's WhatsApp */
+
+let whatsappNumber = "917602579054";
+
+
+let message =
+
+"🛒 নতুন অর্ডার\n\n" +
+
+"🧶 Product: " +
+selectedProduct +
+"\n" +
+
+"💰 Unit Price: ₹" +
+selectedPrice +
+"\n" +
+
+"🔢 Quantity: " +
+quantity +
+"\n" +
+
+"💵 Total: ₹" +
+total +
+"\n\n" +
+
+"👤 Customer: " +
+name +
+"\n" +
+
+"📱 WhatsApp: " +
+phone +
+"\n" +
+
+"📍 Address: " +
+address;
+
+
+let whatsappURL =
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+encodeURIComponent(message);
+
+
+window.open(whatsappURL,"_blank");
+
+}
+
+
+/* INDIA */
+
+function showIndia(){
+
+document.getElementById("indiaInfo").style.display="block";
+
+document.getElementById("internationalInfo").style.display="none";
+
+}
+
+
+/* INTERNATIONAL */
+
+function showInternational(){
+
+document.getElementById("indiaInfo").style.display="none";
+
+document.getElementById("internationalInfo").style.display="block";
+
+}
+
+
+/* CONTACT */
+
+function contactWhatsApp(){
+
+let whatsappNumber="917602579054";
+
+let message=
+"Hello Risha! I am interested in your handmade products from সূতো.";
+
+let url=
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+encodeURIComponent(message);
+
+window.open(url,"_blank");
+
+}
+
+</script>
+
+
+</body>
+</html>
