@@ -45,8 +45,7 @@ function sendOrder() {
     let whatsappNumber = "917602579054";
 
     let whatsappURL =
-        "https://wa.me/" + whatsappNumber + "?text=" + message;
-
+"https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
     window.open(whatsappURL, "_blank");
 }
 </script>
