@@ -38,3 +38,11 @@ nav a {
 #surprise {
     display: none;
 }
+.product-card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
