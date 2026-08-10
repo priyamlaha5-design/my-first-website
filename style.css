@@ -46,3 +46,26 @@ nav a {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
+.product-card h3 {
+    color: darkblue;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.product-card .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+    margin-top: 15px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+}
