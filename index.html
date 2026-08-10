@@ -148,7 +148,52 @@ function sendOrder() {
 🛒 Order Now
 </button>
 </div>
+<!-- SECOND PRODUCT -->
 
+<div class="product-card">
+
+    <img src="Wool-doll-2.jpg"
+         alt="Krishna">
+
+    <h3>Krishna – Handmade Wool Doll 🧶</h3>
+
+    <p>হাতে তৈরি সুন্দর উলের পুতুল</p>
+
+    <p>Handmade with love 💗</p>
+
+    <p>Price: ₹600</p>
+
+    <button onclick="showOrder('Krishna', 600)">
+        🛒 Order Now
+    </button>
+
+</div>
+
+
+<!-- ORDER FORM -->
+
+<div id="order-form" style="display:none;">
+
+    <h3>📝 Place Your Order</h3>
+
+    <input type="text"
+           id="customer-name"
+           placeholder="আপনার নাম">
+
+    <input type="tel"
+           id="customer-phone"
+           placeholder="মোবাইল নম্বর">
+
+    <textarea id="customer-address"
+              placeholder="আপনার ঠিকানা"></textarea>
+
+    <button onclick="sendOrder()">
+        📲 Send Order on WhatsApp
+    </button>
+
+</div>
+
+</section>
 </section>
 <button onclick="document.getElementById('surprise').style.display='block';">
 Open My Surprise 💌
