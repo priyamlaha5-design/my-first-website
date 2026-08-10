@@ -19,7 +19,36 @@ function showInternational() {
     document.getElementById("india-info").style.display = "none";
     document.getElementById("international-info").style.display = "block";
 }
+function showOrder() {
+    document.getElementById("order-form").style.display = "block";
+}
 
+function sendOrder() {
+
+    let name = document.getElementById("customer-name").value;
+    let phone = document.getElementById("customer-phone").value;
+    let address = document.getElementById("customer-address").value;
+
+    if (name === "" || phone === "" || address === "") {
+        alert("দয়া করে সব তথ্য পূরণ করুন।");
+        return;
+    }
+
+    let message =
+        "🛒 নতুন অর্ডার%0A%0A" +
+        "👤 নাম: " + name + "%0A" +
+        "📱 ফোন: " + phone + "%0A" +
+        "📍 ঠিকানা: " + address + "%0A%0A" +
+        "🧶 Product: Handmade Wool Doll%0A" +
+        "💰 Price: ₹499";
+
+    let whatsappNumber = "917602579054";
+
+    let whatsappURL =
+        "https://wa.me/" + whatsappNumber + "?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+}
 </script>
 <body>
 <nav>
@@ -46,6 +75,19 @@ function showInternational() {
 <div id="india-info" style="display:none;">
     <h3>🇮🇳 Indian Customer</h3>
     <p>মূল্য | Price: ₹499</p>
+<button onclick="showOrder()">🛒 Order Now</button>
+
+<div id="order-form" style="display:none;">
+    <h3>📝 Place Your Order</h3>
+
+    <input type="text" id="customer-name" placeholder="আপনার নাম">
+
+    <input type="tel" id="customer-phone" placeholder="মোবাইল নম্বর">
+
+    <textarea id="customer-address" placeholder="আপনার ঠিকানা"></textarea>
+
+    <button onclick="sendOrder()">📲 Send Order on WhatsApp</button>
+</div>
     <p>ভারতের মধ্যে Delivery available</p>
 </div>
 
