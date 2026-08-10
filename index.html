@@ -5,8 +5,21 @@
 <link rel="stylesheet" href="style.css?v=3">
 </head>
 <script>
+
 function showMessage() {
     document.getElementById("surprise").style.display = "block";
+}
+
+function showIndia() {
+    document.getElementById("india-info").style.display = "block";
+    document.getElementById("international-info").style.display = "none";
+}
+
+function showInternational() {
+    document.getElementById("india-info").style.display = "none";
+    document.getElementById("international-info").style.display = "block";
+}
+
 </script>
 <body>
 <nav>
@@ -22,6 +35,25 @@ function showMessage() {
 <h2>ভালোবাসা দিয়ে তৈরি প্রতিটি সৃষ্টি ❤️</h2>
 <section id="products">
 <h2>আমাদের পণ্য 🧶 | Our Handmade Collection</h2>
+<div class="customer-selector">
+    <p><b>আপনি কোথা থেকে অর্ডার করছেন? | Where are you ordering from?</b></p>
+
+    <button onclick="showIndia()">🇮🇳 India</button>
+
+    <button onclick="showInternational()">🌍 International</button>
+</div>
+
+<div id="india-info" style="display:none;">
+    <h3>🇮🇳 Indian Customer</h3>
+    <p>মূল্য | Price: ₹499</p>
+    <p>ভারতের মধ্যে Delivery available</p>
+</div>
+
+<div id="international-info" style="display:none;">
+    <h3>🌍 International Customer</h3>
+    <p>Price: $6.00 USD</p>
+    <p>International shipping available</p>
+</div>
 
 <p>হাতে তৈরি সুন্দর উলের পুতুল ও উপহার</p>
 
