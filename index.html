@@ -6,25 +6,28 @@
 </head>
 <script>
 
+let selectedProduct = "Handmade Wool Doll";
+let selectedPrice = 499;
+
 function showMessage() {
     document.getElementById("surprise").style.display = "block";
 }
 
-let selectedProduct = "Handmade Wool Doll";
-let selectedPrice = 499;
-
-function showOrder(product, price) {
-    selectedProduct = product;
-    selectedPrice = price;
-
-    document.getElementById("order-form").style.display = "block";
-}
+function showIndia() {
+    document.getElementById("india-info").style.display = "block";
     document.getElementById("international-info").style.display = "none";
 }
 
 function showInternational() {
     document.getElementById("india-info").style.display = "none";
     document.getElementById("international-info").style.display = "block";
+}
+
+function showOrder(product, price) {
+    selectedProduct = product;
+    selectedPrice = price;
+
+    document.getElementById("order-form").style.display = "block";
 }
 
 function sendOrder() {
@@ -39,19 +42,24 @@ function sendOrder() {
     }
 
     let message =
-        "🛒 নতুন অর্ডার%0A%0A" +
-        "👤 নাম: " + name + "%0A" +
-        "📱 ফোন: " + phone + "%0A" +
-        "📍 ঠিকানা: " + address + "%0A%0A" +
-        "🧶 Product: " + selectedProduct + "%0A" +
-"💰 Price: ₹" + selectedPrice;
+        "🛒 নতুন অর্ডার\n\n" +
+        "👤 নাম: " + name + "\n" +
+        "📱 ফোন: " + phone + "\n" +
+        "📍 ঠিকানা: " + address + "\n\n" +
+        "🧶 Product: " + selectedProduct + "\n" +
+        "💰 Price: ₹" + selectedPrice;
 
     let whatsappNumber = "917602579054";
 
     let whatsappURL =
-"https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
     window.open(whatsappURL, "_blank");
 }
+
 </script>
 <body>
 <nav>
