@@ -69,3 +69,12 @@ nav a {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.20);
 }
+.product-card img {
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
