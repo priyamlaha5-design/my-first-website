@@ -5,14 +5,12 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="সূতো — Handmade by Risha. Handmade woolen dolls, trinkets, mats and woolen designs.">
+content="সূতো — Handmade by Risha. Handmade woolen dolls, trinkets, mats and woolen designs.">
 
 <title>সূতো — Handmade by Risha</title>
-
 
 <style>
 
@@ -62,7 +60,7 @@ header{
     top:0;
     z-index:1000;
 
-    background:rgba(250,247,242,0.97);
+    background:rgba(250,247,242,.97);
 
     backdrop-filter:blur(12px);
 
@@ -109,6 +107,7 @@ nav{
 nav a{
     font-size:14px;
     color:#604c43;
+
     transition:.3s;
 }
 
@@ -601,6 +600,8 @@ section{
     margin:7px 0 25px;
 
     color:#8a6758;
+
+    font-weight:bold;
 }
 
 .form-group{
@@ -888,7 +889,7 @@ footer small{
     }
 
     nav{
-        gap:15px;
+        gap:14px;
 
         flex-wrap:wrap;
 
@@ -954,29 +955,17 @@ Handmade by Risha
 
 <nav>
 
-<a href="#home">
-Home
-</a>
+<a href="#home">Home</a>
 
-<a href="#categories">
-Categories
-</a>
+<a href="#categories">Categories</a>
 
-<a href="#collection">
-Collection
-</a>
+<a href="#collection">Collection</a>
 
-<a href="#about">
-About
-</a>
+<a href="#about">About</a>
 
-<a href="#shipping">
-Shipping
-</a>
+<a href="#shipping">Shipping</a>
 
-<a href="#contact">
-Contact
-</a>
+<a href="#contact">Contact</a>
 
 </nav>
 
@@ -1090,7 +1079,7 @@ Product Categories 🧶
 
 <div
 class="category-card active"
-onclick="openDolls()">
+id="dolls-category">
 
 <div class="category-icon">
 🧸
@@ -1242,7 +1231,7 @@ Where are you ordering from?
 <button
 type="button"
 class="customer-btn"
-onclick="showIndia()">
+id="india-btn">
 
 🇮🇳 India
 
@@ -1252,7 +1241,7 @@ onclick="showIndia()">
 <button
 type="button"
 class="customer-btn"
-onclick="showInternational()">
+id="international-btn">
 
 🌍 International
 
@@ -1310,7 +1299,9 @@ Shipping charges may vary by destination.
 
 
 
-<!-- PRODUCTS -->
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
 
 <div class="products-grid">
 
@@ -1350,7 +1341,8 @@ Handmade with love 💗
 <button
 type="button"
 class="order-btn"
-onclick="selectProduct('Handmade Wool Doll', 499)">
+data-product="Handmade Wool Doll"
+data-price="499">
 
 🛒 Order Now
 
@@ -1397,7 +1389,8 @@ Handmade with love 💗
 <button
 type="button"
 class="order-btn"
-onclick="selectProduct('Krishna — Handmade Wool Doll', 600)">
+data-product="Krishna — Handmade Wool Doll"
+data-price="600">
 
 🛒 Order Now
 
@@ -1484,8 +1477,7 @@ type="number"
 id="quantity"
 value="1"
 min="1"
-max="20"
-oninput="calculateTotal()">
+max="20">
 
 </div>
 
@@ -1506,7 +1498,7 @@ Total:
 <button
 type="button"
 class="whatsapp-btn"
-onclick="sendOrder()">
+id="send-order-btn">
 
 📲 Send Order on WhatsApp
 
@@ -1756,8 +1748,3 @@ Coming Soon
 <h3>
 🧶 Woolen Trinkets
 </h3>
-
-<p>
-
-ছোট ছোট সুন্দর handmade
-woolen accessories খুব শীঘ্রই আসছে।
