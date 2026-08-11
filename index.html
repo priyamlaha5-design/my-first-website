@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 
 <head>
 
@@ -9,16 +9,16 @@
       content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="সূতো — Handmade by Risha. Woolen dolls, trinkets, mats and handmade wool designs.">
+      content="সূতো — Handmade by Risha. Handmade woolen dolls, trinkets, mats and woolen designs.">
 
 <title>সূতো — Handmade by Risha</title>
 
 
 <style>
 
-/* =========================================
-   GLOBAL
-========================================= */
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
@@ -31,15 +31,9 @@ html{
 }
 
 body{
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+    font-family:Georgia, "Times New Roman", serif;
     background:#faf7f2;
-
     color:#3b302b;
-
     line-height:1.7;
 }
 
@@ -48,48 +42,49 @@ a{
     color:inherit;
 }
 
-button{
+button,
+input,
+textarea{
     font-family:inherit;
+}
+
+button{
     cursor:pointer;
 }
 
 
-/* =========================================
-   NAVIGATION
-========================================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
     position:sticky;
     top:0;
-
     z-index:1000;
 
-    background:rgba(250,247,242,.97);
+    background:rgba(250,247,242,0.97);
 
     backdrop-filter:blur(12px);
 
-    border-bottom:1px solid #e7dcd3;
+    border-bottom:1px solid #e6dbd2;
 }
 
 .nav-container{
     max-width:1180px;
-
     margin:auto;
 
     padding:15px 25px;
 
     display:flex;
-
+    align-items:center;
     justify-content:space-between;
 
-    align-items:center;
+    gap:20px;
 }
 
 .logo{
     font-size:24px;
-
     font-weight:bold;
-
     color:#68473b;
 }
 
@@ -107,15 +102,13 @@ header{
 
 nav{
     display:flex;
-
+    align-items:center;
     gap:25px;
 }
 
 nav a{
     font-size:14px;
-
-    color:#5f4b43;
-
+    color:#604c43;
     transition:.3s;
 }
 
@@ -124,17 +117,15 @@ nav a:hover{
 }
 
 
-/* =========================================
+/* =====================================================
    HERO
-========================================= */
+===================================================== */
 
 .hero{
     min-height:78vh;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
@@ -174,12 +165,7 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:
-        clamp(
-            42px,
-            8vw,
-            76px
-        );
+    font-size:clamp(42px,8vw,76px);
 
     line-height:1.1;
 
@@ -214,6 +200,8 @@ nav a:hover{
 
 .primary-btn,
 .secondary-btn{
+    display:inline-block;
+
     padding:13px 25px;
 
     border-radius:50px;
@@ -250,9 +238,9 @@ nav a:hover{
 }
 
 
-/* =========================================
-   COMMON SECTIONS
-========================================= */
+/* =====================================================
+   COMMON SECTION
+===================================================== */
 
 section{
     max-width:1180px;
@@ -289,7 +277,7 @@ section{
 }
 
 .section-heading p{
-    max-width:650px;
+    max-width:680px;
 
     margin:10px auto;
 
@@ -297,9 +285,9 @@ section{
 }
 
 
-/* =========================================
-   PRODUCT CATEGORIES
-========================================= */
+/* =====================================================
+   CATEGORIES
+===================================================== */
 
 .category-section{
     background:#fffdfb;
@@ -320,7 +308,7 @@ section{
 .category-card{
     position:relative;
 
-    min-height:210px;
+    min-height:215px;
 
     padding:30px 25px;
 
@@ -340,9 +328,9 @@ section{
 
     align-items:center;
 
-    transition:.35s;
-
     overflow:hidden;
+
+    transition:.35s;
 }
 
 .category-card.active{
@@ -364,17 +352,17 @@ section{
 }
 
 .category-card h3{
-    color:#604238;
-
     font-size:21px;
+
+    color:#604238;
 
     margin-bottom:5px;
 }
 
 .category-card p{
-    color:#81736b;
-
     font-size:14px;
+
+    color:#81736b;
 }
 
 .category-card.coming-soon{
@@ -409,24 +397,14 @@ section{
 }
 
 
-/* =========================================
-   COLLECTION FILTER
-========================================= */
-
-.collection-title{
-    margin-top:15px;
-}
-
-
-/* =========================================
+/* =====================================================
    CUSTOMER SELECTOR
-========================================= */
+===================================================== */
 
 .customer-box{
     max-width:750px;
 
-    margin:
-        0 auto 45px;
+    margin:0 auto 45px;
 
     padding:25px;
 
@@ -465,6 +443,8 @@ section{
     background:#faf7f2;
 
     color:#624a40;
+
+    transition:.3s;
 }
 
 .customer-btn:hover{
@@ -484,9 +464,9 @@ section{
 }
 
 
-/* =========================================
+/* =====================================================
    PRODUCTS
-========================================= */
+===================================================== */
 
 .products-grid{
     display:grid;
@@ -539,17 +519,17 @@ section{
 }
 
 .product-content h3{
-    color:#5c4036;
-
     font-size:22px;
+
+    color:#5c4036;
 }
 
 .product-content p{
     margin-top:8px;
 
-    color:#786b64;
-
     font-size:15px;
+
+    color:#786b64;
 }
 
 .product-price{
@@ -589,17 +569,16 @@ section{
 }
 
 
-/* =========================================
+/* =====================================================
    ORDER FORM
-========================================= */
+===================================================== */
 
 #order-section{
     display:none;
 
     max-width:650px;
 
-    margin:
-        45px auto 0;
+    margin:45px auto 0;
 
     padding:32px;
 
@@ -619,8 +598,7 @@ section{
 }
 
 #selected-product{
-    margin:
-        7px 0 25px;
+    margin:7px 0 25px;
 
     color:#8a6758;
 }
@@ -651,9 +629,12 @@ section{
 
     background:#fcfaf8;
 
-    font-family:inherit;
-
     outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:#9b7461;
 }
 
 .form-group textarea{
@@ -694,16 +675,20 @@ section{
     color:white;
 
     font-size:16px;
+
+    transition:.3s;
 }
 
 .whatsapp-btn:hover{
     opacity:.9;
+
+    transform:translateY(-2px);
 }
 
 
-/* =========================================
+/* =====================================================
    ABOUT
-========================================= */
+===================================================== */
 
 .about-grid{
     display:grid;
@@ -752,9 +737,9 @@ section{
 }
 
 
-/* =========================================
+/* =====================================================
    FEATURES
-========================================= */
+===================================================== */
 
 .features{
     display:grid;
@@ -799,9 +784,9 @@ section{
 }
 
 
-/* =========================================
+/* =====================================================
    SHIPPING
-========================================= */
+===================================================== */
 
 .shipping-grid{
     display:grid;
@@ -836,9 +821,9 @@ section{
 }
 
 
-/* =========================================
+/* =====================================================
    CONTACT
-========================================= */
+===================================================== */
 
 .contact-box{
     text-align:center;
@@ -859,16 +844,15 @@ section{
 .contact-box p{
     max-width:620px;
 
-    margin:
-        10px auto 25px;
+    margin:10px auto 25px;
 
     color:#745f55;
 }
 
 
-/* =========================================
+/* =====================================================
    FOOTER
-========================================= */
+===================================================== */
 
 footer{
     padding:30px 20px;
@@ -891,9 +875,9 @@ footer small{
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
 @media(max-width:700px){
 
@@ -914,8 +898,7 @@ footer small{
     .hero{
         min-height:70vh;
 
-        padding:
-            60px 20px;
+        padding:60px 20px;
     }
 
     .hero h1{
@@ -923,8 +906,7 @@ footer small{
     }
 
     section{
-        padding:
-            60px 18px;
+        padding:60px 18px;
     }
 
     .section-heading h2{
@@ -936,11 +918,9 @@ footer small{
     }
 
     #order-section{
-        margin:
-            30px 18px;
+        margin:30px 18px;
 
-        padding:
-            25px 18px;
+        padding:25px 18px;
     }
 
 }
@@ -953,9 +933,9 @@ footer small{
 <body>
 
 
-<!-- =========================================
-     NAVIGATION
-========================================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -990,6 +970,10 @@ Collection
 About
 </a>
 
+<a href="#shipping">
+Shipping
+</a>
+
 <a href="#contact">
 Contact
 </a>
@@ -1002,9 +986,9 @@ Contact
 
 
 
-<!-- =========================================
+<!-- =====================================================
      HERO
-========================================= -->
+===================================================== -->
 
 <main id="home">
 
@@ -1068,9 +1052,9 @@ Our Story
 
 
 
-<!-- =========================================
-     PRODUCT CATEGORIES
-========================================= -->
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
 
 <section
 id="categories"
@@ -1090,8 +1074,10 @@ Product Categories 🧶
 
 
 <p>
-আমাদের handmade collection চারটি
-বিশেষ category-তে ভাগ করা হয়েছে।
+
+আমাদের handmade collection
+চারটি বিশেষ category-তে ভাগ করা হয়েছে।
+
 </p>
 
 </div>
@@ -1202,9 +1188,9 @@ Coming Soon
 
 
 
-<!-- =========================================
+<!-- =====================================================
      COLLECTION
-========================================= -->
+===================================================== -->
 
 <section id="collection">
 
@@ -1222,15 +1208,17 @@ Our Current Collection 🧸
 
 
 <p>
+
 আমাদের প্রথম collection —
 handmade woolen dolls.
+
 </p>
 
 </div>
 
 
 
-<!-- CUSTOMER TYPE -->
+<!-- CUSTOMER SELECTOR -->
 
 <div class="customer-box">
 
@@ -1252,6 +1240,7 @@ Where are you ordering from?
 <div class="customer-buttons">
 
 <button
+type="button"
 class="customer-btn"
 onclick="showIndia()">
 
@@ -1261,6 +1250,7 @@ onclick="showIndia()">
 
 
 <button
+type="button"
 class="customer-btn"
 onclick="showInternational()">
 
@@ -1320,9 +1310,7 @@ Shipping charges may vary by destination.
 
 
 
-<!-- =========================================
-     PRODUCTS
-========================================= -->
+<!-- PRODUCTS -->
 
 <div class="products-grid">
 
@@ -1331,7 +1319,6 @@ Shipping charges may vary by destination.
 
 <article class="product-card">
 
-
 <img
 class="product-image"
 src="wool-doll.jpg"
@@ -1339,7 +1326,6 @@ alt="Handmade Wool Doll">
 
 
 <div class="product-content">
-
 
 <h3>
 Handmade Wool Doll 🧸
@@ -1362,16 +1348,13 @@ Handmade with love 💗
 
 
 <button
+type="button"
 class="order-btn"
-onclick="selectProduct(
-'Handmade Wool Doll',
-499
-)">
+onclick="selectProduct('Handmade Wool Doll', 499)">
 
 🛒 Order Now
 
 </button>
-
 
 </div>
 
@@ -1383,7 +1366,6 @@ onclick="selectProduct(
 
 <article class="product-card">
 
-
 <img
 class="product-image"
 src="Wool-doll-2.jpg"
@@ -1392,15 +1374,13 @@ alt="Krishna Handmade Wool Doll">
 
 <div class="product-content">
 
-
 <h3>
 Krishna — Handmade Wool Doll 🧶
 </h3>
 
 
 <p>
-হাতে তৈরি সুন্দর Krishna-themed
-wool doll.
+হাতে তৈরি সুন্দর Krishna-themed wool doll.
 </p>
 
 
@@ -1415,16 +1395,13 @@ Handmade with love 💗
 
 
 <button
+type="button"
 class="order-btn"
-onclick="selectProduct(
-'Krishna — Handmade Wool Doll',
-600
-)">
+onclick="selectProduct('Krishna — Handmade Wool Doll', 600)">
 
 🛒 Order Now
 
 </button>
-
 
 </div>
 
@@ -1435,13 +1412,11 @@ onclick="selectProduct(
 
 
 
-<!-- =========================================
+<!-- =====================================================
      ORDER FORM
-========================================= -->
+===================================================== -->
 
-<div
-id="order-section">
-
+<div id="order-section">
 
 <h2>
 📝 Place Your Order
@@ -1453,7 +1428,6 @@ Select a product to continue.
 </p>
 
 
-
 <div class="form-group">
 
 <label>
@@ -1463,10 +1437,10 @@ Your Name / আপনার নাম
 <input
 type="text"
 id="customer-name"
-placeholder="Enter your name">
+placeholder="Enter your name"
+autocomplete="name">
 
 </div>
-
 
 
 <div class="form-group">
@@ -1478,10 +1452,10 @@ WhatsApp Number / মোবাইল নম্বর
 <input
 type="tel"
 id="customer-phone"
-placeholder="Enter your WhatsApp number">
+placeholder="Enter your WhatsApp number"
+autocomplete="tel">
 
 </div>
-
 
 
 <div class="form-group">
@@ -1492,11 +1466,10 @@ Delivery Address / ঠিকানা
 
 <textarea
 id="customer-address"
-placeholder="Enter your complete delivery address">
-</textarea>
+placeholder="Enter your complete delivery address"
+autocomplete="street-address"></textarea>
 
 </div>
-
 
 
 <div class="form-group">
@@ -1517,24 +1490,21 @@ oninput="calculateTotal()">
 </div>
 
 
-
 <div class="total-price">
 
 Total:
 
 <strong>
 
-₹<span id="total-price">
-0
-</span>
+₹<span id="total-price">0</span>
 
 </strong>
 
 </div>
 
 
-
 <button
+type="button"
 class="whatsapp-btn"
 onclick="sendOrder()">
 
@@ -1542,16 +1512,15 @@ onclick="sendOrder()">
 
 </button>
 
-
 </div>
 
 </section>
 
 
 
-<!-- =========================================
+<!-- =====================================================
      ABOUT
-========================================= -->
+===================================================== -->
 
 <section id="about">
 
@@ -1568,7 +1537,6 @@ Our Story
 </h2>
 
 </div>
-
 
 
 <div class="about-grid">
@@ -1614,7 +1582,6 @@ with patience, creativity and love.
 
 <div class="about-highlight">
 
-
 <strong>
 🧶 Handmade
 </strong>
@@ -1651,9 +1618,9 @@ special someone-এর জন্য।
 
 
 
-<!-- =========================================
+<!-- =====================================================
      FEATURES
-========================================= -->
+===================================================== -->
 
 <section>
 
@@ -1670,7 +1637,6 @@ Why Suto
 </h2>
 
 </div>
-
 
 
 <div class="features">
@@ -1747,18 +1713,17 @@ International orders welcomed.
 
 </div>
 
-
 </div>
 
 </section>
 
 
 
-<!-- =========================================
-     FUTURE COLLECTIONS
-========================================= -->
+<!-- =====================================================
+     COMING SOON
+===================================================== -->
 
-<section>
+<section id="coming-soon">
 
 
 <div class="section-heading">
@@ -1783,7 +1748,6 @@ Coming Soon
 </div>
 
 
-
 <div class="shipping-grid">
 
 
@@ -1794,57 +1758,6 @@ Coming Soon
 </h3>
 
 <p>
+
 ছোট ছোট সুন্দর handmade
 woolen accessories খুব শীঘ্রই আসছে।
-</p>
-
-</div>
-
-
-
-<div class="shipping-card">
-
-<h3>
-🪢 Woolen Mats
-</h3>
-
-<p>
-ঘর সাজানোর জন্য সুন্দর
-handmade woolen mats।
-</p>
-
-</div>
-
-
-
-<div class="shipping-card">
-
-<h3>
-🎨 Woolen Designs
-</h3>
-
-<p>
-Creative woolen art,
-designs এবং decorative creations।
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     SHIPPING
-========================================= -->
-
-<section id="shipping">
-
-
-<div class="section-heading">
-
-<span>
-Deliv
