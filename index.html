@@ -1728,6 +1728,576 @@ Coming Soon
 <h2>
 আরও কিছু আসছে... ✨
 </h2>
+<p>
+
+ছোট ছোট সুন্দর handmade
+woolen accessories খুব শীঘ্রই আসছে।
+
+</p>
+
+<span class="coming-badge">
+Coming Soon
+</span>
+
+</div>
+
+
+
+<!-- WOOLEN MATS -->
+
+<div class="shipping-card">
+
+<h3>
+🪢 Woolen Mats
+</h3>
+
+<p>
+
+ঘর সাজানোর জন্য সুন্দর
+handmade woolen mats।
+
+</p>
+
+<span class="coming-badge">
+Coming Soon
+</span>
+
+</div>
+
+
+
+<!-- WOOLEN DESIGNS -->
+
+<div class="shipping-card">
+
+<h3>
+🎨 Woolen Designs
+</h3>
+
+<p>
+
+Creative woolen art,
+designs এবং decorative creations।
+
+</p>
+
+<span class="coming-badge">
+Coming Soon
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SHIPPING
+===================================================== -->
+
+<section id="shipping">
+
+<div class="section-heading">
+
+<span>
+Delivery
+</span>
+
+<h2>
+Shipping & Orders 📦
+</h2>
+
+<p>
+
+We welcome both Indian and
+international customers.
+
+</p>
+
+</div>
+
+
+<div class="shipping-grid">
+
+
+<div class="shipping-card">
+
+<h3>
+🇮🇳 India
+</h3>
+
+<p>
+
+Indian customers can place
+their order directly through WhatsApp.
+
+</p>
+
+</div>
+
+
+
+<div class="shipping-card">
+
+<h3>
+🌍 International
+</h3>
+
+<p>
+
+International customers can contact
+us for availability and shipping charges.
+
+</p>
+
+</div>
+
+
+
+<div class="shipping-card">
+
+<h3>
+🧶 Custom Orders
+</h3>
+
+<p>
+
+Want something special?
+Contact Risha for custom handmade creations.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+<div class="contact-box">
+
+<h2>
+Let's Create Something Beautiful 🧶
+</h2>
+
+<p>
+
+কোনো product পছন্দ হয়েছে?
+অথবা custom handmade creation চান?
+
+WhatsApp-এ আমাদের সঙ্গে যোগাযোগ করুন।
+
+</p>
+
+<button
+type="button"
+class="primary-btn"
+id="contact-whatsapp-btn">
+
+💬 Chat on WhatsApp
+
+</button>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<strong>
+সূতো — Handmade by Risha 🧶
+</strong>
+
+<small>
+Handmade with love • © 2026
+</small>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const WHATSAPP_NUMBER = "917602579054";
+
+let selectedProduct = "";
+
+let selectedPrice = 0;
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const orderButtons =
+    document.querySelectorAll(".order-btn");
+
+const orderSection =
+    document.getElementById("order-section");
+
+const selectedProductText =
+    document.getElementById("selected-product");
+
+const quantityInput =
+    document.getElementById("quantity");
+
+const totalPrice =
+    document.getElementById("total-price");
+
+const sendOrderButton =
+    document.getElementById("send-order-btn");
+
+const indiaButton =
+    document.getElementById("india-btn");
+
+const internationalButton =
+    document.getElementById("international-btn");
+
+const indiaInfo =
+    document.getElementById("india-info");
+
+const internationalInfo =
+    document.getElementById("international-info");
+
+const dollsCategory =
+    document.getElementById("dolls-category");
+
+const contactWhatsAppButton =
+    document.getElementById("contact-whatsapp-btn");
+
+
+/* =====================================================
+   ORDER BUTTON
+===================================================== */
+
+orderButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        selectedProduct =
+            button.getAttribute("data-product");
+
+        selectedPrice =
+            Number(
+                button.getAttribute("data-price")
+            );
+
+
+        selectedProductText.textContent =
+            "🧶 " +
+            selectedProduct +
+            " — ₹" +
+            selectedPrice;
+
+
+        quantityInput.value = 1;
+
+
+        calculateTotal();
+
+
+        orderSection.style.display = "block";
+
+
+        setTimeout(function(){
+
+            orderSection.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        },100);
+
+    });
+
+});
+
+
+/* =====================================================
+   CALCULATE TOTAL
+===================================================== */
+
+function calculateTotal(){
+
+    let quantity =
+        Number(quantityInput.value);
+
+
+    if(
+        !Number.isFinite(quantity) ||
+        quantity < 1
+    ){
+
+        quantity = 1;
+
+        quantityInput.value = 1;
+
+    }
+
+
+    if(quantity > 20){
+
+        quantity = 20;
+
+        quantityInput.value = 20;
+
+    }
+
+
+    const total =
+        selectedPrice * quantity;
+
+
+    totalPrice.textContent =
+        total.toLocaleString("en-IN");
+
+}
+
+
+quantityInput.addEventListener(
+    "input",
+    calculateTotal
+);
+
+
+/* =====================================================
+   INDIA
+===================================================== */
+
+indiaButton.addEventListener(
+    "click",
+    function(){
+
+        indiaInfo.style.display = "block";
+
+        internationalInfo.style.display = "none";
+
+    }
+);
+
+
+/* =====================================================
+   INTERNATIONAL
+===================================================== */
+
+internationalButton.addEventListener(
+    "click",
+    function(){
+
+        indiaInfo.style.display = "none";
+
+        internationalInfo.style.display = "block";
+
+    }
+);
+
+
+/* =====================================================
+   WOOLEN DOLLS
+===================================================== */
+
+dollsCategory.addEventListener(
+    "click",
+    function(){
+
+        document
+            .getElementById("collection")
+            .scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
+
+            });
+
+    }
+);
+
+
+/* =====================================================
+   SEND ORDER TO WHATSAPP
+===================================================== */
+
+sendOrderButton.addEventListener(
+    "click",
+    function(){
+
+        const name =
+            document
+                .getElementById("customer-name")
+                .value
+                .trim();
+
+
+        const phone =
+            document
+                .getElementById("customer-phone")
+                .value
+                .trim();
+
+
+        const address =
+            document
+                .getElementById("customer-address")
+                .value
+                .trim();
+
+
+        let quantity =
+            Number(quantityInput.value);
+
+
+        if(
+            selectedProduct === "" ||
+            selectedPrice === 0
+        ){
+
+            alert(
+                "প্রথমে একটি Product নির্বাচন করুন।"
+            );
+
+            return;
+
+        }
+
+
+        if(
+            name === "" ||
+            phone === "" ||
+            address === ""
+        ){
+
+            alert(
+                "দয়া করে নাম, WhatsApp নম্বর এবং ঠিকানা পূরণ করুন।"
+            );
+
+            return;
+
+        }
+
+
+        if(
+            !Number.isFinite(quantity) ||
+            quantity < 1
+        ){
+
+            quantity = 1;
+
+        }
+
+
+        const total =
+            selectedPrice * quantity;
+
+
+        const message =
+
+            "🛒 নতুন অর্ডার\n\n" +
+
+            "🧶 Product: " +
+            selectedProduct +
+            "\n" +
+
+            "💰 Unit Price: ₹" +
+            selectedPrice +
+            "\n" +
+
+            "🔢 Quantity: " +
+            quantity +
+            "\n" +
+
+            "💵 Total: ₹" +
+            total +
+            "\n\n" +
+
+            "👤 Customer Name: " +
+            name +
+            "\n" +
+
+            "📱 Customer WhatsApp: " +
+            phone +
+            "\n" +
+
+            "📍 Delivery Address: " +
+            address;
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            WHATSAPP_NUMBER +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.location.href =
+            whatsappURL;
+
+    }
+);
+
+
+/* =====================================================
+   CONTACT WHATSAPP
+===================================================== */
+
+contactWhatsAppButton.addEventListener(
+    "click",
+    function(){
+
+        const message =
+            "Hello Risha! I am interested in your handmade products from সূতো.";
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            WHATSAPP_NUMBER +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.location.href =
+            whatsappURL;
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL STATE
+===================================================== */
+
+orderSection.style.display = "none";
+
+totalPrice.textContent = "0";
+
+</script>
+
+
+</body>
+
+</html>
 
 
 <p>
