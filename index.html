@@ -56,6 +56,7 @@ body{overflow-x:hidden}nav{animation:navDrop .7s cubic-bezier(.2,.8,.2,1) both}
 <article class="product">
 <div class="product-img"><img src="Wool-doll-2.jpg" alt="Krishna Handmade Wool Doll" loading="lazy" onerror="this.onerror=null;this.src='wool-doll-2.jpg'"></div>
 <div class="content"><div class="eyebrow">Featured piece • Handmade</div><h3>Krishna —<br>Handmade Wool Doll 🧶</h3><p data-t="krishna_desc">হাতে তৈরি সুন্দর Krishna-themed wool doll.</p><p data-t="handmade_love">Handmade with love 💗</p><div class="price">₹600</div>
+<button class="btn primary" onclick="selectProduct('Krishna — Handmade Wool Doll',600)">🛒 Order Now</button>
 <div class="pay"><small>Secure payment powered by Razorpay • Live Mode</small>
 <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TOyMl1ozqKXfO5" async></script></form>
 </div></div>
@@ -96,7 +97,7 @@ body{overflow-x:hidden}nav{animation:navDrop .7s cubic-bezier(.2,.8,.2,1) both}
 
 <section class="section" id="story"><div class="story"><div><div class="eyebrow" style="color:#aaa" data-t="story_eyebrow">Our story</div><h2 data-t="story_title">ভালোবাসা দিয়ে তৈরি। 💗</h2><p data-t="story_text">সুতো — Handmade by Risha-এর প্রতিটি পুতুল ধীরে ধীরে হাতে তৈরি করা হয়। আমাদের লক্ষ্য একটি সুন্দর, ব্যক্তিগত এবং যত্নে তৈরি handmade product আপনার হাতে পৌঁছে দেওয়া।</p></div><div class="story-card"><strong data-t="handmade_100">100% Handmade</strong><span data-t="handmade_touch">প্রতিটি পুতুলে মানুষের হাতের ছোঁয়া আছে।</span></div></div></section>
 
-<section class="section" id="order"><div class="head"><div><div class="eyebrow" data-t="order_eyebrow">Place an order</div><h2 data-t="order_title">আপনার পছন্দটি বলুন।</h2></div><p data-t="order_text">Order details WhatsApp-এ পাঠিয়ে দ্রুত যোগাযোগ করুন।</p></div>
+<section class="section" id="order" style="display:none"><div class="head"><div><div class="eyebrow" data-t="order_eyebrow">Place an order</div><h2 data-t="order_title">আপনার পছন্দটি বলুন।</h2></div><p data-t="order_text">Order details WhatsApp-এ পাঠিয়ে দ্রুত যোগাযোগ করুন।</p></div>
 <div class="order"><div id="selected" style="font-weight:600;margin-bottom:22px">Product: Handmade Wool Doll — ₹499</div><div class="grid">
 <div><label data-t="name_label">Your Name / আপনার নাম</label><input id="name" autocomplete="name" placeholder="Enter your name"></div>
 <div><label data-t="phone_label">WhatsApp Number / মোবাইল নম্বর</label><input id="phone" autocomplete="tel" placeholder="Enter your WhatsApp number"></div>
@@ -121,7 +122,21 @@ let product={name:"Handmade Wool Doll",price:499};
 const qty=document.getElementById("qty");
 function update(){let q=Math.max(1,Math.min(20,Number(qty.value)||1));qty.value=q;document.getElementById("total").textContent="₹"+(product.price*q).toLocaleString("en-IN")}
 qty.addEventListener("input",update);
-function selectProduct(name,price){product={name,price};document.getElementById("selected").textContent="Product: "+name+" — ₹"+price.toLocaleString("en-IN");qty.value=1;update();document.getElementById("order").scrollIntoView({behavior:"smooth"})}
+function selectProduct(name,price){
+  product={name,price};
+  document.getElementById("selected").textContent="Product: "+name+" — ₹"+price.toLocaleString("en-IN");
+  qty.value=1;
+  update();
+
+  const orderSection=document.getElementById("order");
+  orderSection.style.display="block";
+  orderSection.style.opacity="1";
+  orderSection.style.transform="translateY(0)";
+
+  setTimeout(()=>{
+    orderSection.scrollIntoView({behavior:"smooth",block:"start"});
+  },80);
+}
 document.getElementById("send").onclick=()=>{const name=document.getElementById("name").value.trim(),phone=document.getElementById("phone").value.trim(),address=document.getElementById("address").value.trim(),q=Number(qty.value)||1,total=product.price*q;if(!name||!phone||!address){alert("দয়া করে নাম, WhatsApp নম্বর এবং delivery address পূরণ করুন।");return}const msg=`🛍️ নতুন অর্ডার — সুতো Handmade by Risha\n\n🧶 Product: ${product.name}\n🔢 Quantity: ${q}\n💰 Total: ₹${total.toLocaleString("en-IN")}\n\n👤 Customer Name: ${name}\n📱 Customer WhatsApp: ${phone}\n📍 Delivery Address: ${address}\n\nধন্যবাদ। 💗`;window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank")};
 document.getElementById("menu").onclick=()=>document.getElementById("links").classList.toggle("open");
 document.querySelectorAll(".links a").forEach(a=>a.onclick=()=>document.getElementById("links").classList.remove("open"));
@@ -139,7 +154,30 @@ document.getElementById("language").addEventListener("change",e=>applyLanguage(e
 
 const revealItems=document.querySelectorAll(".section,footer");
 const revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity="1";entry.target.style.transform="translateY(0)";revealObserver.unobserve(entry.target)}})},{threshold:.08});
-revealItems.forEach(el=>{el.style.opacity="0";el.style.transform="translateY(22px)";el.style.transition="opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)";revealObserver.observe(el)});
+revealItems.forEach(el=>{el.style.opacity="0";el.style.transform="translateY(22px)";el.style.transition="const revealItems=document.querySelectorAll(".section,footer");
+
+const revealObserver=new IntersectionObserver(
+  entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.style.opacity="1";
+        entry.target.style.transform="translateY(0)";
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {threshold:.08}
+);
+
+revealItems.forEach(el=>{
+  el.style.opacity="0";
+  el.style.transform="translateY(22px)";
+  el.style.transition=
+    "opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)";
+  revealObserver.observe(el);
+});
+
 </script>
+
 </body>
 </html>
