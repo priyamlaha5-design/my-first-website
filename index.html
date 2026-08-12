@@ -370,6 +370,13 @@ footer{
     scroll-behavior:auto!important;
   }
 }
+
+/* ===== Language selector ===== */
+.lang-wrap{display:flex;align-items:center;gap:8px;margin-left:auto;margin-right:14px}
+.lang-select{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:8px 30px 8px 13px;font:600 12px "DM Sans",sans-serif;cursor:pointer;outline:none;background-image:linear-gradient(45deg,transparent 50%,#555 50%),linear-gradient(135deg,#555 50%,transparent 50%);background-position:calc(100% - 14px) 12px,calc(100% - 10px) 12px;background-size:4px 4px,4px 4px;background-repeat:no-repeat}
+.lang-select:focus{box-shadow:0 0 0 3px #0000000b}
+@media(max-width:800px){.lang-wrap{margin-left:auto;margin-right:8px}.lang-select{padding:7px 28px 7px 11px}}
+
 </style>
 </head>
 
@@ -385,11 +392,11 @@ footer{
     <button class="menu" id="menu">☰</button>
 
     <div class="links" id="links">
-      <a href="#home">Home</a>
-      <a href="#collection">Collection</a>
-      <a href="#story">Our Story</a>
+      <a href="#home" data-i18n="nav_home">Home</a>
+      <a href="#collection" data-i18n="nav_collection">Collection</a>
+      <a href="#story" data-i18n="nav_story">Our Story</a>
       <a href="#collection" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'});return false;">Order</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -398,13 +405,13 @@ footer{
 
 <section class="hero">
   <div class="hero-copy">
-    <div class="eyebrow">Handcrafted • Made with love</div>
-    <h1>ছোট্ট হাতে,<br>বড় ভালোবাসা।</h1>
-    <p>সুতোয় তৈরি প্রতিটি পুতুল শুধু একটি product নয়—এটি যত্ন, সময় আর ভালোবাসায় তৈরি একটি ছোট্ট গল্প।</p>
+    <div class="eyebrow" data-i18n="hero_eyebrow">Handcrafted • Made with love</div>
+    <h1 data-i18n="hero_title">ছোট্ট হাতে,<br>বড় ভালোবাসা।</h1>
+    <p data-i18n="hero_text">সুতোয় তৈরি প্রতিটি পুতুল শুধু একটি product নয়—এটি যত্ন, সময় আর ভালোবাসায় তৈরি একটি ছোট্ট গল্প।</p>
 
     <div class="actions">
-      <a class="btn primary" href="#collection">Collection দেখুন</a>
-      <a class="btn secondary" href="#story">আমাদের গল্প</a>
+      <a class="btn primary" href="#collection" data-i18n="hero_collection">Collection দেখুন</a>
+      <a class="btn secondary" href="#story" data-i18n="hero_story">আমাদের গল্প</a>
     </div>
   </div>
 </section>
@@ -414,10 +421,10 @@ footer{
 
   <div class="head">
     <div>
-      <div class="eyebrow">The collection</div>
-      <h2>যে পুতুলে গল্প আছে।</h2>
+      <div class="eyebrow" data-i18n="collection_eyebrow">The collection</div>
+      <h2 data-i18n="collection_title">যে পুতুলে গল্প আছে।</h2>
     </div>
-    <p>হাতে তৈরি, সীমিত সংখ্যায় তৈরি এবং প্রতিটি piece-এ আলাদা যত্ন।</p>
+    <p data-i18n="collection_text">হাতে তৈরি, সীমিত সংখ্যায় তৈরি এবং প্রতিটি piece-এ আলাদা যত্ন।</p>
   </div>
 
 
@@ -436,12 +443,12 @@ footer{
 
     <div class="content">
 
-      <div class="eyebrow">Featured piece • Handmade</div>
+      <div class="eyebrow" data-i18n="featured_eyebrow">Featured piece • Handmade</div>
 
-      <h3>Krishna —<br>Handmade Wool Doll 🧶</h3>
+      <h3 data-i18n="krishna_title">Krishna —<br>Handmade Wool Doll 🧶</h3>
 
-      <p>হাতে তৈরি সুন্দর Krishna-themed wool doll.</p>
-      <p>Handmade with love 💗</p>
+      <p data-i18n="krishna_desc">হাতে তৈরি সুন্দর Krishna-themed wool doll.</p>
+      <p data-i18n="handmade_love">Handmade with love 💗</p>
 
       <div class="price">₹600</div>
 
@@ -479,12 +486,12 @@ footer{
 
     <div class="content">
 
-      <div class="eyebrow">New • Handmade</div>
+      <div class="eyebrow" data-i18n="new_eyebrow">New • Handmade</div>
 
-      <h3>Handmade<br>Wool Doll 🧸</h3>
+      <h3 data-i18n="doll_title">Handmade<br>Wool Doll 🧸</h3>
 
-      <p>হাতে তৈরি সুন্দর উলের পুতুল। প্রতিটি piece ভালোবাসা দিয়ে তৈরি।</p>
-      <p>Handmade with love 💗</p>
+      <p data-i18n="doll_desc">হাতে তৈরি সুন্দর উলের পুতুল। প্রতিটি piece ভালোবাসা দিয়ে তৈরি।</p>
+      <p data-i18n="handmade_love">Handmade with love 💗</p>
 
       <div class="price">₹499</div>
 
@@ -533,9 +540,9 @@ footer{
   <div class="story">
 
     <div>
-      <div class="eyebrow" style="color:#aaa">Our story</div>
+      <div class="eyebrow" style="color:#aaa" data-i18n="story_eyebrow">Our story</div>
 
-      <h2>ভালোবাসা দিয়ে তৈরি। 💗</h2>
+      <h2 data-i18n="story_title">ভালোবাসা দিয়ে তৈরি। 💗</h2>
 
       <p>
         সুতো — Handmade by Risha-এর প্রতিটি পুতুল ধীরে ধীরে হাতে তৈরি করা হয়।
@@ -545,8 +552,8 @@ footer{
     </div>
 
     <div class="story-card">
-      <strong>100% Handmade</strong>
-      <span>প্রতিটি পুতুলে মানুষের হাতের ছোঁয়া আছে।</span>
+      <strong data-i18n="handmade_100">100% Handmade</strong>
+      <span data-i18n="handmade_touch">প্রতিটি পুতুলে মানুষের হাতের ছোঁয়া আছে।</span>
     </div>
 
   </div>
@@ -558,11 +565,11 @@ footer{
 
   <div class="head">
     <div>
-      <div class="eyebrow">Place an order</div>
-      <h2>আপনার পছন্দটি বলুন।</h2>
+      <div class="eyebrow" data-i18n="order_eyebrow">Place an order</div>
+      <h2 data-i18n="order_title">আপনার পছন্দটি বলুন।</h2>
     </div>
 
-    <p>Order details WhatsApp-এ পাঠিয়ে দ্রুত যোগাযোগ করুন।</p>
+    <p data-i18n="order_text">Order details WhatsApp-এ পাঠিয়ে দ্রুত যোগাযোগ করুন।</p>
   </div>
 
   <div class="order">
@@ -607,7 +614,7 @@ footer{
     </div>
 
     <div class="summary">
-      <span>Total</span>
+      <span data-i18n="total_label">Total</span>
       <strong id="total">₹499</strong>
     </div>
 
@@ -860,7 +867,195 @@ revealItems.forEach(el=>{
 
 });
 
-</script>
 
-</body>
-</html>
+/* ===== Bengali / Hindi / English language selector ===== */
+const translations = {
+  bn:{
+    nav_home:"হোম",nav_collection:"কালেকশন",nav_story:"আমাদের গল্প",nav_order:"অর্ডার",nav_contact:"যোগাযোগ",
+    hero_eyebrow:"হাতে তৈরি • ভালোবাসা দিয়ে তৈরি",hero_title:"ছোট্ট হাতে,<br>বড় ভালোবাসা।",
+    hero_text:"সুতোয় তৈরি প্রতিটি পুতুল শুধু একটি product নয়—এটি যত্ন, সময় আর ভালোবাসায় তৈরি একটি ছোট্ট গল্প।",
+    hero_collection:"কালেকশন দেখুন",hero_story:"আমাদের গল্প",
+    collection_eyebrow:"কালেকশন",collection_title:"যে পুতুলে গল্প আছে।",collection_text:"হাতে তৈরি, সীমিত সংখ্যায় তৈরি এবং প্রতিটি piece-এ আলাদা যত্ন।",
+    featured_eyebrow:"বিশেষ পিস • Handmade",krishna_title:"Krishna —<br>Handmade Wool Doll 🧶",
+    krishna_desc:"হাতে তৈরি সুন্দর Krishna-themed wool doll.",handmade_love:"ভালোবাসা দিয়ে তৈরি 💗",
+    order_now:"🛒 Order Now",payment_test:"Razorpay-এর মাধ্যমে নিরাপদ পেমেন্ট • Test Mode",
+    new_eyebrow:"নতুন • Handmade",doll_title:"Handmade<br>Wool Doll 🧸",doll_desc:"হাতে তৈরি সুন্দর উলের পুতুল। প্রতিটি piece ভালোবাসা দিয়ে তৈরি।",
+    story_eyebrow:"আমাদের গল্প",story_title:"ভালোবাসা দিয়ে তৈরি। 💗",
+    story_text:"সুতো — Handmade by Risha-এর প্রতিটি পুতুল ধীরে ধীরে হাতে তৈরি করা হয়। আমাদের লক্ষ্য একটি সুন্দর, ব্যক্তিগত এবং যত্নে তৈরি handmade product আপনার হাতে পৌঁছে দেওয়া।",
+    handmade_100:"100% হাতে তৈরি",handmade_touch:"প্রতিটি পুতুলে মানুষের হাতের ছোঁয়া আছে।",
+    order_eyebrow:"অর্ডার করুন",order_title:"আপনার পছন্দটি বলুন।",order_text:"Order details WhatsApp-এ পাঠিয়ে দ্রুত যোগাযোগ করুন।",
+    name_label:"আপনার নাম",phone_label:"WhatsApp নম্বর",address_label:"ডেলিভারি ঠিকানা",quantity_label:"পরিমাণ",
+name_placeholder:"আপনার নাম লিখুন",
+phone_placeholder:"আপনার WhatsApp নম্বর লিখুন",
+address_placeholder:"সম্পূর্ণ ডেলিভারি ঠিকানা লিখুন",
+total_label:"মোট",
+send_whatsapp:"📩 WhatsApp-এ অর্ডার পাঠান"
+  },
+
+  hi:{
+    nav_home:"होम",
+    nav_collection:"कलेक्शन",
+    nav_story:"हमारी कहानी",
+    nav_order:"ऑर्डर",
+    nav_contact:"संपर्क",
+
+    hero_eyebrow:"हाथ से बनाया • प्यार से बनाया",
+    hero_title:"छोटे हाथों से,<br>बड़े प्यार के साथ।",
+
+    hero_text:"धागे से बनी हर गुड़िया सिर्फ एक product नहीं—यह देखभाल, समय और प्यार से बनी एक छोटी-सी कहानी है।",
+
+    hero_collection:"कलेक्शन देखें",
+    hero_story:"हमारी कहानी",
+
+    collection_eyebrow:"कलेक्शन",
+    collection_title:"हर गुड़िया की अपनी कहानी है।",
+    collection_text:"हाथ से बनी, सीमित संख्या में तैयार और हर piece में खास देखभाल।",
+
+    featured_eyebrow:"Featured piece • Handmade",
+    krishna_title:"Krishna —<br>Handmade Wool Doll 🧶",
+    krishna_desc:"हाथ से बनी सुंदर Krishna-themed wool doll.",
+    handmade_love:"प्यार से बनाई गई 💗",
+
+    order_now:"🛒 Order Now",
+    payment_test:"Razorpay द्वारा सुरक्षित भुगतान • Test Mode",
+
+    new_eyebrow:"नया • Handmade",
+    doll_title:"Handmade<br>Wool Doll 🧸",
+    doll_desc:"हाथ से बनी सुंदर ऊन की गुड़िया। हर piece प्यार से बनाया गया है।",
+
+    story_eyebrow:"हमारी कहानी",
+    story_title:"प्यार से बनाया गया। 💗",
+
+    story_text:"सुतो — Handmade by Risha की हर गुड़िया धीरे-धीरे हाथ से बनाई जाती है। हमारा लक्ष्य एक सुंदर, व्यक्तिगत और प्यार से बना handmade product आपके हाथों तक पहुँचाना है।",
+
+    handmade_100:"100% हाथ से बना",
+    handmade_touch:"हर गुड़िया में इंसानी हाथों का स्पर्श है।",
+
+    order_eyebrow:"ऑर्डर करें",
+    order_title:"अपनी पसंद बताइए।",
+    order_text:"Order details WhatsApp पर भेजें और जल्दी संपर्क करें।",
+
+    name_label:"आपका नाम",
+    phone_label:"WhatsApp नंबर",
+    address_label:"डिलीवरी पता",
+    quantity_label:"मात्रा",
+
+    name_placeholder:"अपना नाम दर्ज करें",
+    phone_placeholder:"अपना WhatsApp नंबर दर्ज करें",
+    address_placeholder:"पूरा डिलीवरी पता दर्ज करें",
+
+    total_label:"कुल",
+    send_whatsapp:"📩 WhatsApp पर ऑर्डर भेजें"
+  },
+
+  en:{
+    nav_home:"Home",
+    nav_collection:"Collection",
+    nav_story:"Our Story",
+    nav_order:"Order",
+    nav_contact:"Contact",
+
+    hero_eyebrow:"Handcrafted • Made with love",
+    hero_title:"Made by hand,<br>made with love.",
+
+    hero_text:"Every doll made with yarn is more than a product—it is a little story made with care, time and love.",
+
+    hero_collection:"View Collection",
+    hero_story:"Our Story",
+
+    collection_eyebrow:"The collection",
+    collection_title:"Every doll has a story.",
+    collection_text:"Handmade in limited quantities, with special care in every piece.",
+
+    featured_eyebrow:"Featured piece • Handmade",
+    krishna_title:"Krishna —<br>Handmade Wool Doll 🧶",
+    krishna_desc:"A beautiful handmade Krishna-themed wool doll.",
+    handmade_love:"Handmade with love 💗",
+
+    order_now:"🛒 Order Now",
+    payment_test:"Secure payment powered by Razorpay • Test Mode",
+
+    new_eyebrow:"New • Handmade",
+    doll_title:"Handmade<br>Wool Doll 🧸",
+    doll_desc:"A beautiful handmade wool doll. Every piece is made with love.",
+
+    story_eyebrow:"Our story",
+    story_title:"Made with love. 💗",
+
+    story_text:"Every doll from Suto — Handmade by Risha is slowly crafted by hand. Our goal is to deliver a beautiful, personal and carefully handmade product to you.",
+
+    handmade_100:"100% Handmade",
+    handmade_touch:"Every doll carries the touch of human hands.",
+
+    order_eyebrow:"Place an order",
+    order_title:"Tell us what you like.",
+    order_text:"Send your order details on WhatsApp for a quick response.",
+
+    name_label:"Your Name",
+    phone_label:"WhatsApp Number",
+    address_label:"Delivery Address",
+    quantity_label:"Quantity",
+
+    name_placeholder:"Enter your name",
+    phone_placeholder:"Enter your WhatsApp number",
+    address_placeholder:"Enter your complete delivery address",
+
+    total_label:"Total",
+    send_whatsapp:"📩 Send Order on WhatsApp"
+  }
+};
+
+function applyLanguage(lang){
+
+  const t=translations[lang]||translations.en;
+
+  document.documentElement.lang=
+    lang==="bn" ? "bn" :
+    lang==="hi" ? "hi" :
+    "en";
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+
+    const key=el.getAttribute("data-i18n");
+
+    if(t[key]!==undefined){
+      el.innerHTML=t[key];
+    }
+
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+
+    const key=el.getAttribute("data-i18n-placeholder");
+
+    if(t[key]!==undefined){
+      el.placeholder=t[key];
+    }
+
+  });
+
+  localStorage.setItem("sutoLanguage",lang);
+
+  const selector=document.getElementById("language-select");
+
+  if(selector){
+    selector.value=lang;
+  }
+
+}
+
+const languageSelect=
+document.getElementById("language-select");
+
+if(languageSelect){
+
+  languageSelect.addEventListener(
+    "change",
+    e=>applyLanguage(e.target.value)
+  );
+
+  applyLanguage(
+    localStorage.getItem("sutoLanguage")||"bn"
+  );
+
+}
