@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="bn">
 <head>
@@ -256,9 +257,8 @@ h2{
 }
 
 /* ORDER PAGE */
-#order{
-  display:none;
-}
+#order{display:none}
+#order.order-visible{display:block;}
 .order{
   background:var(--paper);
   border:1px solid var(--line);
@@ -848,9 +848,7 @@ function selectProduct(name,price){
     price:price
   };
 
-  document.getElementById("selected").textContent =
-    "Product: " + name + " — ₹" +
-    price.toLocaleString("en-IN");
+  updateSelectedProductText();
 
   qty.value = 1;
 
@@ -860,6 +858,7 @@ function selectProduct(name,price){
      Order section remains hidden until Order Now is clicked.
   */
   orderSection.style.display = "block";
+  orderSection.classList.add("order-visible");
 
   setTimeout(()=>{
     orderSection.scrollIntoView({
@@ -931,6 +930,95 @@ document.getElementById("menu").onclick = ()=>{
   document.getElementById("links").classList.toggle("open");
 };
 
+document.querySelectorAll(".links a").forEach(a=    document.getElementById("links").classList.remove("open");
+  };
+});
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+   ========================================================= */
+
+function goToCollection(){
+  document.getElementById("collection")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+function goToStory(){
+  document.getElementById("story")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+
+/* =========================================================
+   LANGUAGE SYSTEM
+   ========================================================= */
+
+let currentLang = "bn";
+
+const productDisplayNames = {
+
+  "Krishna Handmade Wool Doll":{
+    bn:"Krishna Handmade Wool Doll",
+    hi:"Krishna Handmade Wool Doll",
+    en:"Krishna Handmade Wool Doll"
+  },
+
+  "Handmade Wool Doll":{
+    bn:"Handmade Wool Doll",
+    hi:"Handmade Wool Doll",
+    en:"Handmade Wool Doll"
+  },
+
+  "MAHISASUR MORDINI":{
+    bn:"MAHISASUR MORDINI",
+    hi:"MAHISASUR MORDINI",
+    en:"MAHISASUR MORDINI"
+  }
+
+};
+
+
+function getOrderPrefix(lang){
+
+  if(lang==="hi") return "Product:";
+  if(lang==="en") return "Product:";
+
+  return "Product:";
+}
+
+
+function updateSelectedProductText(){
+
+  const selected =
+    document.getElementById("selected");
+
+  if(!selected) return;
+
+  const displayName =
+    (
+      productDisplayNames[product.name] &&
+      productDisplayNames[product.name][currentLang]
+    ) || product.name;
+
+  selected.textContent =
+    getOrderPrefix(currentLang) +
+    " " +
+    displayName +
+    " — ₹" +
+    product.price.toLocaleString("en-IN");
+
+}
+
+
+/* =========================================================
+   TRANSLATIONS
+   ========================================================= */
+
+const translations = {
+
+bn:{
+
 nav_home:"হোম",
 nav_collection:"কালেকশন",
 nav_story:"আমাদের গল্প",
@@ -939,6 +1027,7 @@ nav_contact:"যোগাযোগ",
 hero_eyebrow:"হাতে তৈরি • ভালোবাসা দিয়ে তৈরি",
 hero_title:"ছোট্ট হাতে,<br>বড় ভালোবাসা।",
 hero_text:"সুতোয় তৈরি প্রতিটি পুতুল শুধু একটি product নয়—এটি যত্ন, সময় আর ভালোবাসায় তৈরি একটি ছোট্ট গল্প।",
+
 hero_collection:"কালেকশন দেখুন",
 hero_story:"আমাদের গল্প",
 
@@ -964,6 +1053,7 @@ payment_live:"Razorpay-এর মাধ্যমে নিরাপদ পেম
 story_eyebrow:"আমাদের গল্প",
 story_title:"ভালোবাসা দিয়ে তৈরি। 💗",
 story_text:"সুতো — Handmade by Risha-এর প্রতিটি পুতুল ধীরে ধীরে হাতে তৈরি করা হয়। আমাদের লক্ষ্য একটি সুন্দর, ব্যক্তিগত এবং যত্নে তৈরি handmade product আপনার হাতে পৌঁছে দেওয়া।",
+
 handmade_100:"100% হাতে তৈরি",
 handmade_touch:"প্রতিটি পুতুলে মানুষের হাতের ছোঁয়া আছে।",
 
@@ -984,6 +1074,7 @@ address_placeholder:"সম্পূর্ণ delivery address লিখুন"
 
 },
 
+
 hi:{
 
 nav_home:"होम",
@@ -994,6 +1085,7 @@ nav_contact:"संपर्क",
 hero_eyebrow:"हाथ से बनाया • प्यार से बनाया",
 hero_title:"छोटे हाथों से,<br>बड़े प्यार के साथ।",
 hero_text:"धागे से बनी हर गुड़िया सिर्फ एक product नहीं—यह देखभाल, समय और प्यार से बनी एक छोटी-सी कहानी है।",
+
 hero_collection:"कलेक्शन देखें",
 hero_story:"हमारी कहानी",
 
@@ -1019,6 +1111,7 @@ payment_live:"Razorpay के माध्यम से सुरक्षित
 story_eyebrow:"हमारी कहानी",
 story_title:"प्यार से बनाया गया। 💗",
 story_text:"Suto — Handmade by Risha की हर गुड़िया धीरे-धीरे हाथ से बनाई जाती है। हमारा लक्ष्य एक सुंदर, व्यक्तिगत और प्यार से बनाया गया handmade product आपके हाथों तक पहुँचाना है।",
+
 handmade_100:"100% Handmade",
 handmade_touch:"हर गुड़िया में इंसानी हाथों का स्पर्श है।",
 
@@ -1039,6 +1132,7 @@ address_placeholder:"अपना पूरा delivery address लिखें"
 
 },
 
+
 en:{
 
 nav_home:"Home",
@@ -1049,6 +1143,7 @@ nav_contact:"Contact",
 hero_eyebrow:"HANDCRAFTED • MADE WITH LOVE",
 hero_title:"Made by hand,<br>made with love.",
 hero_text:"Every doll made with yarn is more than a product—it is a little story made with care, time and love.",
+
 hero_collection:"View Collection",
 hero_story:"Our Story",
 
@@ -1074,6 +1169,7 @@ payment_live:"Secure payment powered by Razorpay • Live Mode",
 story_eyebrow:"OUR STORY",
 story_title:"Made with love. 💗",
 story_text:"Every doll from Suto — Handmade by Risha is slowly crafted by hand. Our goal is to deliver a beautiful, personal and carefully handmade product to you.",
+
 handmade_100:"100% Handmade",
 handmade_touch:"Every doll carries the touch of human hands.",
 
@@ -1095,86 +1191,3 @@ address_placeholder:"Enter your complete delivery address"
 }
 
 };
-
-
-/* ===== LANGUAGE FUNCTION ===== */
-
-let currentLang="bn";
-
-function applyLanguage(lang){
-
-  if(!translations[lang]) return;
-
-  currentLang=lang;
-
-  document.documentElement.lang=lang;
-
-  document.querySelectorAll("[data-t]").forEach(el=>{
-
-    const key=el.dataset.t;
-
-    if(translations[lang][key] !== undefined){
-      el.innerHTML=translations[lang][key];
-    }
-
-  });
-
-  document.querySelectorAll("[data-placeholder]").forEach(el=>{
-
-    const key=el.dataset.placeholder;
-
-    if(translations[lang][key] !== undefined){
-      el.placeholder=translations[lang][key];
-    }
-
-  });
-
-}
-
-
-/* ===== LANGUAGE SELECTOR ===== */
-
-document.getElementById("language").addEventListener(
-  "change",
-  function(e){
-    applyLanguage(e.target.value);
-  }
-);
-
-
-/* ===== REVEAL ANIMATION ===== */
-
-const revealItems=document.querySelectorAll(".reveal");
-
-const revealObserver=new IntersectionObserver(
-  entries=>{
-    entries.forEach(entry=>{
-
-      if(entry.isIntersecting){
-
-        entry.target.classList.add("visible");
-
-        revealObserver.unobserve(entry.target);
-
-      }
-
-    });
-  },
-  {threshold:.08}
-);
-
-revealItems.forEach(el=>{
-  revealObserver.observe(el);
-});
-
-
-/* ===== START WEBSITE IN BENGALI ===== */
-
-applyLanguage("bn");
-
-updateTotal();
-
-</script>
-
-</body>
-</html>
