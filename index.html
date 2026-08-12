@@ -377,16 +377,6 @@ footer{
 .lang-select:focus{box-shadow:0 0 0 3px #0000000b}
 @media(max-width:800px){.lang-wrap{margin-left:auto;margin-right:8px}.lang-select{padding:7px 28px 7px 11px}}
 
-
-/* ===== Contact details ===== */
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-.contact-card{display:block;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:26px;text-align:center;transition:transform .3s ease,box-shadow .3s ease}
-.contact-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px #00000012}
-.contact-icon{font-size:28px;margin-bottom:10px}
-.contact-card strong{display:block;font-size:16px;margin-bottom:7px}
-.contact-card span{color:var(--muted);font-size:14px;word-break:break-word}
-@media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
-
 </style>
 </head>
 
@@ -895,176 +885,299 @@ revealItems.forEach(el=>{
 /* ===== Bengali / Hindi / English language selector ===== */
 const translations = {
   bn:{
-        nav_home:"হোম",
-    nav_collection:"কালেকশন",
-    nav_story:"আমাদের গল্প",
-    nav_order:"অর্ডার",
-    nav_contact:"যোগাযোগ",
-
-    hero_eyebrow:"হাতে তৈরি • ভালোবাসা দিয়ে তৈরি",
-    hero_title:"ছোট্ট হাতে,<br>বড় ভালোবাসা।",
-    hero_text:"সুতোয় তৈরি প্রতিটি পুতুল শুধু একটি product নয়—এটি যত্ন, সময় আর ভালোবাসায় তৈরি একটি ছোট গল্প।",
-    hero_collection:"কালেকশন দেখুন",
-    hero_story:"আমাদের গল্প",
-
-    collection_eyebrow:"কালেকশন",
-    collection_title:"যে পুতুলে গল্প আছে।",
-    collection_text:"হাতে তৈরি, সীমিত সংখ্যায় তৈরি এবং প্রতিটি piece-এ আলাদা যত্ন।",
-
-    featured_eyebrow:"বিশেষ পিস • Handmade",
-    krishna_title:"Krishna —<br>Handmade Wool Doll 🧶",
-    krishna_desc:"হাতে তৈরি সুন্দর Krishna-themed wool doll.",
+    nav_home:"হোম",nav_collection:"কালেকশন",nav_story:"আমাদের গল্প",nav_order:"অর্ডার",nav_contact:"যোগাযোগ",
+    hero_eyebrow:"হাতে তৈরি • ভালোবাসা দিয়ে তৈরি",hero_title:"ছোট্ট হাতে,<br>বড় ভালোবাসা।",
+    hero_text:"সুতোয় তৈরি প্রতিটি পুতুল শুধু একটি product নয়—এটি যত্ন, সময় আর ভালোবাসায় তৈরি একটি ছোট্ট গল্প।",
+    hero_collection:"কালেকশন দেখুন",hero_story:"আমাদের গল্প",
+    collection_eyebrow:"কালেকশন",collection_title:"যে পুতুলে গল্প আছে।",collection_text:"হাতে তৈরি, সীমিত সংখ্যায় তৈরি এবং প্রতিটি piece-এ আলাদা যত্ন।",
+    featured_eyebrow:"বিশেষ পিস • Handmade",payment_live:"Razorpay-এর মাধ্যমে নিরাপদ পেমেন্ট • Live Mode",krishna_title:"Krishna —<br>Handmade Wool Doll 🧶",
     handmade_love:"ভালোবাসা দিয়ে তৈরি 💗",
 
-    payment_live:"Razorpay-এর মাধ্যমে নিরাপদ পেমেন্ট • Live Mode",
+order_now:"🛒 Order Now",
 
-    new_eyebrow:"নতুন • Handmade",
-    doll_title:"Handmade<br>Wool Doll 🧸",
-    doll_desc:"হাতে তৈরি সুন্দর উলের পুতুল। প্রতিটি piece ভালোবাসা দিয়ে তৈরি।",
+payment_test:"Razorpay-এর মাধ্যমে নিরাপদ পেমেন্ট • Test Mode",
 
-    order_now:"🛒 Order Now",
+new_eyebrow:"নতুন • Handmade",
 
-    story_eyebrow:"আমাদের গল্প",
-    story_title:"ভালোবাসা দিয়ে তৈরি। 💗",
-    story_text:"সুতো — Handmade by Risha-এর প্রতিটি পুতুল ধীরে ধীরে হাতে তৈরি করা হয়। আমাদের লক্ষ্য একটি সুন্দর, ব্যক্তিগত এবং যত্নে তৈরি handmade product আপনার হাতে পৌঁছে দেওয়া।",
-    handmade_100:"100% হাতে তৈরি",
-    handmade_touch:"প্রতিটি পুতুলে মানুষের হাতের ছোঁয়া আছে।",
+doll_title:"Handmade<br>Wool Doll 🧸",
 
-    order_eyebrow:"অর্ডার করুন",
-    order_title:"আপনার পছন্দটি বলুন।",
-    order_text:"Order details WhatsApp-এ পাঠিয়ে দ্রুত যোগাযোগ করুন।",
+doll_desc:"হাতে তৈরি সুন্দর উলের পুতুল। প্রতিটি piece ভালোবাসা দিয়ে তৈরি।",
 
-    name_label:"আপনার নাম",
-    phone_label:"WhatsApp নম্বর",
-    address_label:"ঠিকানা",
-    quantity_label:"পরিমাণ",
+story_eyebrow:"আমাদের গল্প",
 
-    total_label:"মোট",
-    send_whatsapp:"📩 WhatsApp-এ অর্ডার পাঠান",
+story_title:"ভালোবাসা দিয়ে তৈরি। 💗",
 
-    contact_eyebrow:"যোগাযোগ",
-    contact_title:"আমাদের সঙ্গে যোগাযোগ করুন।",
-    contact_text:"Order বা যেকোনো প্রশ্নের জন্য সরাসরি যোগাযোগ করুন।",
-    contact_phone:"ফোন",
-    contact_whatsapp:"WhatsApp",
-    contact_email:"ইমেইল",
+story_text:"সুতো — Handmade by Risha-এর প্রতিটি পুতুল ধীরে ধীরে হাতে তৈরি করা হয়। আমাদের লক্ষ্য একটি সুন্দর, ব্যক্তিগত এবং যত্নে তৈরি handmade product আপনার হাতে পৌঁছে দেওয়া।",
 
-    footer_text:"© 2026 সুতো — Handmade with love."
+handmade_100:"100% হাতে তৈরি",
+
+handmade_touch:"প্রতিটি পুতুলে মানুষের হাতের ছোঁয়া আছে।",
+
+order_eyebrow:"অর্ডার করুন",
+
+order_title:"আপনার পছন্দটি বলুন।",
+
+order_text:"Order details WhatsApp-এ পাঠিয়ে দ্রুত যোগাযোগ করুন।",
+
+name_label:"আপনার নাম",
+
+phone_label:"WhatsApp নম্বর",
+
+address_label:"ডেলিভারি ঠিকানা",
+
+quantity_label:"পরিমাণ",
+
+name_placeholder:"আপনার নাম লিখুন",
+
+phone_placeholder:"আপনার WhatsApp নম্বর লিখুন",
+
+address_placeholder:"সম্পূর্ণ ডেলিভারি ঠিকানা লিখুন",
+
+total_label:"মোট",
+
+send_whatsapp:"📩 WhatsApp-এ অর্ডার পাঠান"
+
   },
 
   hi:{
     nav_home:"होम",
+
     nav_collection:"कलेक्शन",
+
     nav_story:"हमारी कहानी",
+
     nav_order:"ऑर्डर",
+
     nav_contact:"संपर्क",
 
     hero_eyebrow:"हाथ से बनाया • प्यार से बनाया",
+
     hero_title:"छोटे हाथों से,<br>बड़े प्यार के साथ।",
+
     hero_text:"धागे से बनी हर गुड़िया सिर्फ एक product नहीं—यह देखभाल, समय और प्यार से बनी एक छोटी-सी कहानी है।",
+
     hero_collection:"कलेक्शन देखें",
+
     hero_story:"हमारी कहानी",
 
     collection_eyebrow:"कलेक्शन",
+
     collection_title:"हर गुड़िया की अपनी कहानी है।",
+
     collection_text:"हाथ से बनी, सीमित संख्या में तैयार और हर piece में खास देखभाल।",
 
-    featured_eyebrow:"विशेष पिस • Handmade",
+    featured_eyebrow:"Featured piece • Handmade",
+
+    payment_live:"Razorpay द्वारा सुरक्षित भुगतान • Live Mode",
+
     krishna_title:"Krishna —<br>Handmade Wool Doll 🧶",
+
     krishna_desc:"हाथ से बनी सुंदर Krishna-themed wool doll.",
-    handmade_love:"प्यार से बनाया गया 💗",
 
-    payment_live:"Razorpay के माध्यम से सुरक्षित भुगतान • Live Mode",
-
-    new_eyebrow:"नया • Handmade",
-    doll_title:"Handmade<br>Wool Doll 🧸",
-    doll_desc:"हाथ से बनी सुंदर ऊन की गुड़िया। हर piece प्यार से बनाया गया है।",
+    handmade_love:"प्यार से बनाई गई 💗",
 
     order_now:"🛒 Order Now",
 
+    payment_test:"Razorpay द्वारा सुरक्षित भुगतान • Test Mode",
+
+    new_eyebrow:"नया • Handmade",
+
+    doll_title:"Handmade<br>Wool Doll 🧸",
+
+    doll_desc:"हाथ से बनी सुंदर ऊन की गुड़िया। हर piece प्यार से बनाया गया है।",
+
     story_eyebrow:"हमारी कहानी",
+
     story_title:"प्यार से बनाया गया। 💗",
-    story_text:"सुतो — Handmade by Risha की हर गुड़िया धीरे-धीरे हाथ से बनाई जाती है। हमारा लक्ष्य एक सुंदर, व्यक्तिगत और देखभाल से बनाया गया handmade product आपके हाथों तक पहुँचाना है।",
+
+    story_text:"सुतो — Handmade by Risha की हर गुड़िया धीरे-धीरे हाथ से बनाई जाती है। हमारा लक्ष्य एक सुंदर, व्यक्तिगत और प्यार से बना handmade product आपके हाथों तक पहुँचाना है।",
+
     handmade_100:"100% हाथ से बना",
+
     handmade_touch:"हर गुड़िया में इंसानी हाथों का स्पर्श है।",
 
     order_eyebrow:"ऑर्डर करें",
+
     order_title:"अपनी पसंद बताइए।",
-    order_text:"Order details WhatsApp पर भेजकर जल्दी संपर्क करें।",
+
+    order_text:"Order details WhatsApp पर भेजें और जल्दी संपर्क करें।",
 
     name_label:"आपका नाम",
+
     phone_label:"WhatsApp नंबर",
-    address_label:"पता",
+
+    address_label:"डिलीवरी पता",
+
     quantity_label:"मात्रा",
 
+    name_placeholder:"अपना नाम दर्ज करें",
+
+    phone_placeholder:"अपना WhatsApp नंबर दर्ज करें",
+
+    address_placeholder:"पूरा डिलीवरी पता दर्ज करें",
+
     total_label:"कुल",
-    send_whatsapp:"📩 WhatsApp पर ऑर्डर भेजें",
 
-    contact_eyebrow:"संपर्क",
-    contact_title:"हमसे संपर्क करें।",
-    contact_text:"ऑर्डर या किसी भी सवाल के लिए सीधे संपर्क करें।",
-    contact_phone:"फोन",
-    contact_whatsapp:"WhatsApp",
-    contact_email:"ईमेल",
+    send_whatsapp:"📩 WhatsApp पर ऑर्डर भेजें"
 
-    footer_text:"© 2026 सुतो — Handmade with love."
   },
 
   en:{
     nav_home:"Home",
+
     nav_collection:"Collection",
+
     nav_story:"Our Story",
+
     nav_order:"Order",
+
     nav_contact:"Contact",
 
     hero_eyebrow:"Handcrafted • Made with love",
+
     hero_title:"Made by hand,<br>made with love.",
+
     hero_text:"Every doll made with yarn is more than a product—it is a little story made with care, time and love.",
+
     hero_collection:"View Collection",
+
     hero_story:"Our Story",
 
-    collection_eyebrow:"The Collection",
+    collection_eyebrow:"The collection",
+
     collection_title:"Every doll has a story.",
+
     collection_text:"Handmade in limited quantities, with special care in every piece.",
 
-    featured_eyebrow:"Featured Piece • Handmade",
-    krishna_title:"Krishna —<br>Handmade Wool Doll 🧶",
-    krishna_desc:"Beautiful Krishna-themed wool doll, handmade with care.",
-    handmade_love:"Handmade with love 💗",
+    featured_eyebrow:"Featured piece • Handmade",
 
     payment_live:"Secure payment powered by Razorpay • Live Mode",
 
-    new_eyebrow:"New • Handmade",
-    doll_title:"Handmade<br>Wool Doll 🧸",
-    doll_desc:"A beautiful handmade wool doll. Every piece is made with love.",
+    krishna_title:"Krishna —<br>Handmade Wool Doll 🧶",
+
+    krishna_desc:"A beautiful handmade Krishna-themed wool doll.",
+
+    handmade_love:"Handmade with love 💗",
 
     order_now:"🛒 Order Now",
 
-    story_eyebrow:"Our Story",
+    payment_test:"Secure payment powered by Razorpay • Test Mode",
+
+    new_eyebrow:"New • Handmade",
+
+    doll_title:"Handmade<br>Wool Doll 🧸",
+
+    doll_desc:"A beautiful handmade wool doll. Every piece is made with love.",
+
+    story_eyebrow:"Our story",
+
     story_title:"Made with love. 💗",
-    story_text:"Every doll from Suto — Handmade by Risha is carefully handmade. Our goal is to deliver a beautiful, personal and lovingly crafted handmade product to your hands.",
+
+    story_text:"Every doll from Suto — Handmade by Risha is slowly crafted by hand. Our goal is to deliver a beautiful, personal and carefully handmade product to you.",
+
     handmade_100:"100% Handmade",
+
     handmade_touch:"Every doll carries the touch of human hands.",
 
-    order_eyebrow:"Place an Order",
+    order_eyebrow:"Place an order",
+
     order_title:"Tell us what you like.",
-    order_text:"Send your order details on WhatsApp and we will contact you quickly.",
+
+    order_text:"Send your order details on WhatsApp for a quick response.",
 
     name_label:"Your Name",
+
     phone_label:"WhatsApp Number",
+
     address_label:"Delivery Address",
+
     quantity_label:"Quantity",
 
+    name_placeholder:"Enter your name",
+
+    phone_placeholder:"Enter your WhatsApp number",
+
+    address_placeholder:"Enter your complete delivery address",
+
     total_label:"Total",
-    send_whatsapp:"📩 Send Order on WhatsApp",
 
-    contact_eyebrow:"Contact",
-    contact_title:"Get in touch with us.",
-    contact_text:"For orders or any questions, contact us directly.",
-    contact_phone:"Phone",
-    contact_whatsapp:"WhatsApp",
-    contact_email:"Email",
+    send_whatsapp:"📩 Send Order on WhatsApp"
 
-    footer_text:"© 2026 Suto — Handmade with love."
   }
+
 };
+
+
+function applyLanguage(lang){
+
+  const t=translations[lang]||translations.en;
+
+  document.documentElement.lang=
+    lang==="bn" ? "bn" :
+    lang==="hi" ? "hi" :
+    "en";
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+
+    const key=el.getAttribute("data-i18n");
+
+    if(t[key]!==undefined){
+
+      el.innerHTML=t[key];
+
+    }
+
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+
+    const key=el.getAttribute("data-i18n-placeholder");
+
+    if(t[key]!==undefined){
+
+      el.placeholder=t[key];
+
+    }
+
+  });
+
+  localStorage.setItem("sutoLanguage",lang);
+
+  const selector=
+    document.getElementById("language-select");
+
+  if(selector){
+
+    selector.value=lang;
+
+  }
+
+}
+
+
+const languageSelect=
+  document.getElementById("language-select");
+
+
+if(languageSelect){
+
+  languageSelect.addEventListener("change",e=>{
+
+    applyLanguage(e.target.value);
+
+    document
+      .getElementById("links")
+      .classList.remove("open");
+
+  });
+
+  applyLanguage(
+    localStorage.getItem("sutoLanguage")||"bn"
+  );
+
+}
+
+</script>
+
+</body>
+</html>
