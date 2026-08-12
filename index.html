@@ -14,7 +14,7 @@ nav{position:sticky;top:0;z-index:10;background:#f5f3efdd;backdrop-filter:blur(1
 h1,h2,h3{font-family:"Noto Serif Bengali",serif;font-weight:600}h1{font-size:clamp(44px,6vw,76px);line-height:1.05;margin:0 0 24px}h2{font-size:clamp(34px,5vw,54px);line-height:1.1;margin:0 0 18px}.hero p{max-width:520px;color:var(--muted);font-size:18px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:999px;padding:13px 22px;font-weight:600;cursor:pointer}.primary{background:var(--ink);color:#fff}.secondary{background:transparent;border:1px solid var(--line)}
 .hero-img,.product-img{overflow:hidden;border-radius:32px;box-shadow:0 22px 65px #00000018}.hero-img img{aspect-ratio:4/5;object-fit:cover}
 .head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:34px}.head p{max-width:430px;color:var(--muted)}
-.product{display:grid;grid-template-columns:1.05fr .95fr;background:var(--paper);border-radius:28px;overflow:hidden;box-shadow:0 18px 55px #0000000d;margin-bottom:32px}.product-img{border-radius:0;box-shadow:none;min-height:570px}.product-img img{height:100%;object-fit:cover}.content{padding:60px;display:flex;flex-direction:column;justify-content:center}.content h3{font-size:clamp(32px,4vw,50px);line-height:1.15;margin:0 0 18px}.content p{color:var(--muted);font-size:17px}.price{font-size:28px;font-weight:600;margin:20px 0 25px}.pay{padding-top:20px;border-top:1px solid var(--line);margin-top:10px}
+.product{display:grid;grid-template-columns:1.05fr .95fr;background:var(--paper);border-radius:28px;overflow:hidden;box-shadow:0 18px 55px #0000000d;margin-bottom:32px}.product-img{border-radius:0;box-shadow:none;min-height:570px}.product-img img{height:100%;object-fit:cover}.content{padding:60px;display:flex;flex-direction:column;justify-content:center}.content h3{font-size:clamp(32px,4vw,50px);line-height:1.15;margin:0 0 18px}.content p{color:var(--muted);font-size:17px}.price{font-size:28px;font-weight:600;margin:20px 0 25px}.pay{padding-top:20px;border-top:1px solid var(--line);margin-top:10px}.pay form{margin-top:10px}.pay small{color:var(--muted)}
 .story{background:var(--ink);color:#fff;border-radius:28px;padding:65px;display:grid;grid-template-columns:1fr 1fr;gap:50px}.story p{color:#bbb;font-size:17px}.story-card{background:#2b2b2e;border-radius:22px;padding:30px}.story-card strong{display:block;font-size:30px;margin-bottom:8px}
 .order{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:50px;box-shadow:0 18px 55px #0000000d}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.full{grid-column:1/-1}label{font-weight:600;font-size:14px}input,textarea{width:100%;margin-top:8px;border:1px solid var(--line);background:#faf9f7;border-radius:16px;padding:15px;font:inherit}textarea{min-height:125px;resize:vertical}.summary{margin-top:24px;background:#ece7e1;border-radius:20px;padding:22px;display:flex;justify-content:space-between;font-size:18px}.summary strong{font-size:27px}.wa{width:100%;margin-top:18px;border:0;border-radius:999px;padding:16px;background:var(--green);color:#fff;font-weight:600;font-size:16px}
 footer{border-top:1px solid var(--line);padding:50px 22px;color:var(--muted)}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -69,22 +69,22 @@ footer{animation:fadeUp .8s ease both}
 <main id="home">
 <section class="hero">
 <div class="hero-copy"><div class="eyebrow">Handcrafted • Made with love</div><h1>ছোট্ট হাতে,<br>বড় ভালোবাসা।</h1><p>সুতোয় তৈরি প্রতিটি পুতুল শুধু একটি product নয়—এটি যত্ন, সময় আর ভালোবাসায় তৈরি একটি ছোট্ট গল্প।</p><div class="actions"><a class="btn primary" href="#collection">Collection দেখুন</a><a class="btn secondary" href="#story">আমাদের গল্প</a></div></div>
-<div class="hero-img"><img src="wool-doll-2.jpg" alt="Krishna Handmade Wool Doll"></div>
+<div class="hero-img"><img data-krishna-image src="wool-doll-2.jpg" alt="Krishna Handmade Wool Doll" loading="eager"></div>
 </section>
 
 <section class="section" id="collection">
 <div class="head"><div><div class="eyebrow">The collection</div><h2>যে পুতুলে গল্প আছে।</h2></div><p>হাতে তৈরি, সীমিত সংখ্যায় তৈরি এবং প্রতিটি piece-এ আলাদা যত্ন।</p></div>
 
 <article class="product">
-<div class="product-img"><img src="wool-doll-2.jpg" alt="Krishna Handmade Wool Doll"></div>
+<div class="product-img"><img data-krishna-image src="wool-doll-2.jpg" alt="Krishna Handmade Wool Doll" loading="eager"></div>
 <div class="content"><div class="eyebrow">Featured piece • Handmade</div><h3>Krishna —<br>Handmade Wool Doll 🧶</h3><p>হাতে তৈরি সুন্দর Krishna-themed wool doll.</p><p>Handmade with love 💗</p><div class="price">₹600</div>
-<div class="pay"><small>Secure payment powered by Razorpay</small>
+<div class="pay"><small>Secure payment powered by Razorpay • Test Mode</small>
 <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TOTlcZYrBrRLaU" async></script></form>
 </div></div>
 </article>
 
 <article class="product">
-<div class="content"><div class="eyebrow">New • Handmade</div><h3>Handmade<br>Wool Doll 🧸</h3><p>হাতে তৈরি সুন্দর উলের পুতুল। প্রতিটি piece ভালোবাসা দিয়ে তৈরি।</p><p>Handmade with love 💗</p><div class="price">₹499</div><button class="btn primary" onclick="selectProduct('Handmade Wool Doll',499)">🛒 Order Now</button></div>
+<div class="content"><div class="eyebrow">New • Handmade</div><h3>Handmade<br>Wool Doll 🧸</h3><p>হাতে তৈরি সুন্দর উলের পুতুল। প্রতিটি piece ভালোবাসা দিয়ে তৈরি।</p><p>Handmade with love 💗</p><div class="price">₹499</div><button class="btn primary" onclick="selectProduct('Handmade Wool Doll',499)">🛒 Order Now</button><div class="pay" style="margin-top:18px"><small>Secure payment powered by Razorpay • Test Mode</small><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TOleI0g5ShXMIU" async></script></form></div></div>
 <div class="product-img"><img src="wool-doll.jpg" alt="Handmade Wool Doll"></div>
 </article>
 </section>
@@ -120,6 +120,19 @@ function selectProduct(name,price){product={name,price};document.getElementById(
 document.getElementById("send").onclick=()=>{const name=document.getElementById("name").value.trim(),phone=document.getElementById("phone").value.trim(),address=document.getElementById("address").value.trim(),q=Number(qty.value)||1,total=product.price*q;if(!name||!phone||!address){alert("দয়া করে নাম, WhatsApp নম্বর এবং delivery address পূরণ করুন।");return}if(WHATSAPP_NUMBER==="YOUR_WHATSAPP_NUMBER"){alert("প্রথমে WHATSAPP_NUMBER-এ আপনার Business WhatsApp number বসান।");return}const msg=`🛍️ নতুন অর্ডার — সুতো Handmade by Risha\n\n🧶 Product: ${product.name}\n🔢 Quantity: ${q}\n💰 Total: ₹${total.toLocaleString("en-IN")}\n\n👤 Customer Name: ${name}\n📱 WhatsApp: ${phone}\n📍 Delivery Address: ${address}\n\nধন্যবাদ। 💗`;window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank")};
 document.getElementById("menu").onclick=()=>document.getElementById("links").classList.toggle("open");
 document.querySelectorAll(".links a").forEach(a=>a.onclick=()=>document.getElementById("links").classList.remove("open"));
+
+// Krishna image fallback: handles common filename/extension differences on GitHub Pages.
+const krishnaCandidates=["wool-doll-2.jpg","wool-doll-2.jpeg","wool-doll-2.png","krishna-wool-doll.jpg","krishna.jpg"];
+document.querySelectorAll("[data-krishna-image]").forEach(img=>{
+  let i=0;
+  const tryNext=()=>{
+    if(i>=krishnaCandidates.length){return;}
+    const next=krishnaCandidates[i++];
+    if(img.getAttribute("src")===next){tryNext();return;}
+    img.src=next;
+  };
+  img.addEventListener("error",tryNext);
+});
 
 // Premium scroll reveal
 const revealItems=document.querySelectorAll(".section,.story,.order,footer");
