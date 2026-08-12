@@ -19,6 +19,44 @@ h1,h2,h3{font-family:"Noto Serif Bengali",serif;font-weight:600}h1{font-size:cla
 .order{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:50px;box-shadow:0 18px 55px #0000000d}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.full{grid-column:1/-1}label{font-weight:600;font-size:14px}input,textarea{width:100%;margin-top:8px;border:1px solid var(--line);background:#faf9f7;border-radius:16px;padding:15px;font:inherit}textarea{min-height:125px;resize:vertical}.summary{margin-top:24px;background:#ece7e1;border-radius:20px;padding:22px;display:flex;justify-content:space-between;font-size:18px}.summary strong{font-size:27px}.wa{width:100%;margin-top:18px;border:0;border-radius:999px;padding:16px;background:var(--green);color:#fff;font-weight:600;font-size:16px}
 footer{border-top:1px solid var(--line);padding:50px 22px;color:var(--muted)}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:800px){.links{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 22px;background:#f5f3effa;flex-direction:column;gap:15px}.links.open{display:flex}.menu{display:block}.hero{grid-template-columns:1fr;min-height:auto;padding-top:30px}.hero-img{order:1}.hero-copy{order:2}.section{padding:60px 18px}.head{display:block}.product{grid-template-columns:1fr}.product-img{min-height:390px}.content{padding:35px 25px}.story{grid-template-columns:1fr;padding:35px 25px}.order{padding:28px 22px}.grid{grid-template-columns:1fr}.full{grid-column:auto}}
+
+/* ===== Premium motion ===== */
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+nav{animation:navDrop .7s cubic-bezier(.2,.8,.2,1) both}
+.hero-copy>*{opacity:0;transform:translateY(24px);animation:fadeUp .8s cubic-bezier(.2,.8,.2,1) forwards}
+.hero-copy .eyebrow{animation-delay:.12s}
+.hero-copy h1{animation-delay:.22s}
+.hero-copy p{animation-delay:.34s}
+.hero-copy .actions{animation-delay:.46s}
+.hero-img{opacity:0;transform:translateY(28px) scale(.985);animation:heroIn 1s cubic-bezier(.2,.8,.2,1) .28s forwards}
+.hero-img img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.hero-img:hover img{transform:scale(1.045)}
+.product{opacity:0;transform:translateY(28px);animation:cardIn .9s cubic-bezier(.2,.8,.2,1) both}
+.product:nth-of-type(2){animation-delay:.14s}
+.product:nth-of-type(3){animation-delay:.28s}
+.product-img img{transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.product:hover .product-img img{transform:scale(1.035)}
+.btn,.wa{position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.btn:hover,.wa:hover{transform:translateY(-3px);box-shadow:0 12px 28px #0000001c}
+.btn:active,.wa:active{transform:translateY(0) scale(.98)}
+.btn::after,.wa::after{content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;background:linear-gradient(90deg,transparent,#ffffff55,transparent);transform:skewX(-18deg);transition:left .7s ease}
+.btn:hover::after,.wa:hover::after{left:150%}
+.story{animation:storyFloat 8s ease-in-out infinite}
+.story-card{transition:transform .35s ease,box-shadow .35s ease}
+.story-card:hover{transform:translateY(-8px) rotate(.4deg);box-shadow:0 18px 40px #00000025}
+.order{transition:transform .35s ease,box-shadow .35s ease}
+.order:hover{transform:translateY(-4px);box-shadow:0 25px 65px #00000012}
+footer{animation:fadeUp .8s ease both}
+@keyframes navDrop{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+@keyframes heroIn{to{opacity:1;transform:none}}
+@keyframes cardIn{to{opacity:1;transform:none}}
+@keyframes storyFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){
+*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
 </style>
 </head>
 <body>
@@ -64,10 +102,16 @@ footer{border-top:1px solid var(--line);padding:50px 22px;color:var(--muted)}.fo
 </section>
 </main>
 
-<footer id="contact"><div class="foot"><div><b style="color:#1d1d1f">সুতো 🧶</b><br>Handmade by Risha</div><div>© 2026 সুতো — Handmade with love.</div></div></footer>
+<footer id="contact">
+<div class="foot">
+<div><b style="color:#1d1d1f">সুতো 🧶</b><br>Handmade by Risha</div>
+<div>© 2026 সুতো — Handmade with love.</div>
+<div style="width:100%;text-align:center;margin-top:18px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8a827b">created by priyam</div>
+</div>
+</footer>
 
 <script>
-const WHATSAPP_NUMBER="917602579054";
+const WHATSAPP_NUMBER="YOUR_WHATSAPP_NUMBER";
 let product={name:"Handmade Wool Doll",price:499};
 const qty=document.getElementById("qty");
 function update(){let q=Math.max(1,Math.min(20,Number(qty.value)||1));qty.value=q;document.getElementById("total").textContent="₹"+(product.price*q).toLocaleString("en-IN")}
@@ -76,6 +120,25 @@ function selectProduct(name,price){product={name,price};document.getElementById(
 document.getElementById("send").onclick=()=>{const name=document.getElementById("name").value.trim(),phone=document.getElementById("phone").value.trim(),address=document.getElementById("address").value.trim(),q=Number(qty.value)||1,total=product.price*q;if(!name||!phone||!address){alert("দয়া করে নাম, WhatsApp নম্বর এবং delivery address পূরণ করুন।");return}if(WHATSAPP_NUMBER==="YOUR_WHATSAPP_NUMBER"){alert("প্রথমে WHATSAPP_NUMBER-এ আপনার Business WhatsApp number বসান।");return}const msg=`🛍️ নতুন অর্ডার — সুতো Handmade by Risha\n\n🧶 Product: ${product.name}\n🔢 Quantity: ${q}\n💰 Total: ₹${total.toLocaleString("en-IN")}\n\n👤 Customer Name: ${name}\n📱 WhatsApp: ${phone}\n📍 Delivery Address: ${address}\n\nধন্যবাদ। 💗`;window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank")};
 document.getElementById("menu").onclick=()=>document.getElementById("links").classList.toggle("open");
 document.querySelectorAll(".links a").forEach(a=>a.onclick=()=>document.getElementById("links").classList.remove("open"));
+
+// Premium scroll reveal
+const revealItems=document.querySelectorAll(".section,.story,.order,footer");
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity="1";
+      entry.target.style.transform="translateY(0)";
+      revealObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:.08});
+revealItems.forEach(el=>{
+  el.style.opacity="0";
+  el.style.transform="translateY(22px)";
+  el.style.transition="opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)";
+  revealObserver.observe(el);
+});
+
 </script>
 </body>
 </html>
