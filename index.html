@@ -569,7 +569,7 @@ footer{
 
     <div id="selected"
          style="font-weight:600;margin-bottom:22px">
-      Product: Handmade Wool Doll — ₹499
+      একটি product নির্বাচন করুন।
     </div>
 
     <div class="grid">
@@ -611,9 +611,12 @@ footer{
       <strong id="total">₹499</strong>
     </div>
 
-    <button class="wa" id="send">
+    <button class="wa" id="send" type="button">
       📩 Send Order on WhatsApp
     </button>
+    <p id="order-status" style="font-size:12px;color:#6e6e73;margin-top:12px">
+      Order Now চাপার পর এই form দেখা যাবে।
+    </p>
 
   </div>
 
@@ -681,17 +684,25 @@ function selectProduct(name,price){
     price
   };
 
+  const orderSection=document.getElementById("order");
+
   document.getElementById("selected").textContent=
     "Product: "+name+
     " — ₹"+price.toLocaleString("en-IN");
 
   qty.value=1;
-
   update();
 
-  document
-    .getElementById("order")
-    .scrollIntoView({behavior:"smooth"});
+  // Order form is hidden on the home page.
+  // It appears only after the customer presses Order Now.
+  orderSection.style.display="block";
+
+  setTimeout(()=>{
+    orderSection.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  },50);
 }
 
 
