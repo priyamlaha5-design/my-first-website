@@ -76,7 +76,12 @@ body{overflow-x:hidden}nav{animation:navDrop .7s cubic-bezier(.2,.8,.2,1) both}
 <p data-t="handmade_love">Handmade with love 💗</p>
 <div class="price">₹1,500</div>
 <button class="btn primary" onclick="selectProduct('MAHISASUR MORDINI',1500)" data-t="order_now">🛒 Order Now</button>
-<div class="pay"><small>Order via WhatsApp • Payment can be completed after order confirmation.</small></div>
+<div class="pay">
+<small>Secure payment powered by Razorpay • Live Mode</small>
+<form>
+<script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TOzu9B3TfsyiMB" async></script>
+</form>
+</div>
 </div>
 </article>
 </section>
