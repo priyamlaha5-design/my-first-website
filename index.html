@@ -1,416 +1,1045 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="সূতো — Handmade by Risha | হাতে তৈরি সুন্দর ও যত্নের পণ্য">
-  <title>সূতো — Handmade by Risha</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="সুতো — Handmade by Risha | Handmade Wool Dolls">
+<title>সুতো — Handmade by Risha</title>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
 
-    :root{
-      --bg:#f5f3ef;
-      --paper:#ffffff;
-      --ink:#17201f;
-      --muted:#68736f;
-      --green:#1e5c46;
-      --green-dark:#123b2d;
-      --line:#ddd9d3;
-      --accent:#6b5549;
-      --soft:#eaf0ec;
-    }
+:root{
+  --bg:#f5f3ef;
+  --ink:#1d1d1f;
+  --muted:#6e6e73;
+  --paper:#fff;
+  --line:#ddd9d3;
+  --accent:#6b5549;
+  --green:#5d7e5e;
+}
 
-    *{box-sizing:border-box;scroll-behavior:smooth}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font-family:"DM Sans","Noto Serif Bengali",sans-serif;
-      line-height:1.65;
-    }
-    a{text-decoration:none;color:inherit}
-    img{display:block;width:100%}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"DM Sans","Noto Serif Bengali",sans-serif;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%}
 
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(245,243,239,.94);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line);
-    }
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#f5f3efee;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #0000000b;
+  animation:navDrop .7s cubic-bezier(.2,.8,.2,1) both;
+}
+.nav{
+  max-width:1180px;
+  margin:auto;
+  min-height:72px;
+  padding:0 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  font-family:"Noto Serif Bengali",serif;
+  font-size:22px;
+  font-weight:700;
+  line-height:1;
+}
+.brand small{
+  display:block;
+  font:8px "DM Sans";
+  letter-spacing:.25em;
+  color:var(--muted);
+  margin-top:7px;
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.links{
+  display:flex;
+  gap:25px;
+  font-size:14px;
+  font-weight:600;
+}
+.language{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:999px;
+  padding:11px 16px;
+  font:600 14px "DM Sans";
+  cursor:pointer;
+  outline:none;
+}
+.menu{
+  display:none;
+  background:none;
+  border:0;
+  font-size:28px;
+  cursor:pointer;
+}
 
-    .nav{
-      max-width:1180px;
-      margin:auto;
-      min-height:68px;
-      padding:0 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
+/* HERO */
+.hero,.section{
+  max-width:1180px;
+  margin:auto;
+  padding:70px 22px;
+}
+.hero{
+  min-height:calc(100vh - 72px);
+  display:grid;
+  grid-template-columns:1fr 1.15fr;
+  align-items:center;
+  gap:45px;
+}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+h1,h2,h3{
+  font-family:"Noto Serif Bengali",serif;
+  font-weight:600;
+}
+h1{
+  font-size:clamp(44px,6vw,76px);
+  line-height:1.05;
+  margin:0 0 24px;
+}
+h2{
+  font-size:clamp(34px,5vw,54px);
+  line-height:1.1;
+  margin:0 0 18px;
+}
+.hero p{
+  max-width:560px;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.btn{
+  border:0;
+  border-radius:999px;
+  padding:14px 23px;
+  font-weight:600;
+  cursor:pointer;
+  font-size:15px;
+}
+.primary{background:var(--ink);color:#fff}
+.secondary{background:transparent;border:1px solid var(--line)}
+.hero-img,.product-img{
+  overflow:hidden;
+  border-radius:32px;
+  box-shadow:0 22px 65px #00000018;
+}
+.hero-img img{
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
 
-    .brand{
-      font-family:"Noto Serif Bengali",serif;
-      font-size:22px;
-      font-weight:700;
-      color:var(--green);
-      white-space:nowrap;
-    }
+/* COLLECTION */
+.head{
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+  align-items:end;
+  margin-bottom:34px;
+}
+.head p{
+  max-width:430px;
+  color:var(--muted);
+  line-height:1.7;
+}
 
-    .brand small{
-      display:block;
-      font-family:"DM Sans",sans-serif;
-      font-size:10px;
-      letter-spacing:.18em;
-      color:var(--muted);
-      margin-top:-5px;
-    }
+/* PRODUCTS */
+.product{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  background:var(--paper);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 18px 55px #0000000d;
+  margin-bottom:32px;
+}
+.product-img{
+  border-radius:0;
+  box-shadow:none;
+  min-height:570px;
+}
+.product-img img{
+  width:100%;
+  height:100%;
+  min-height:570px;
+  object-fit:cover;
+}
+.content{
+  padding:60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.content h3{
+  font-size:clamp(32px,4vw,50px);
+  line-height:1.15;
+  margin:0 0 18px;
+}
+.content p{
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.7;
+}
+.price{
+  font-size:30px;
+  font-weight:700;
+  margin:20px 0 25px;
+}
+.pay{
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  margin-top:10px;
+}
+.pay small{
+  color:var(--muted);
+  display:block;
+  margin-bottom:12px;
+}
+.pay form{
+  margin-top:10px;
+  min-height:65px;
+}
 
-    .links{
-      display:flex;
-      align-items:center;
-      gap:22px;
-      font-size:14px;
-    }
+/* STORY */
+.story{
+  background:var(--ink);
+  color:#fff;
+  border-radius:28px;
+  padding:65px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+}
+.story p{
+  color:#bbb;
+  font-size:17px;
+  line-height:1.8;
+}
+.story-card{
+  background:#2b2b2e;
+  border-radius:22px;
+  padding:30px;
+}
+.story-card strong{
+  display:block;
+  font-size:30px;
+  margin-bottom:8px;
+}
 
-    .links a:hover{color:var(--green)}
+/* ORDER PAGE */
+#order{display:none}
+#order.order-visible{display:block;}
+.order{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:50px;
+  box-shadow:0 18px 55px #0000000d;
+}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.full{grid-column:1/-1}
+label{
+  font-weight:600;
+  font-size:14px;
+}
+input,textarea{
+  width:100%;
+  margin-top:8px;
+  border:1px solid var(--line);
+  background:#faf9f7;
+  border-radius:16px;
+  padding:15px;
+  font:inherit;
+}
+textarea{
+  min-height:125px;
+  resize:vertical;
+}
+.summary{
+  margin-top:24px;
+  background:#ece7e1;
+  border-radius:20px;
+  padding:22px;
+  display:flex;
+  justify-content:space-between;
+  font-size:18px;
+}
+.summary strong{font-size:27px}
+.wa{
+  width:100%;
+  margin-top:18px;
+  border:0;
+  border-radius:999px;
+  padding:16px;
+  background:var(--green);
+  color:#fff;
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+}
+.contact-info{
+  color:var(--muted);
+  font-size:14px;
+  margin-top:15px;
+  line-height:1.7;
+}
+.contact-info a{
+  text-decoration:underline;
+}
 
-    .crm-nav{
-      background:var(--green);
-      color:#fff!important;
-      padding:9px 15px;
-      border-radius:999px;
-      font-weight:700;
-    }
+/* FOOTER */
+footer{
+  border-top:1px solid var(--line);
+  padding:50px 22px;
+  color:var(--muted);
+}
+.foot{
+  max-width:1180px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.creator{
+  width:100%;
+  text-align:center;
+  margin-top:18px;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#8a827b;
+}
 
-    .hero{
-      max-width:1180px;
-      margin:auto;
-      min-height:calc(100vh - 68px);
-      padding:70px 20px;
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      align-items:center;
-      gap:55px;
-    }
+/* PREMIUM MOTION */
+.hero-copy>*{
+  opacity:0;
+  transform:translateY(24px);
+  animation:fadeUp .8s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.hero-copy .eyebrow{animation-delay:.12s}
+.hero-copy h1{animation-delay:.22s}
+.hero-copy p{animation-delay:.34s}
+.hero-copy .actions{animation-delay:.46s}
+.hero-img{
+  opacity:0;
+  transform:translateY(28px) scale(.985);
+  animation:heroIn 1s cubic-bezier(.2,.8,.2,1) .28s forwards;
+}
+.hero-img img,.product-img img{
+  transition:transform 1s cubic-bezier(.2,.7,.2,1);
+}
+.hero-img:hover img{transform:scale(1.045)}
+.product:hover .product-img img{transform:scale(1.035)}
+.btn,.wa{
+  position:relative;
+  overflow:hidden;
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+}
+.btn:hover,.wa:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 28px #0000001c;
+}
+.btn:active,.wa:active{transform:translateY(0) scale(.98)}
+.btn::after,.wa::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:55%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,#ffffff55,transparent);
+  transform:skewX(-18deg);
+  transition:left .7s ease;
+}
+.btn:hover::after,.wa:hover::after{left:150%}
+.story{
+  animation:storyFloat 8s ease-in-out infinite;
+}
+.story-card{
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.story-card:hover{
+  transform:translateY(-8px) rotate(.4deg);
+  box-shadow:0 18px 40px #00000025;
+}
+.order{
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.order:hover{
+  transform:translateY(-4px);
+  box-shadow:0 25px 65px #00000012;
+}
 
-    .eyebrow{
-      color:var(--green);
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-size:12px;
-      font-weight:700;
-      margin-bottom:15px;
-    }
+.reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
 
-    h1,h2,h3{
-      font-family:"Noto Serif Bengali",serif;
-      line-height:1.25;
-      margin-top:0;
-    }
+@keyframes navDrop{
+  from{opacity:0;transform:translateY(-16px)}
+  to{opacity:1;transform:none}
+}
+@keyframes fadeUp{
+  to{opacity:1;transform:none}
+}
+@keyframes heroIn{
+  to{opacity:1;transform:none}
+}
+@keyframes storyFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-4px)}
+}
 
-    h1{
-      font-size:clamp(42px,7vw,78px);
-      margin-bottom:20px;
-    }
+@media(max-width:800px){
+  .nav{
+    min-height:64px;
+    padding:0 18px;
+  }
+  .nav-right{gap:8px}
+  .links{
+    display:none;
+    position:absolute;
+    top:64px;
+    left:0;
+    right:0;
+    padding:18px 22px;
+    background:#f5f3effa;
+    flex-direction:column;
+    gap:15px;
+    border-bottom:1px solid var(--line);
+  }
+  .links.open{display:flex}
+  .menu{display:block}
+  .language{padding:10px 13px}
+  .hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding-top:30px;
+  }
+  .hero-img{order:1}
+  .hero-copy{order:2}
+  .section{padding:60px 18px}
+  .head{display:block}
+  .product{grid-template-columns:1fr}
+  .product-img{min-height:390px}
+  .product-img img{min-height:390px}
+  .content{padding:35px 25px}
+  .story{
+    grid-template-columns:1fr;
+    padding:35px 25px;
+  }
+  .order{padding:28px 22px}
+  .grid{grid-template-columns:1fr}
+  .full{grid-column:auto}
+}
 
-    .hero p{
-      max-width:600px;
-      color:var(--muted);
-      font-size:18px;
-    }
+@media(prefers-reduced-motion:reduce){
+  *{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
 
-    .actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:28px;
-    }
+/* CRM ACCESS */
+.crm-nav{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--green);
+  color:#fff!important;
+  padding:9px 15px;
+  border-radius:999px;
+  font-weight:700;
+}
+.crm-float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:2000;
+  background:var(--green);
+  color:#fff;
+  padding:13px 18px;
+  border-radius:999px;
+  font-weight:700;
+  box-shadow:0 8px 25px rgba(0,0,0,.22);
+  transition:transform .25s ease,background .25s ease,box-shadow .25s ease;
+}
+.crm-float:hover{
+  background:#123b2d;
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+@media(max-width:800px){
+  .crm-nav{padding:9px 12px;font-size:13px}
+  .crm-float{right:14px;bottom:14px;padding:12px 15px;font-size:13px}
+}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:13px 20px;
-      border-radius:999px;
-      font-weight:700;
-      border:1px solid var(--line);
-    }
-
-    .btn-primary{
-      background:var(--green);
-      color:#fff;
-      border-color:var(--green);
-    }
-
-    .btn-secondary{background:#fff}
-
-    .hero-card{
-      background:var(--paper);
-      border-radius:28px;
-      padding:14px;
-      box-shadow:0 20px 60px rgba(23,32,31,.12);
-      transform:rotate(1deg);
-    }
-
-    .hero-art{
-      min-height:470px;
-      border-radius:20px;
-      background:
-        radial-gradient(circle at 30% 25%, #d8e5dc 0 12%, transparent 13%),
-        radial-gradient(circle at 70% 70%, #e4d8cf 0 16%, transparent 17%),
-        linear-gradient(145deg,#1e5c46,#9baf9f 55%,#e9dfd6);
-      display:flex;
-      align-items:flex-end;
-      padding:28px;
-      color:#fff;
-    }
-
-    .hero-art strong{
-      font-family:"Noto Serif Bengali",serif;
-      font-size:30px;
-      max-width:300px;
-    }
-
-    section{
-      max-width:1180px;
-      margin:auto;
-      padding:80px 20px;
-    }
-
-    .section-head{
-      max-width:700px;
-      margin-bottom:35px;
-    }
-
-    .section-head h2{font-size:38px;margin-bottom:10px}
-    .section-head p{color:var(--muted)}
-
-    .story{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:25px;
-    }
-
-    .panel{
-      background:var(--paper);
-      border:1px solid #ece9e4;
-      border-radius:22px;
-      padding:30px;
-    }
-
-    .products{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .product{
-      background:var(--paper);
-      border-radius:20px;
-      overflow:hidden;
-      border:1px solid #ece9e4;
-    }
-
-    .product-img{
-      aspect-ratio:1/1;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:55px;
-      background:linear-gradient(135deg,#e8eee9,#eee4dc);
-    }
-
-    .product-body{padding:20px}
-    .product-body h3{margin-bottom:5px;font-size:22px}
-    .product-body p{color:var(--muted);font-size:14px}
-
-    .contact{
-      background:var(--green-dark);
-      color:#fff;
-      border-radius:28px;
-      padding:45px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:25px;
-    }
-
-    .contact p{color:#d7e2dd}
-
-    footer{
-      background:#102b22;
-      color:#d7e2dd;
-      text-align:center;
-      padding:30px 20px 90px;
-      font-size:13px;
-    }
-
-    .crm-float{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      z-index:2000;
-      background:var(--green);
-      color:#fff;
-      padding:13px 18px;
-      border-radius:999px;
-      font-weight:700;
-      box-shadow:0 8px 25px rgba(0,0,0,.25);
-    }
-
-    .crm-float:hover{background:var(--green-dark)}
-
-    @media(max-width:800px){
-      .links a:not(.crm-nav){display:none}
-      .hero{grid-template-columns:1fr;padding-top:50px}
-      .hero-art{min-height:330px}
-      .story,.products{grid-template-columns:1fr}
-      section{padding:60px 18px}
-      .contact{padding:30px;display:block}
-      .contact .btn{margin-top:15px}
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <header class="topbar">
-    <nav class="nav">
-      <a class="brand" href="#home">
-        সূতো
-        <small>HANDMADE BY RISHA</small>
-      </a>
+<nav>
+  <div class="nav">
+    <a class="brand" href="#home">
+      সুতো 🧶
+      <small>HANDMADE BY RISHA</small>
+    </a>
 
-      <div class="links">
-        <a href="#story">গল্প</a>
-        <a href="#products">পণ্য</a>
-        <a href="#contact">যোগাযোগ</a>
-        <a class="crm-nav" href="https://suto-hande-crm.vercel.app/" target="_blank" rel="noopener noreferrer">
+    <div class="nav-right">
+      <select id="language" class="language" aria-label="Language">
+        <option value="bn">বাংলা</option>
+        <option value="hi">हिन्दी</option>
+        <option value="en">English</option>
+      </select>
+
+      <button class="menu" id="menu" aria-label="Menu">☰</button>
+
+      <div class="links" id="links">
+        <a href="#home" data-t="nav_home">হোম</a>
+        <a href="#collection" data-t="nav_collection">কালেকশন</a>
+        <a href="#story" data-t="nav_story">আমাদের গল্প</a>
+        <a href="#contact" data-t="nav_contact">যোগাযোগ</a>
+        <a class="crm-nav"
+           href="https://suto-hande-crm.vercel.app/"
+           target="_blank"
+           rel="noopener noreferrer">
           🔐 CRM / Admin
         </a>
       </div>
-    </nav>
-  </header>
+    </div>
+  </div>
+</nav>
 
-  <main>
+<main id="home">
 
-    <section class="hero" id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow" data-t="hero_eyebrow">হাতে তৈরি • ভালোবাসা দিয়ে তৈরি</div>
+    <h1 data-t="hero_title">ছোট্ট হাতে,<br>বড় ভালোবাসা।</h1>
+    <p data-t="hero_text">
+      সুতোয় তৈরি প্রতিটি পুতুল শুধু একটি product নয়—এটি যত্ন, সময় আর ভালোবাসায় তৈরি একটি ছোট্ট গল্প।
+    </p>
+
+    <div class="actions">
+      <button class="btn primary" data-t="hero_collection" onclick="goToCollection()">কালেকশন দেখুন</button>
+      <button class="btn secondary" data-t="hero_story" onclick="goToStory()">আমাদের গল্প</button>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="Wool-doll-3.jpg" alt="Handmade Wool Dolls" loading="eager"
+         onerror="this.onerror=null;this.src='Wool-doll-2.jpg';">
+  </div>
+</section>
+
+
+<section class="section reveal" id="collection">
+
+  <div class="head">
+    <div>
+      <div class="eyebrow" data-t="collection_eyebrow">কালেকশন</div>
+      <h2 data-t="collection_title">যে পুতুলে গল্প আছে।</h2>
+    </div>
+    <p data-t="collection_text">
+      হাতে তৈরি, সীমিত সংখ্যায় তৈরি এবং প্রতিটি piece-এ আলাদা যত্ন।
+    </p>
+  </div>
+
+
+  <!-- KRISHNA -->
+  <article class="product">
+
+    <div class="product-img">
+      <img src="Wool-doll-2.jpg"
+           alt="Krishna Handmade Wool Doll"
+           loading="lazy"
+           onerror="this.onerror=null;this.src='wool-doll-2.jpg';">
+    </div>
+
+    <div class="content">
+      <div class="eyebrow" data-t="featured_eyebrow">বিশেষ পিস • Handmade</div>
+
+      <h3 data-t="krishna_title">
+        Krishna —<br>Handmade Wool Doll 🧶
+      </h3>
+
+      <p data-t="krishna_desc">
+        হাতে তৈরি সুন্দর Krishna-themed wool doll.
+      </p>
+
+      <p data-t="handmade_love">ভালোবাসা দিয়ে তৈরি 💗</p>
+
+      <div class="price">₹600</div>
+
+      <button class="btn primary" data-t="order_now"
+              onclick="selectProduct('Krishna Handmade Wool Doll',600)">
+        🛒 Order Now
+      </button>
+
+      <div class="pay">
+        <small data-t="payment_live">Razorpay-এর মাধ্যমে নিরাপদ পেমেন্ট • Live Mode</small>
+
+        <form>
+          <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                  data-payment_button_id="pl_TOyMl1ozqKXfO5"
+                  async>
+          </script>
+        </form>
+      </div>
+    </div>
+
+  </article>
+
+
+  <!-- HANDMADE WOOL DOLL -->
+  <article class="product">
+
+    <div class="content">
+      <div class="eyebrow" data-t="new_eyebrow">নতুন • Handmade</div>
+
+      <h3 data-t="doll_title">
+        Handmade<br>Wool Doll 🧸
+      </h3>
+
+      <p data-t="doll_desc">
+        হাতে তৈরি সুন্দর উলের পুতুল। প্রতিটি piece ভালোবাসা দিয়ে তৈরি।
+      </p>
+
+      <p data-t="handmade_love">ভালোবাসা দিয়ে তৈরি 💗</p>
+
+      <div class="price">₹499</div>
+
+      <button class="btn primary" data-t="order_now"
+              onclick="selectProduct('Handmade Wool Doll',499)">
+        🛒 Order Now
+      </button>
+
+      <div class="pay">
+        <small data-t="payment_live">Razorpay-এর মাধ্যমে নিরাপদ পেমেন্ট • Live Mode</small>
+
+        <form>
+          <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                  data-payment_button_id="pl_TP02wz67WCRfMm"
+                  async>
+          </script>
+        </form>
+      </div>
+    </div>
+
+    <div class="product-img">
+      <img src="wool-doll.jpg"
+           alt="Handmade Wool Doll"
+           loading="lazy">
+    </div>
+
+  </article>
+
+
+  <!-- MAHISASUR MORDINI -->
+  <article class="product">
+
+    <div class="product-img">
+      <img src="Wool-doll-3.jpg"
+           alt="MAHISASUR MORDINI Handmade Collection"
+           loading="lazy"
+           onerror="this.onerror=null;this.src='wool-doll-3.jpg';">
+    </div>
+
+    <div class="content">
+      <div class="eyebrow" data-t="special_eyebrow">বিশেষ সংগ্রহ • Handmade</div>
+
+      <h3>MAHISASUR<br>MORDINI 🧶</h3>
+
+      <p data-t="mahisasur_desc">
+        একটি বিশেষ handmade Mahisasur Mordini collection piece—শিল্প, ঐতিহ্য এবং যত্নশীল কারুশিল্পের সুন্দর সমন্বয়।
+      </p>
+
+      <p data-t="handmade_love">ভালোবাসা দিয়ে তৈরি 💗</p>
+
+      <div class="price">₹1500</div>
+
+      <button class="btn primary" data-t="order_now"
+              onclick="selectProduct('MAHISASUR MORDINI',1500)">
+        🛒 Order Now
+      </button>
+
+      <div class="pay">
+        <small data-t="payment_live">Razorpay-এর মাধ্যমে নিরাপদ পেমেন্ট • Live Mode</small>
+
+        <form>
+          <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                  data-payment_button_id="pl_TOzu9B3TfsyiMB"
+                  async>
+          </script>
+        </form>
+      </div>
+    </div>
+
+  </article>
+
+</section>
+
+
+<section class="section reveal" id="story">
+  <div class="story">
+
+    <div>
+      <div class="eyebrow" style="color:#aaa" data-t="story_eyebrow">আমাদের গল্প</div>
+
+      <h2 data-t="story_title">ভালোবাসা দিয়ে তৈরি। 💗</h2>
+
+      <p data-t="story_text">
+        সুতো — Handmade by Risha-এর প্রতিটি পুতুল ধীরে ধীরে হাতে তৈরি করা হয়।
+        আমাদের লক্ষ্য একটি সুন্দর, ব্যক্তিগত এবং যত্নে তৈরি handmade product আপনার হাতে পৌঁছে দেওয়া।
+      </p>
+    </div>
+
+    <div class="story-card">
+      <strong data-t="handmade_100">100% হাতে তৈরি</strong>
+      <span data-t="handmade_touch">প্রতিটি পুতুলে মানুষের হাতের ছোঁয়া আছে।</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ORDER FORM IS HIDDEN UNTIL ORDER NOW IS CLICKED -->
+<section class="section" id="order">
+
+  <div class="head">
+    <div>
+      <div class="eyebrow" data-t="order_eyebrow">অর্ডার করুন</div>
+      <h2 data-t="order_title">আপনার পছন্দটি বলুন।</h2>
+    </div>
+
+    <p data-t="order_text">
+      আপনার order details দিন। WhatsApp-এর মাধ্যমে আমরা দ্রুত যোগাযোগ করব।
+    </p>
+  </div>
+
+  <div class="order">
+
+    <div id="selected"
+         style="font-weight:600;margin-bottom:22px">
+      Product: Handmade Wool Doll — ₹499
+    </div>
+
+    <div class="grid">
+
       <div>
-        <div class="eyebrow">Handmade • Thoughtful • Personal</div>
-        <h1>হাতে তৈরি জিনিসে<br>থাকে মনের ছোঁয়া।</h1>
-        <p>
-          সূতো — Handmade by Risha-এর ছোট্ট জগতে আপনাকে স্বাগতম।
-          প্রতিটি কাজ যত্ন, ভালোবাসা এবং নিজস্বতার সঙ্গে তৈরি।
-        </p>
-
-        <div class="actions">
-          <a class="btn btn-primary" href="#products">পণ্য দেখুন</a>
-          <a class="btn btn-secondary" href="#story">আমাদের গল্প</a>
-        </div>
+        <label data-t="name_label">আপনার নাম</label>
+        <input id="name"
+               autocomplete="name"
+               data-placeholder="name_placeholder"
+               placeholder="আপনার নাম লিখুন">
       </div>
 
-      <div class="hero-card">
-        <div class="hero-art">
-          <strong>একটি সুন্দর জিনিস শুরু হয় একটি ছোট্ট ভাবনা থেকে।</strong>
-        </div>
-      </div>
-    </section>
-
-    <section id="story">
-      <div class="section-head">
-        <div class="eyebrow">Our Story</div>
-        <h2>আমাদের গল্প</h2>
-        <p>কারুশিল্প, সৃজনশীলতা এবং ব্যক্তিগত যত্ন—এই তিনটি জিনিসকে সামনে রেখেই সূতো।</p>
+      <div>
+        <label data-t="phone_label">WhatsApp নম্বর</label>
+        <input id="phone"
+               autocomplete="tel"
+               inputmode="tel"
+               data-placeholder="phone_placeholder"
+               placeholder="আপনার WhatsApp নম্বর লিখুন">
       </div>
 
-      <div class="story">
-        <div class="panel">
-          <h3>কেন হাতে তৈরি?</h3>
-          <p>
-            হাতে তৈরি প্রতিটি পণ্যের নিজস্ব একটি চরিত্র থাকে।
-            একই ডিজাইন হলেও প্রতিটি কাজে থাকে সামান্য আলাদা স্পর্শ—
-            আর সেটাই তাকে বিশেষ করে তোলে।
-          </p>
-        </div>
-
-        <div class="panel">
-          <h3>আমাদের লক্ষ্য</h3>
-          <p>
-            সুন্দর, ব্যবহারযোগ্য এবং যত্নের সঙ্গে তৈরি handmade পণ্য
-            আরও সহজে মানুষের কাছে পৌঁছে দেওয়া।
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="products">
-      <div class="section-head">
-        <div class="eyebrow">Collection</div>
-        <h2>আমাদের সংগ্রহ</h2>
-        <p>এখানে তোমার আসল product ছবি, নাম ও দাম পরে সহজেই যোগ করা যাবে।</p>
+      <div class="full">
+        <label data-t="address_label">ডেলিভারি ঠিকানা</label>
+        <textarea id="address"
+                  autocomplete="street-address"
+                  data-placeholder="address_placeholder"
+                  placeholder="সম্পূর্ণ delivery address লিখুন"></textarea>
       </div>
 
-      <div class="products">
-        <article class="product">
-          <div class="product-img">🧶</div>
-          <div class="product-body">
-            <h3>হ্যান্ডমেড ক্রাফট</h3>
-            <p>যত্নের সঙ্গে তৈরি একটি বিশেষ handmade creation.</p>
-          </div>
-        </article>
-
-        <article class="product">
-          <div class="product-img">🌸</div>
-          <div class="product-body">
-            <h3>ডেকোরেশন</h3>
-            <p>ঘর সাজানোর জন্য সুন্দর ও ব্যক্তিগত স্পর্শের কাজ।</p>
-          </div>
-        </article>
-
-        <article class="product">
-          <div class="product-img">🎁</div>
-          <div class="product-body">
-            <h3>গিফট আইটেম</h3>
-            <p>প্রিয় মানুষকে দেওয়ার জন্য তৈরি বিশেষ handmade উপহার।</p>
-          </div>
-        </article>
+      <div>
+        <label data-t="qty_label">পরিমাণ</label>
+        <input id="qty"
+               type="number"
+               min="1"
+               max="20"
+               value="1">
       </div>
-    </section>
 
-    <section id="contact">
-      <div class="contact">
-        <div>
-          <div class="eyebrow" style="color:#b9d2c7">Get in touch</div>
-          <h2>আপনার পছন্দের কিছু তৈরি করতে চান?</h2>
-          <p>অর্ডার বা handmade product সম্পর্কে জানতে আমাদের সঙ্গে যোগাযোগ করুন।</p>
-        </div>
+    </div>
 
-        <a class="btn btn-secondary" href="https://suto-hande-crm.vercel.app/" target="_blank" rel="noopener noreferrer">
-          🔐 CRM / Admin
-        </a>
-      </div>
-    </section>
+    <div class="summary">
+      <span data-t="total_label">Total</span>
+      <strong id="total">₹499</strong>
+    </div>
 
-  </main>
+    <button class="wa" id="send" data-t="send_order">
+      📩 Send Order on WhatsApp
+    </button>
 
-  <footer>
-    © 2026 সূতো — Handmade by Risha
-  </footer>
+    <div class="contact-info">
+      WhatsApp: <a href="https://wa.me/917602579054" target="_blank">7602579054</a>
+      &nbsp;•&nbsp;
+      Email: <a href="mailto:panrisha9@gmail.com">panrisha9@gmail.com</a>
+    </div>
 
-  <!-- Floating CRM access -->
-  <a
-    class="crm-float"
-    href="https://suto-hande-crm.vercel.app/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Open CRM Admin"
-  >
-    🔐 CRM / Admin
-  </a>
+  </div>
+</section>
 
-</body>
-</html>
+</main>
+
+
+<!-- CRM QUICK ACCESS -->
+<a class="crm-float"
+   href="https://suto-hande-crm.vercel.app/"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Open CRM Admin">
+  🔐 CRM / Admin
+</a>
+
+<footer id="contact" class="reveal">
+
+  <div class="foot">
+
+    <div>
+      <b style="color:#1d1d1f">সুতো 🧶</b><br>
+      Handmade by Risha
+    </div>
+
+    <div>
+      📞 <a href="tel:+917602579054">7602579054</a>
+      &nbsp;•&nbsp;
+      ✉️ <a href="mailto:panrisha9@gmail.com">panrisha9@gmail.com</a>
+    </div>
+
+    <div class="creator">
+      created by priyam
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   PRODUCT / ORDER SYSTEM
+   ========================================================= */
+
+const WHATSAPP_NUMBER = "917602579054";
+
+let product = {
+  name:"Handmade Wool Doll",
+  price:499
+};
+
+const qty = document.getElementById("qty");
+const orderSection = document.getElementById("order");
+
+function updateTotal(){
+
+  let q = Math.max(
+    1,
+    Math.min(20, Number(qty.value) || 1)
+  );
+
+  qty.value = q;
+
+  document.getElementById("total").textContent =
+    "₹" + (product.price * q).toLocaleString("en-IN");
+}
+
+qty.addEventListener("input",updateTotal);
+
+
+function selectProduct(name,price){
+
+  product = {
+    name:name,
+    price:price
+  };
+
+  updateSelectedProductText();
+
+  qty.value = 1;
+
+  updateTotal();
+
+  /* IMPORTANT:
+     Order section remains hidden until Order Now is clicked.
+  */
+  orderSection.style.display = "block";
+  orderSection.classList.add("order-visible");
+
+  setTimeout(()=>{
+    orderSection.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  },50);
+}
+
+
+document.getElementById("send").onclick = ()=>{
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+  const address =
+      const q =
+    Number(qty.value) || 1;
+
+  const total =
+    product.price * q;
+
+  if(!name || !phone || !address){
+
+    alert(
+      currentLang === "bn"
+      ? "দয়া করে নাম, WhatsApp নম্বর এবং delivery address পূরণ করুন।"
+      : currentLang === "hi"
+      ? "कृपया नाम, WhatsApp नंबर और delivery address भरें।"
+      : "Please enter your name, WhatsApp number and delivery address."
+    );
+
+    return;
+  }
+
+  const msg =
+`🛍️ New Order — Suto Handmade by Risha
+
+🧶 Product: ${product.name}
+🔢 Quantity: ${q}
+💰 Total: ₹${total.toLocaleString("en-IN")}
+
+👤 Customer Name: ${name}
+📱 WhatsApp: ${phone}
+📍 Delivery Address: ${address}
+
+Thank you. 💗`;
+
+  window.open(
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(msg),
+    "_blank"
+  );
+};
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+document.getElementById("menu").onclick = ()=>{
+  document.getElementById("links").classList.toggle("open");
+};
+
+document.querySelectorAll(".links a").forEach(a=>{
+  a.onclick=()=>{
+    document.getElementById("links").classList.remove("open");
+  };
+});
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+   ========================================================= */
+
+function goToCollection(){
+  document.getElementById("collection")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+function goToStory(){
+  document.getElementById("story")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+
+/* =========================================================
+   LANGUAGE SYSTEM
+   ========================================================= */
+
+let currentLang = "bn";
+
+const productDisplayNames = {
+  "Krishna Handmade Wool Doll": {
+    bn: "Krishna Handmade Wool Doll",
+    hi: "Krishna Handmade Wool Doll",
+    en: "Krishna Handmade Wool Doll"
+  },
+  "Handmade Wool Doll": {
+    bn: "Handmade Wool Doll",
+    hi: "Handmade Wool Doll",
+    en: "Handmade Wool Doll"
+  },
+  "MAHISASUR MORDINI": {
+    bn: "MAHISASUR MORDINI",
+    hi: "MAHISASUR MORDINI",
+    en: "MAHISASUR MORDINI"
+  }
+};
+
+function getOrderPrefix(lang){
+  if(lang === "hi") return "Product:";
+  if(lang === "en") return "Product:";
+  return "Product:";
+}
+
+function updateSelectedProductText(){
+  const selected = document.getElementById("selected");
+  if(!selected) return;
+
+  const displayName =
+    (productDisplayNames[product.name] &&
+     productDisplayNames[product.name][currentLang])
+      || product.name;
+
+  selected.textContent =
+    getOrderPrefix(currentLang) + " " +
+    displayName + " — ₹" +
+    product.price.toLocaleString("en-IN");
+}
