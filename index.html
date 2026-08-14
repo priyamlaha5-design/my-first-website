@@ -481,7 +481,7 @@ footer{
   }
 }
 
-/* CRM ACCESS */
+/* ===== CRM ACCESS: added only ===== */
 .crm-nav{
   display:inline-flex;
   align-items:center;
@@ -503,12 +503,10 @@ footer{
   border-radius:999px;
   font-weight:700;
   box-shadow:0 8px 25px rgba(0,0,0,.22);
-  transition:transform .25s ease,background .25s ease,box-shadow .25s ease;
 }
 .crm-float:hover{
   background:#123b2d;
-  transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(0,0,0,.25);
+  transform:translateY(-2px);
 }
 @media(max-width:800px){
   .crm-nav{padding:9px 12px;font-size:13px}
@@ -541,12 +539,12 @@ footer{
         <a href="#collection" data-t="nav_collection">কালেকশন</a>
         <a href="#story" data-t="nav_story">আমাদের গল্প</a>
         <a href="#contact" data-t="nav_contact">যোগাযোগ</a>
-        <a class="crm-nav"
-           href="https://suto-hande-crm.vercel.app/"
-           target="_blank"
-           rel="noopener noreferrer">
-          🔐 CRM / Admin
-        </a>
+          <a class="crm-nav"
+             href="https://suto-hande-crm.vercel.app/"
+             target="_blank"
+             rel="noopener noreferrer">
+            🔐 CRM / Admin
+          </a>
       </div>
     </div>
   </div>
@@ -825,15 +823,6 @@ footer{
 </main>
 
 
-<!-- CRM QUICK ACCESS -->
-<a class="crm-float"
-   href="https://suto-hande-crm.vercel.app/"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Open CRM Admin">
-  🔐 CRM / Admin
-</a>
-
 <footer id="contact" class="reveal">
 
   <div class="foot">
@@ -927,7 +916,9 @@ document.getElementById("send").onclick = ()=>{
     document.getElementById("phone").value.trim();
 
   const address =
-      const q =
+    document.getElementById("address").value.trim();
+
+  const q =
     Number(qty.value) || 1;
 
   const total =
@@ -938,7 +929,7 @@ document.getElementById("send").onclick = ()=>{
     alert(
       currentLang === "bn"
       ? "দয়া করে নাম, WhatsApp নম্বর এবং delivery address পূরণ করুন।"
-      : currentLang === "hi"
+            : currentLang === "hi"
       ? "कृपया नाम, WhatsApp नंबर और delivery address भरें।"
       : "Please enter your name, WhatsApp number and delivery address."
     );
@@ -1007,39 +998,8 @@ let currentLang = "bn";
 
 const productDisplayNames = {
   "Krishna Handmade Wool Doll": {
-    bn: "Krishna Handmade Wool Doll",
-    hi: "Krishna Handmade Wool Doll",
+    bn: "কৃষ্ণ হাতে তৈরি উলের পুতুল",
+    hi: "कृष्ण हाथ से बनी ऊन की गुड़िया",
     en: "Krishna Handmade Wool Doll"
-  },
-  "Handmade Wool Doll": {
-    bn: "Handmade Wool Doll",
-    hi: "Handmade Wool Doll",
-    en: "Handmade Wool Doll"
-  },
-  "MAHISASUR MORDINI": {
-    bn: "MAHISASUR MORDINI",
-    hi: "MAHISASUR MORDINI",
-    en: "MAHISASUR MORDINI"
   }
 };
-
-function getOrderPrefix(lang){
-  if(lang === "hi") return "Product:";
-  if(lang === "en") return "Product:";
-  return "Product:";
-}
-
-function updateSelectedProductText(){
-  const selected = document.getElementById("selected");
-  if(!selected) return;
-
-  const displayName =
-    (productDisplayNames[product.name] &&
-     productDisplayNames[product.name][currentLang])
-      || product.name;
-
-  selected.textContent =
-    getOrderPrefix(currentLang) + " " +
-    displayName + " — ₹" +
-    product.price.toLocaleString("en-IN");
-}
